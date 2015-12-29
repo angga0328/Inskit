@@ -6,10 +6,10 @@
           h1.tagline.-bottom style=("margin-left:20px") =@wisata.nama
           .ratingg
             = link_to like_wisata_path(@wisata), method: :put do
-              span.icon-heart style="color: white; font-size:30px; margin-left: 20px;"
+              span.icon-heart style="color: white; font-size:30px; margin-left: 20px; text-shadow: 0px 0px 20px rgb(0, 0, 0);"
                 | #{@wisata.get_upvotes.size}
             = link_to dislike_wisata_path(@wisata), method: :put do
-              span.icon-heart-broken style="color: white; font-size:30px; margin-left: 20px;"
+              span.icon-heart-broken style="color: white; font-size:30px; margin-left: 20px; text-shadow: 0px 0px 20px rgb(0, 0, 0);"
                 | #{@wisata.get_downvotes.size}
 
             
@@ -24,7 +24,12 @@
         p.glyphicon.glyphicon-map-marker 
           |    #{@wisata.alamat}
       address
+      
         p.glyphicon.glyphicon-info-sign
+        - if @wisata.kategori_id == 6
+          |    Kisaran Harga makanan untuk 1 orang :
+          |    #{@wisata.harga}
+        - else
           |    Harga Tiket Masuk : 
           |    #{@wisata.harga}
       address
@@ -41,7 +46,7 @@
             =image_tag (guide.foto), {:class => "img-responsive"}
             =link_to guide.nama, guide
       hr
-      h2 Tempat Wisata #{@wisata.daerah.nama} lainnya
+      h2 Tempat Wisata #{@wisata.daerah.nama} 
       br
       .row
         - @wisata.daerah.wisatas.each do |wisata|
@@ -52,12 +57,12 @@
     .col-sm-5.wisata-review
       - unless @reviews.where("foto IS NOT NULL").count == 0
         .row
-          - @reviews[0..4].each do |review|
+          - @reviews.where("foto IS NOT NULL")[0..4].each do |review|
             .col-md-4
               .thumbnail
                 =image_tag(review.foto, class: "img-responsive", style: "height: 70px; width: 122px;") if review.foto?      
           .thumbnail
-            = link_to(image_tag('more'), album_wisata_path)  
+            = link_to(image_tag('more'), album_wisata_path) 
 
     
       h2 Review  

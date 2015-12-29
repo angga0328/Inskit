@@ -7,6 +7,9 @@
             = @berita.title
         .panel-body
           = image_tag(@berita.foto, class: "img-responsive center-block" )
+          br
+          p style ="color: grey;"
+            | Tanggal Terbit #{@berita.created_at}
           p style="text-align:justify;"
             = simple_format(@berita.content)
               

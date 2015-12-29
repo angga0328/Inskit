@@ -4,7 +4,7 @@
       =link_to 'Berita & Promo', beritas_path
   .panel-body.panel-bd-home-berita
     .row.media
-    -@beritas.order('created_at DESC').each do |berita|
+    -@beritas.order('created_at DESC')[0..4].each do |berita|
       .col-lg-12.col-md-12.col-sm-12.col-xs-12
         .hovereffect
           = image_tag(berita.foto, class: "img-responsive center-block", style: "width:300px; height:200px")

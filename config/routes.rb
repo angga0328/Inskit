@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'privacy' => 'static_pages#privacy'
   get 'contact' => 'static_pages#contact'
   get 'popular-location' => 'static_pages#popular_location'
-
+  resources :reviews, only: [:create, :destroy]
   devise_for :admins
   devise_for :guides
   resources :beritas
@@ -19,8 +19,8 @@ Rails.application.routes.draw do
       get 'album'
     end
     resources :reviews, only: [:create, :destroy]
-    
   end
+
   devise_for :users
   resources :users, only: [:show, :index]
   resources :guides, only: [:show, :index] do

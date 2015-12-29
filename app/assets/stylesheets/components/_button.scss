@@ -60,3 +60,16 @@
     border-color: #6AAFD8;
   }
 }
+.tombol-delete {
+  .btn {
+    font-size: 12px;
+    background-color:  #c6222f;
+    border-color:  #c6222f;
+    margin-right: 15px;
+    &:hover,
+    &:focus {
+      background-color: white;
+      color: #c6222f;
+    }
+  }
+}

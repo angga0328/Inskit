@@ -1,12 +1,11 @@
-
 .review-side
   .row
     .col-sm-2
-      = image_tag(review.user.foto, class: "img-responsive", style: "height:67px; width: 67px;")   
+      = image_tag(review.user.foto, class: "img-responsive", style: "height:67px; width: 67px;")
     .col-sm-10 style="padding-left: 0px; margin-left:-10px;"
-      .col-sm-8.nama-periview 
+      .col-sm-8.nama-periview
         =link_to review.user.nama, review.user
-      .col-sm-4.tgl-tweet 
+      .col-sm-4.tgl-tweet
         =time_ago_in_words(review.created_at)
       .col-sm-12.nama-wisata-direview
         span
@@ -21,5 +20,8 @@
         section.image-gallery
           figure tabindex="1"
             =image_tag(review.foto, class: "img-responsive center-block", style: "max-height:100px;") if review.foto?
-
-
+    .tombol-delete  
+      - if admin_signed_in?
+        = link_to review , method: :delete, class: "btn btn-danger pull-right", data:   {confirm: 'Are you sure?'}
+          i.glyphicon.glyphicon-trash
+        
