@@ -26,20 +26,21 @@
                 .col-sm-7
                   =f.email_field :email, :class => "form-control", :required => true 
                   br
-              .form-group
-                label.col-sm-5.control-label for="inputPassword"  Password
-                .col-sm-7
-                  =f.password_field :password, :autocomplete => "off", :class => "form-control"
-                  -if @minimum_password_length 
-                    em 
-                      | (#{@minimum_password_length} characters minimum)
+              -if f.object.password_required?
+                .form-group
+                  label.col-sm-5.control-label for="inputPassword"  Password
+                  .col-sm-7
+                    =f.password_field :password, :autocomplete => "off", :class => "form-control"
+                    -if @minimum_password_length 
+                      em 
+                        | (#{@minimum_password_length} characters minimum)
+                      br
+                      br
+                .form-group
+                  label.col-sm-5.control-label for="inputPassword_Confirmation"  Password Confirmation
+                  .col-sm-7
+                    =f.password_field :password_confirmation, :autocomplete => "off", :class => "form-control"
                     br
-                    br
-              .form-group
-                label.col-sm-5.control-label for="inputPassword_Confirmation"  Password Confirmation
-                .col-sm-7
-                  =f.password_field :password_confirmation, :autocomplete => "off", :class => "form-control"
-                  br
               .form-group
                 label.col-sm-5.control-label for="inputFoto"  Foto
                 .col-sm-7

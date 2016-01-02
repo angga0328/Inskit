@@ -19,9 +19,9 @@ Rails.application.routes.draw do
       get 'album'
     end
     resources :reviews, only: [:create, :destroy]
-    
+
   end
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"} 
   resources :users, only: [:show, :index]
   resources :guides, only: [:show, :index] do
     member do
