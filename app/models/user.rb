@@ -8,6 +8,15 @@ class User < ActiveRecord::Base
   after_create :twitterimage
   acts_as_voter
 
+  def twitter
+    @client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key        = 'QuqTKLz0pYQnvY5kdfU8CLmDV'
+      config.consumer_secret     = 'CayiHN1brVvjqLgLmzFszkUDw9CM8pOIde0NBY4LMFSmGwZ23x'
+      config.access_token        = token
+      config.access_token_secret = secret
+    end
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
@@ -16,6 +25,8 @@ class User < ActiveRecord::Base
       user.nama =  auth.info.name
       user.bio = auth.info.description
       user.fotourl = auth.info.image
+      user.token = auth.credentials.token
+      user.secret = auth.credentials.secret
     end
   end
 

@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
-  
+
   private
     def review_params
       params.require(:review).permit(:content, :wisata_id, :foto, :guide_id)
