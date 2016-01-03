@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :foto, FotoUploader
   has_many :reviews
-
+  after_create :twitterimage
   acts_as_voter
 
   def self.from_omniauth(auth)
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
       user.username = auth.info.nickname
       user.nama =  auth.info.name
       user.bio = auth.info.description
-      user.remote_foto_url = auth.info.image
+      user.fotourl = auth.info.image
     end
   end
 
@@ -41,4 +41,11 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+  private
+    def twitterimage
+      if self.fotourl
+        self.remote_foto_url = self.fotourl
+      end
+    end
 end

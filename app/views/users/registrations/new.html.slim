@@ -6,6 +6,7 @@
         .panel-body
           =form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-horizontal", html: { method: :post }) do |f| 
               =devise_error_messages!  
+              =f.hidden_field :fotourl
               .form-group
                 label.col-sm-5.control-label for="inputNama"  Nama
                 .col-sm-7
