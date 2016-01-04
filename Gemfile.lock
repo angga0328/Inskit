@@ -84,7 +84,6 @@ GEM
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
     hashie (3.4.3)
-=======
     http (0.9.8)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -233,12 +232,7 @@ DEPENDENCIES
   gmaps4rails (~> 2.1, >= 2.1.2)
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
-  omniauth
-  omniauth-twitter
-=======
   omniauth-twitter (~> 1.2, >= 1.2.1)
->>>>>>> bdf6f6cfa1d282f278438e545374f090b76f2974
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
