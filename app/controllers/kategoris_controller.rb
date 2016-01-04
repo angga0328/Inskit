@@ -10,7 +10,7 @@ class KategorisController < ApplicationController
   # GET /kategoris/1
   # GET /kategoris/1.json
   def show
-    @wisatas = @kategori.wisatas
+    @wisatas = @kategori.wisatas.order(:cached_votes_up => :desc)
   end
 
   # GET /kategoris/new

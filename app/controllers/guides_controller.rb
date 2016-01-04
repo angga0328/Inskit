@@ -19,6 +19,7 @@ class GuidesController < ApplicationController
   end
 
   def index
+   
   end
 
   private

@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require lightbox
+
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require lightbox-plus-jquery
 //= require_tree .

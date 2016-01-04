@@ -18,6 +18,10 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'geocoder', '~> 1.2', '>= 1.2.13'
 gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+
+
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 

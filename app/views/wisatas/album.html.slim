@@ -1,3 +1,7 @@
+<link href="/assets/stylesheets/lightbox.min.scss" media="all" rel="stylesheet" />
+
+
+
 .container
   .panel.panel-default.page-popular-location
     .panel-heading
@@ -6,4 +10,7 @@
       - @reviews.order('created_at DESC').where("foto IS NOT NULL").each do |review|
         .col-sm-4.page-album
           .hovereffect
-            = link_to(image_tag(review.foto, class: "img-responsive center-block", style: "width:400px; height:300px"))
+            a.example-image-link data-lightbox="example-set" data-title="Click the right half of the image to move forward"
+              = link_to(image_tag(review.foto, class: "img-responsive center-block example-image", style: "width:400px; height:300px"))
+
+<script src="/assets/javascripts/lightbox-plus-jquery.min.js"></script>

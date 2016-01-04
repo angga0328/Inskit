@@ -1,23 +1,4 @@
-.row.table-custom
-  .col-xs-12
-    .table-responsive
-      table.table.table-bordered.table-hover
-        h3.text-center
-          | Daftar Daerah Wisata Jawa Barat
-        thead
-          tr
-            th.text-center Nama
-            th.text-center Foto
-            th.text-center colspan="3" Action
-        tbody
-          - @daerahs.each do |daerah|
-            tr
-              td = daerah.nama
-              td = daerah.foto
-              td.text-center = link_to 'Show', daerah, class: "btn btn-default"
-              td.text-center = link_to 'Edit', edit_daerah_path(daerah), class: "btn btn-default"
-              td.text-center = link_to 'Destroy', daerah, method: :delete, data:   {confirm: 'Are you sure?'}, class: "btn btn-default"          
-        tfoot
-          tr
-            = link_to 'Tambah Daerah', new_daerah_path, class: "btn btn-default pull-right"
-
+-if admin_signed_in?
+  = render 'daerahs/indexadmin'
+-else
+  = render 'daerahs/indexuser'

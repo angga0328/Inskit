@@ -1,23 +1,4 @@
-p#notice= notice
-.row.table-custom
-  .col-xs-12
-    .table-responsive
-      table.table.table-bordered.table-hover
-        h3.text-center
-          | Daftar Kategori Wisata Jawa Barat
-        thead
-          tr
-            th.text-center Nama
-            th.text-center Foto
-            th.text-center colspan="3" Action
-        tbody
-          - @kategoris.each do |kategori|
-            tr
-              td = kategori.nama
-              td = kategori.foto
-              td.text-center = link_to 'Show', kategori, class: "btn btn-default"
-              td.text-center = link_to 'Edit', edit_kategori_path(kategori), class: "btn btn-default"
-              td.text-center = link_to 'Destroy', kategori, method: :delete, data:   {confirm: 'Are you sure?'}, class: "btn btn-default"          
-        tfoot
-          tr
-            = link_to 'Tambah Kategori', new_kategori_path, class: "btn btn-default pull-right"
+-if admin_signed_in?
+  = render 'kategoris/indexadmin'
+-else
+  = render 'kategoris/indexuser'
