@@ -29,25 +29,26 @@
                   p
                     | Currently waiting confirmation for: #{resource.unconfirmed_email}                    
                 br
-            .form-group
-              label.col-sm-5.control-label for="inputPassword_Confirmation"  Current Password
-              .col-sm-7
-                =f.password_field :current_password, :class => "form-control", hint: "we need your current password to confirm your changes", required: true
-                br
-                br
-            .form-group
-              label.col-sm-5.control-label for="inputPassword"  Password
-              .col-sm-7
-                =f.password_field :password, :autocomplete => "off", :class => "form-control", hint: "leave it blank if you don't want to change it", required: false
-                -if @minimum_password_length 
-                  em 
-                    | (#{@minimum_password_length} characters minimum)
-                br
-            .form-group
-              label.col-sm-5.control-label for="inputPassword_Confirmation"  Password Confirmation
-              .col-sm-7
-                =f.password_field :password_confirmation, :autocomplete => "off", :class => "form-control", required: false
-                br
+            - if f.object.encrypted_password.present?
+              .form-group
+                label.col-sm-5.control-label for="inputPassword_Confirmation"  Current Password
+                .col-sm-7
+                  =f.password_field :current_password, :class => "form-control", hint: "we need your current password to confirm your changes", required: true
+                  br
+                  br
+              .form-group
+                label.col-sm-5.control-label for="inputPassword"  Password
+                .col-sm-7
+                  =f.password_field :password, :autocomplete => "off", :class => "form-control", hint: "leave it blank if you don't want to change it", required: false
+                  -if @minimum_password_length 
+                    em 
+                      | (#{@minimum_password_length} characters minimum)
+                  br
+              .form-group
+                label.col-sm-5.control-label for="inputPassword_Confirmation"  Password Confirmation
+                .col-sm-7
+                  =f.password_field :password_confirmation, :autocomplete => "off", :class => "form-control", required: false
+                  br
             .form-group
               label.col-sm-5.control-label for="inputFoto"  Foto
               .col-sm-7
