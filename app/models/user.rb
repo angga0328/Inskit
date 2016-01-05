@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
       user.fotourl = auth.info.image
       user.token = auth.credentials.token
       user.secret = auth.credentials.secret
+      user.twitterlink = true
     end
   end
 

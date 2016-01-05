@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103075137) do
+ActiveRecord::Schema.define(version: 20160105065503) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(version: 20160103075137) do
     t.string   "fotourl"
     t.string   "token"
     t.string   "secret"
+    t.boolean  "twitterlink"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

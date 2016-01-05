@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
   before_create :post_to_twitter
-  
+
   belongs_to :user
   belongs_to :wisata
   belongs_to :guide
@@ -8,6 +8,6 @@ class Review < ActiveRecord::Base
   before_create :post_to_twitter
 
   def post_to_twitter
-    user.twitter.update(content)
+    user.twitter.update(content) if user.twitterlink && user.uid
   end
 end

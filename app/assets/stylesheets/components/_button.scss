@@ -25,14 +25,14 @@
   }
 }
 .btn-berita {
-  background-color: #c6222f;
+  background-color: #198BCB;
   border-color: transparent;
   color: white;
   &:hover,
   &:focus {
-    background: #fff;
-    color: #c6222f;
-    border-color: #c6222f;
+    background: #6aafd8;
+    color: #045783;
+    border-color: #6aafd8;
   }
 }
 .btn-guide {
@@ -63,13 +63,24 @@
 .tombol-delete {
   .btn {
     font-size: 12px;
-    background-color:  #c6222f;
-    border-color:  #c6222f;
+    background-color: #c6222f;
+    border-color: #c6222f;
     margin-right: 15px;
     &:hover,
     &:focus {
       background-color: white;
       color: #c6222f;
     }
+  }
+}
+.btn-review {
+  background-color: #198BCB;
+  border-color: transparent;
+  color: white;
+  &:hover,
+  &:focus {
+    background: #6aafd8;
+    color: #045783;
+    border-color: #6aafd8;
   }
 }

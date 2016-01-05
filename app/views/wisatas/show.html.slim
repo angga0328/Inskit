@@ -4,7 +4,7 @@
       .col-lg-12
         .nama_rating
           h1.tagline.-bottom style=("margin-left:20px") =@wisata.nama
-          .ratingg
+          .ratingg.heart-show
             = link_to like_wisata_path(@wisata), method: :put do
               span.icon-heart style="color: white; font-size:30px; margin-left: 20px; text-shadow: 0px 0px 20px rgb(0, 0, 0);"
                 | #{@wisata.get_upvotes.size}
@@ -75,7 +75,7 @@
           .form-inputs
             = f.input :foto
           .form-actions
-            = f.button :submit, class: "btn btn-info"
+            = f.button :submit, class: "btn btn-info btn-review"
         br    
       - if @wisata.reviews.any?
         #reviews

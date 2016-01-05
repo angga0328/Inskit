@@ -10,7 +10,7 @@
               =image_tag (berita.foto), {:class => "img-responsive", style: "height: 200px; width: 300px;"}
               .overlay
             .caption 
-              h4 style="color: #3786C8;" = berita.title
+              h4.berita-title = berita.title
               p
                 a role="button"
                   = button_to "Baca", berita_path(berita), class: "btn btn-primary btn-berita", method: :get

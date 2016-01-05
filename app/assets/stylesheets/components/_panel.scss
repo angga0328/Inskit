@@ -69,17 +69,17 @@
   margin-top: 50px;
   margin-bottom: 185px;
   .btn {
-    background-color: #c6222f;
+    background-color: #198BCB;
     color: white;
     font-weight: 800;
     &:hover,
     &:focus {
-      color: #c6222f;
-      background-color: white;
+      background: #6AAFD8;
+      color: #045783;
     }
   }
   .panel-heading {
-    background-color: #6AAFD8;
+    background-color: #198BCB;
     .panel-title {
       font-weight: 800;
       color: white;
@@ -102,17 +102,17 @@ hr {
   margin-top: 50px;
   margin-bottom: 216px;
   .btn {
-    background-color: #c6222f;
+    background-color: #198BCB;
     color: white;
     font-weight: 800;
     &:hover,
     &:focus {
-      color: #c6222f;
-      background-color: white;
+      background: #6AAFD8;
+      color: #045783;
     }
   }
   .panel-heading {
-    background-color: #6AAFD8;
+    background-color: #198BCB;
     .panel-title {
       font-weight: 800;
       color: white;
@@ -131,17 +131,17 @@ hr {
   margin-top: 50px;
   margin-bottom: 330px;
   .btn {
-    background-color: #c6222f;
+    background-color: #198BCB;
     color: white;
     font-weight: 800;
     &:hover,
     &:focus {
-      color: #c6222f;
-      background-color: white;
+      background: #6AAFD8;
+      color: #045783;
     }
   }
   .panel-heading {
-    background-color: #6AAFD8;
+    background-color: #198BCB;
     .panel-title {
       font-weight: 800;
       color: white;
@@ -194,8 +194,8 @@ hr {
     font-weight: 800;
     &:hover,
     &:focus {
-      color: #c6222f;
-      background-color: white;
+      background: #db4954;
+      color: #790009;
     }
   }
   .panel-heading {
@@ -214,21 +214,21 @@ hr {
   }
 }
 .panel-signup-admin {
-    box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+  box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
   margin-top: 50px;
   margin-bottom: 222px;
   .btn {
-    background-color: #c6222f;
+    background-color: #198BCB;
     color: white;
     font-weight: 800;
     &:hover,
     &:focus {
-      color: #c6222f;
-      background-color: white;
+      background: #6AAFD8;
+      color: #045783;
     }
   }
   .panel-heading {
-    background-color: #6AAFD8;
+    background-color: #198BCB;
     .panel-title {
       font-weight: 800;
       color: white;
@@ -241,5 +241,4 @@ hr {
       }
     }
   }
-
 }

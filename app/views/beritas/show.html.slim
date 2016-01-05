@@ -6,7 +6,7 @@
           .panel-title
             = @berita.title
         .panel-body
-          = image_tag(@berita.foto, class: "img-responsive center-block" )
+          = image_tag(@berita.foto, class: "img-responsive center-block", style: "height: 300px;")
           br
           p style ="color: grey;"
             | Tanggal Terbit #{@berita.created_at}
