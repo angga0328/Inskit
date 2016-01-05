@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
 
   def twitter
     @client ||= Twitter::REST::Client.new do |config|
-      config.consumer_key        =
-      config.consumer_secret     =
+      config.consumer_key        = 'tKVBot5vLarsaklyRUEaYt5xs'
+      config.consumer_secret     = '7vs5aJViuT8PsLvy0SSJXFAaC5qSa9zyHclWkDkWqo9SbdSf0P'
       config.access_token        = token
       config.access_token_secret = secret
     end

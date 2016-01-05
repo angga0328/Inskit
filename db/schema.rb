@@ -91,10 +91,10 @@ ActiveRecord::Schema.define(version: 20160103075137) do
     t.text     "content"
     t.integer  "user_id"
     t.integer  "wisata_id"
-    t.integer  "guide_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "foto"
+    t.integer  "guide_id"
   end
 
   add_index "reviews", ["guide_id"], name: "index_reviews_on_guide_id"

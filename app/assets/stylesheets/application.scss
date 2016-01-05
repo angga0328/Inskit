@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "lightbox";
 
 /* variables */
 
@@ -26,6 +27,7 @@
 @import "daerahs.scss";
 @import "wisatas.scss";
 @import "kategoris.scss";
+
 
 @import "_alert.scss";
 @import "icons.scss";

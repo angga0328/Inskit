@@ -17,12 +17,13 @@
             =review.content
     .row
       .col-sm-10.col-sm-offset-2
-        section.image-gallery
-          figure tabindex="1"
-            =image_tag(review.foto, class: "img-responsive center-block", style: "max-height:100px;") if review.foto?
-
+        a href=review.foto data-lightbox=review.foto
+          =image_tag(review.foto, class: "img-responsive", style: "width:450px;") if review.foto?
     .tombol-delete  
       - if admin_signed_in?
         = link_to review , method: :delete, class: "btn btn-danger pull-right", data:   {confirm: 'Are you sure?'}
           i.glyphicon.glyphicon-trash
         
+/        section.image-gallery
+/          figure tabindex="1"
+/            =image_tag(review.foto, class: "img-responsive center-block", style: "max-height:100px;") if review.foto?

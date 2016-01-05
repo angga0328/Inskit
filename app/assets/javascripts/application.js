@@ -17,5 +17,5 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
-//= require lightbox-plus-jquery
+//= require lightbox
 //= require_tree .

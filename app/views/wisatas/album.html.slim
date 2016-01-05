@@ -1,16 +1,10 @@
-<link href="/assets/stylesheets/lightbox.min.scss" media="all" rel="stylesheet" />
-
-
-
 .container
   .panel.panel-default.page-popular-location
     .panel-heading
       h3.panel-title style="text-align:center;"  Album #{@wisata.nama}
     .panel-body
       - @reviews.order('created_at DESC').where("foto IS NOT NULL").each do |review|
-        .col-sm-4.page-album
+        .col-sm-3.page-album
           .hovereffect
-            a.example-image-link data-lightbox="example-set" data-title="Click the right half of the image to move forward"
-              = link_to(image_tag(review.foto, class: "img-responsive center-block example-image", style: "width:400px; height:300px"))
-
-<script src="/assets/javascripts/lightbox-plus-jquery.min.js"></script>
+            a href=review.foto data-lightbox="image-1"
+              =image_tag(review.foto, class: "img-responsive", style: "width:300px; height:200px;")
