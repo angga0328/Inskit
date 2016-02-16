@@ -13,5 +13,8 @@
             .form-group
               .col-sm-offset-2.col-sm-10
                 =f.submit "Send me reset password instructions", :class => "btn btn-default"
-                =render "admins/shared/links"    
+                |    OR        
+                =link_to "Login", new_session_path(resource_name)
+        .panel-footer.text-center
+          | @Indonesiaku 2016
 

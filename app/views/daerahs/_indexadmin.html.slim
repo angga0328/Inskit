@@ -16,7 +16,7 @@
               td = daerah.foto
               td.text-center = link_to 'Show', daerah, class: "btn btn-default"
               td.text-center = link_to 'Edit', edit_daerah_path(daerah), class: "btn btn-default"
-              td.text-center = link_to 'Destroy', daerah, method: :delete, data:   {confirm: 'Are you sure?'}, class: "btn btn-default"          
+              td.text-center = link_to 'Delete', daerah, method: :delete, data:   {confirm: 'Are you sure?'}, class: "btn btn-default"          
         tfoot
           tr
             = link_to 'Tambah Daerah', new_daerah_path, class: "btn btn-default pull-right"

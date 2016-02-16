@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :foto, FotoUploader
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   after_create :twitterimage
   acts_as_voter
 

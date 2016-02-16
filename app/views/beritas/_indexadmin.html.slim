@@ -16,7 +16,7 @@ table
         td= berita.foto
         td= link_to 'Show', berita
         td= link_to 'Edit', edit_berita_path(berita)
-        td= link_to 'Destroy', berita, method: :delete, data:   {confirm: 'Are you sure?'  }
+        td= link_to 'Delete', berita, method: :delete, data:   {confirm: 'Are you sure?'  }
 br
 
 = link_to 'New Berita', new_berita_path

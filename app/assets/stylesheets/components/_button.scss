@@ -36,28 +36,29 @@
   }
 }
 .btn-guide {
-  background-color: #c6222f;
-  border-color: transparent;
+  background-color: #198bcb;
+  border-color: #198bcb;
   color: white;
   margin-left: 300px;
+  margin-bottom: 10px;
   &:hover,
   &:focus {
-    background: #fff;
-    color: #c6222f;
-    border-color: #c6222f;
+    background: #6AAFD8;
+    color: #045783;
+    border-color: #198bcb;
   }
 }
 .btn-unguide {
-  background-color: #6AAFD8;
+  background-color: #c6222f;
   border-color: transparent;
   color: white;
   margin-left: 300px;
   margin-bottom: 10px;
   &:hover,
   &:focus {
-    background: #fff;
-    color: #6AAFD8;
-    border-color: #6AAFD8;
+    background: #db4954;
+    color: #790009;
+    border-color: #c6222f;
   }
 }
 .tombol-delete {
@@ -66,10 +67,11 @@
     background-color: #c6222f;
     border-color: #c6222f;
     margin-right: 15px;
+    color: white;
     &:hover,
     &:focus {
-      background-color: white;
-      color: #c6222f;
+      background-color: #db4954;
+      color: #790009;
     }
   }
 }

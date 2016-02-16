@@ -17,7 +17,7 @@ p#notice= notice
               td = kategori.foto
               td.text-center = link_to 'Show', kategori, class: "btn btn-default"
               td.text-center = link_to 'Edit', edit_kategori_path(kategori), class: "btn btn-default"
-              td.text-center = link_to 'Destroy', kategori, method: :delete, data:   {confirm: 'Are you sure?'}, class: "btn btn-default"          
+              td.text-center = link_to 'Delete', kategori, method: :delete, data:   {confirm: 'Are you sure?'}, class: "btn btn-default"          
         tfoot
           tr
             = link_to 'Tambah Kategori', new_kategori_path, class: "btn btn-default pull-right"

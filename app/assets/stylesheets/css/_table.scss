@@ -1,17 +1,17 @@
 .table-custom {
   .btn {
-    background-color: #c6222f;
-    border-color: transparent;
+    background-color: #198bcb;
+    border-color: #198bcb;
     color: white;
     &:hover,
     &:focus {
-      background: #fff;
-      color: #c6222f;
-      border-color: #c6222f;
+      background-color: #6AAFD8;
+      color: #045783;
+      border-color: #198bcb;
     }
   }
   thead {
-    background-color: #6AAFD8;
+    background-color: #198bcb;
     color: white;
   }
   h2 {

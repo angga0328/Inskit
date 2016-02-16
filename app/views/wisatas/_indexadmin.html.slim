@@ -24,7 +24,7 @@ p#notice= notice
             td = wisata.telp
             td = link_to 'Show', wisata
             td = link_to 'Edit', edit_wisata_path(wisata)
-            td = link_to 'Destroy', wisata, method: :delete, data:   {confirm: 'Are you sure?'}      
+            td = link_to 'Delete', wisata, method: :delete, data:   {confirm: 'Are you sure?'}      
       tfoot
         tr
-          = link_to 'Tambah Wisata', new_wisata_path, class: "btn btn-default"
+          = link_to 'Tambah Wisata', new_wisata_path, class: "btn btn-default btn-table"
