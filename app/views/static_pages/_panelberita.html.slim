@@ -1,13 +1,12 @@
 .panel.panel-default.panel-berita
   .panel-heading
     h3.panel-title
-      =link_to 'Berita & Promo', beritas_path
-  .panel-body.panel-bd-home-berita
-    .row.media
-    -@beritas.order('created_at DESC')[0..4].each do |berita|
-      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+      =link_to 'Events', beritas_path
+  .panel-body.panel-home-berita
+    -@beritas.order('created_at DESC')[0..1].each do |berita|
+      .col-md-6.padding
         .hovereffect
-          = image_tag(berita.foto, class: "img-responsive center-block", style: "width:300px; height:200px")
+          = image_tag(berita.foto, class: "img-responsive center-block ukuran")
           .overlay
             h2 = berita.title
             =link_to 'Lihat', berita, class: "info"

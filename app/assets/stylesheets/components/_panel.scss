@@ -1,69 +1,6 @@
 .panel {
   border: 0px;
 }
-.panel-popular {
-  z-index: 1;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-bottom: 0px;
-  .panel-heading {
-    background-color: #ffffff;
-    color: #198bcb;
-    border-radius: 0px;
-    border-bottom: 0px;
-  }
-  .panel-body {
-    background: #d8d8d8;
-    padding-top: 0px;
-    border: 0px;
-    padding-bottom: 0px;
-  }
-  .panel-title {
-    text-align: center;
-    font-weight: 800;
-  }
-}
-.panel-review {
-  z-index: 10;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-bottom: 0px;
-  .panel-heading {
-    box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
-    background-color: rgba(230, 230, 230, 0.74);
-    color: #198bcb;
-    border-radius: 0px;
-  }
-  .panel-body {
-    box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 -0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
-  }
-  .panel-title {
-    text-align: center;
-    font-weight: 800;
-  }
-}
-.panel-berita {
-  z-index: 1;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-bottom: 0px;
-  .panel-heading {
-    background-color: #ffffff;
-    color: #198bcb;
-    border-radius: 0px;
-    border: 0px;
-  }
-  .panel-body {
-    background: #d8d8d8;
-    padding-top: 0px;
-    border: 0px;
-    padding-bottom: 0px;
-  }
-  .panel-title {
-    text-align: center;
-    font-weight: 800;
-  }
-}
 .panel-v1 {
   box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
   margin-top: 50px;

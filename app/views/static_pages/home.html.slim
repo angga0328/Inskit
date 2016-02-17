@@ -1,11 +1,12 @@
-.row
-  .col-lg-12.slideshow
-    =render 'caro'
-/.row
-/  .col-md-3.panel-popular
-/      =render 'panelpopular'
-/  .col-md-6.panel-review
-/      =render 'panelreview'
-/  .col-md-3.panel-berita
-/      =render 'panelberita'
+.col-md-12.set-carousel
+  =render 'caro'
+.row.set-row  
+  .col-md-5.panel-popular
+    =render 'panelpopular'
+    =render 'panelberita'
+    =render 'video'
+    =render 'footer'
+  .col-md-7.panel-review
+    =render 'panelreview'
+
 

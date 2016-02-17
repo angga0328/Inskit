@@ -2,12 +2,11 @@
   .panel-heading
     h3.panel-title
       =link_to 'Popular Location', 'popular-location'
-  .panel-body.panel-bd-home-popular
-    .row.media
-    -@wisatas[0..4].each do |wisata|
-      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+  .panel-body.panel-home-popular
+    -@wisatas[0..2].each do |wisata|
+      .col-md-4.padding
         .hovereffect
-          = image_tag(wisata.foto, class: "img-responsive center-block", style: "width:300px; height:200px")
+          = image_tag(wisata.foto, class: "img-responsive center-block ukuran")
           .overlay
             h2 = wisata.nama
             span.glyphicon.glyphicon-heart style="color:white;"

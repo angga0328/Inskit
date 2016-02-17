@@ -22,6 +22,9 @@ gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 
 gem 'rails_admin', '~> 0.8.1'
 
+gem "rename"
+
+
 gem 'lightbox2-rails'
 gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'
 gem 'twitter', '~> 5.15'
