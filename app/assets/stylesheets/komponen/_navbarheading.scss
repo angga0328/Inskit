@@ -1,3 +1,24 @@
+.navbar-new {
+  .img-logo {
+    width: 150px;
+    margin-top: 12px;
+  }
+  .panah-kebawah {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 10px;
+  }
+  .menu-kebawahnya {
+    width: 50%;
+    margin-left: 200px;
+  }
+  .jarak-dgn-logo {
+    margin-left: 50px;
+  }
+  .form-control {
+    height: 32px;
+  }
+}
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 .navbar-form {
   .form-control {
@@ -28,7 +49,7 @@
   a {
     color: #ffffff;
   }
-  background-color: #198bcb;
+  background-color: #3FC380;
 }
 .navbar-nav>li>.dropdown-menu {
   margin-top: 20px;
@@ -119,7 +140,7 @@
     &:hover,
     &:focus {
       color: #c6222f;
-      background-color: #ffffff;
+      background-color: #C5EFF7;
     }
   }
 }
@@ -130,4 +151,55 @@
     color: #c6222f;
     background-color: #ffffff;
   }
+}
+.search-form .form-group {
+  transition: all 0.35s, border-radius 0s;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-left: 20px;
+}
+.search-form .form-group input.form-control {
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display: block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 100%;
+  border-radius: 4px 25px 25px 4px;
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #3596e0;
+  left: initial;
+  font-size: 14px;
 }

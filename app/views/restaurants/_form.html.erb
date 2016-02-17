@@ -1,0 +1,19 @@
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :wisata_id %>
+    <%= f.input :nama %>
+    <%= f.input :alamat %>
+    <%= f.input :deskripsi %>
+    <%= f.input :telp %>
+    <%= f.input :harga %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :foto %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

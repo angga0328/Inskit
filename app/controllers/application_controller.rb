@@ -19,4 +19,7 @@ class ApplicationController < ActionController::Base
       super # Use the default one
     end
   end
+  def after_sign_in_path_for(admin)
+    rails_admin_path
+  end
 end

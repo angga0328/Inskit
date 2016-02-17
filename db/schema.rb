@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105065503) do
+ActiveRecord::Schema.define(version: 20160216085213) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -80,8 +80,36 @@ ActiveRecord::Schema.define(version: 20160105065503) do
   add_index "guides", ["email"], name: "index_guides_on_email", unique: true
   add_index "guides", ["reset_password_token"], name: "index_guides_on_reset_password_token", unique: true
 
+  create_table "hotels", force: :cascade do |t|
+    t.integer  "wisata_id"
+    t.string   "nama"
+    t.text     "alamat"
+    t.text     "deskripsi"
+    t.string   "telp"
+    t.integer  "harga"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "foto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "kategoris", force: :cascade do |t|
     t.string   "nama"
+    t.string   "foto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.integer  "wisata_id"
+    t.string   "nama"
+    t.text     "alamat"
+    t.text     "deskripsi"
+    t.integer  "telp"
+    t.integer  "harga"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "foto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

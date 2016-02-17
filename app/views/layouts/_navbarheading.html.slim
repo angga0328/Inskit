@@ -1,4 +1,4 @@
-nav.navbar.navbar-fixed-top 
+nav.navbar.navbar-fixed-top.navbar-new 
   .container
     .navbar-header
       button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
@@ -6,17 +6,17 @@ nav.navbar.navbar-fixed-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      ul.list-inline style="margin-bottom:0px;" 
+      ul.list-inline
         li
           =link_to root_path
-            =image_tag ('wishkit4.png'), :class => "img-responsive", :width => "150px", :style => "margin-top: 5px;"
+            =image_tag ('indonesiaku.png'), :class => "img-responsive img-logo"
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav.list-inline
+      ul.nav.navbar-nav.list-inline.jarak-dgn-logo
         li.dropdown.mega-dropdown
-          a.dropdown-toggle data-toggle="dropdown" href="#" 
-            | Telusur Jawa Barat
-            span.glyphicon.glyphicon-chevron-down.pull-right style=("margin-top: 5px; margin-left: 5px; font-size: 10px;") 
-          ul.dropdown-menu.mega-dropdown-menu.row style="width: 50%; margin-left: 120px;"
+          a.dropdown-toggle data-toggle="dropdown" href="#"
+            | Jelajahi Indonesia
+            span.glyphicon.glyphicon-chevron-down.pull-right.panah-kebawah
+          ul.dropdown-menu.mega-dropdown-menu.row.menu-kebawahnya
             - Daerah.all.each do |daerah|
                 li.col-sm-4
                   ul
@@ -26,19 +26,22 @@ nav.navbar.navbar-fixed-top
       ul.nav.navbar-nav.list-inline
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
-            | Kategori
-            span.glyphicon.glyphicon-chevron-down.pull-right style=("margin-top: 5px; margin-left: 5px; font-size: 10px;") 
-          ul.dropdown-menu.dropdown-kategori 
+            | Kategori Pariwisata
+            span.glyphicon.glyphicon-chevron-down.pull-right.panah-kebawah 
+          ul.dropdown-menu.dropdown-kategori style="top: 30px; left: 27px;"
             - Kategori.all.each do |kategori|
               li.dropdown-header
               li
                 = link_to kategori.nama, kategori
-      ul.nav.navbar-nav.navbar-left
-      ul.nav.navbar-nav.navbar-right
+
+      ul.nav.navbar-nav.list-inline
         = form_tag(wisatas_path, :method => "get", class: "navbar-form navbar-left", role: "search") do
           .form-group
             = search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Posts"
-          = submit_tag "Search", class: 'btn btn-info'
+            button.btn.btn-default.btn-search type="submit" style="border-radius: 0px;"
+              i.glyphicon.glyphicon-search
+
+      ul.nav.navbar-nav.navbar-right
         -if user_signed_in?
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
@@ -67,7 +70,7 @@ nav.navbar.navbar-fixed-top
               li.divider role="separator"
               li
                 = link_to 'sign out', destroy_guide_session_path, method: :delete
-                
+                h
         -elsif admin_signed_in?
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
@@ -79,33 +82,22 @@ nav.navbar.navbar-fixed-top
               li.divider role="separator"
               li
                 = link_to 'sign out', destroy_admin_session_path, method: :delete
-                
-                
-                
+
+
+
         - else
           li style='padding-top:15px;'
             | Login as
           li
-            =link_to 'Traveler', new_user_session_path
+            =link_to 'Traveler', new_user_session_path, :style => "text-decoration: underline;"
           li style='padding-top:15px;'
             | or
           li
-            =link_to 'Guide', new_guide_session_path
-          
+            =link_to 'Guide', new_guide_session_path, :style => "text-decoration: underline;"
             
-        li.dropdown
-          a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
-           span.glyphicon.glyphicon-option-vertical style=("font-size: 20px;") 
-          ul.dropdown-menu.dropdown-kategori 
-            li.dropdown-header
+            
 
-              li
-                = link_to 'Bantuan Penggunaan', help_path
-              li
-                = link_to 'Saran', new_saran_path  
-              li
-                = link_to 'Tentang Wishkit', about_path
-              li
-                = link_to 'Kebijakan Privasi', privacy_path
-            
-            
+/.search-form action= ""
+/          .form-group.has-feedback
+/            input#search.form-control name="search" placeholder="search" type="text"
+/            span.glyphicon.glyphicon-search.form-control-feedback

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wisata_id: 1
+  nama: MyString
+  alamat: MyText
+  deskripsi: MyText
+  telp: 1
+  harga: 1
+  latitude: 1.5
+  longitude: 1.5
+  foto: MyString
+
+two:
+  wisata_id: 1
+  nama: MyString
+  alamat: MyText
+  deskripsi: MyText
+  telp: 1
+  harga: 1
+  latitude: 1.5
+  longitude: 1.5
+  foto: MyString
