@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
   get 'popular-location' => 'static_pages#popular_location'
   resources :reviews, only: [:create, :destroy]
-  devise_for :admins, :path => "", :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :admins, :path => '', :path_names => {:sign_in => 'masuk', :sign_out => 'logout'}
   devise_for :guides
   resources :beritas
   resources :daerahs
