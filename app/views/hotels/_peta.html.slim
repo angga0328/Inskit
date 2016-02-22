@@ -12,7 +12,8 @@ javascript:
     },
     function(){
       markers = handler.addMarkers([
-        { lat: #{hotel.latitude}, lng: #{hotel.longitude}}
+        { lat: #{hotel.latitude}, lng: #{hotel.longitude},
+        "infowindow": "Hotel " +  "#{hotel.nama}"}
       ]);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();

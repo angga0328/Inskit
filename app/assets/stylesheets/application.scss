@@ -12,8 +12,14 @@
 @import "komponen/_panelevent.scss";
 @import "komponen/_setrow.scss";
 @import "komponen/_footer.scss";
+@import "page_daerah_kategori/_listwisata.scss";
+@import "wisata/_header.scss";
+@import "wisata/_kolominformasi.scss";
+@import "wisata/_popularlocation.scss";
+@import "panel/_alluser.scss";
+@import "panel/_panel.scss";
 //@import "components/_slideshow.scss";
-@import "components/_panel.scss";
+//@import "components/_panel.scss";
 //@import "components/_button.scss";
 //@import "components/_media.scss";
 //@import "components/_text.scss";
@@ -32,6 +38,9 @@
 //@import "daerahs.scss";
 //@import "wisatas.scss";
 //@import "kategoris.scss";
-//@import "_alert.scss";
-//@import "icons.scss";
+@import "users.scss";
+@import "beritas.scss";
+@import "guides.scss";
+@import "_alert.scss";
+@import "icons.scss";
 @import "lightbox.min.scss";

@@ -1,13 +1,14 @@
-.panel.panel-default.page-popular-location
+.panel.panel-default.list-berita
   .panel-heading
-    h3.panel-title style="text-align:center;"  Berita & Promo
+    h3.panel-title.text-center  Events
   .panel-body
-    .row style="margin-left:28px;"
+    .col-md-12
       - Berita.all.order('created_at DESC').each do |berita|
-        .col-sm-6.col-md-4
-          .thumbnail.thumbnail-berita style="width: 300px; height: 350px; overflow:auto;"
-            .hovereffect style="height:65%;"
-              =image_tag (berita.foto), {:class => "img-responsive", style: "height: 200px; width: 300px;"}
+        .col-md-4
+          .thumbnail.thumbnail-berita
+            .hovereffect
+              center
+                =image_tag (berita.foto), {:class => "img-responsive", style: "height: 200px; width: 300px;"}
               .overlay
             .caption 
               h4.berita-title = berita.title

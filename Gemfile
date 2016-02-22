@@ -25,6 +25,8 @@ gem 'rails_admin', '~> 0.8.1'
 gem "rename"
 
 gem 'chartkick', '~> 1.4', '>= 1.4.1'
+gem 'groupdate', '~> 2.5', '>= 2.5.2'
+gem 'active_median', '~> 0.1.2'
 
 gem 'lightbox2-rails'
 gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'

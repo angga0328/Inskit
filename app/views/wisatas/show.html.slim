@@ -1,84 +1,123 @@
-.container
-  header.business-header style= 'background: url("#{@wisata.foto}") center center no-repeat scroll;'
-    .row
-      .col-lg-12
-        .nama_rating
-          h1.tagline.-bottom style=("margin-left:20px") =@wisata.nama
-          .ratingg.heart-show
-            = link_to like_wisata_path(@wisata), method: :put do
-              span.icon-heart style="color: white; font-size:30px; margin-left: 20px; text-shadow: 0px 0px 20px rgb(0, 0, 0);"
-                | #{@wisata.get_upvotes.size}
-            = link_to dislike_wisata_path(@wisata), method: :put do
-              span.icon-heart-broken style="color: white; font-size:30px; margin-left: 20px; text-shadow: 0px 0px 20px rgb(0, 0, 0);"
-                | #{@wisata.get_downvotes.size}
-
-            
-.container
-  hr
-  .row
-    .col-sm-7.tempat-lain
-      center
-        = render 'wisatas/peta', wisata: @wisata
-      hr
-      address
-        p.glyphicon.glyphicon-map-marker 
-          |    #{@wisata.alamat}
-      address
-      
-        p.glyphicon.glyphicon-info-sign
-        - if @wisata.kategori_id == 6
-          |    Kisaran Harga makanan untuk 1 orang :
-          |    #{@wisata.harga}
-        - else
-          |    Harga Tiket Masuk : 
-          |    #{@wisata.harga}
-      address
-        p.glyphicon.glyphicon-earphone title="Phone"
-          |    #{@wisata.telp}
-        h4 style="font-weight: 800;" Deskripsi
-        p.text-justify = @wisata.deskripsi
-      .row style="margin-left:0px;"
-        h2
-          | Available Guide
-        = render 'guide_form' if guide_signed_in?
-        -@wisata.guides.each do |guide|
-          .col-sm-3.text-center
-            =image_tag (guide.foto), {:class => "img-responsive"}
-            =link_to guide.nama, guide
-      hr
-      h2 Tempat Wisata #{@wisata.daerah.nama} 
+.row.set-row
+  .business-header.kolom-header style= 'background: url("#{@wisata.foto}") center center no-repeat scroll;'
+    .col-lg-12.nama-rating
+      h1.tagline
+        =@wisata.nama
+        .rating.heart-show
+          = link_to like_wisata_path(@wisata), method: :put do
+            span.icon-heart
+          | #{@wisata.get_upvotes.size}
+          = link_to dislike_wisata_path(@wisata), method: :put do
+            span.icon-heart-broken
+          | #{@wisata.get_downvotes.size}
+.row.set-row
+  .col-md-5.kolom-informasi
+    .embed-responsive.embed-responsive-4by3.peta
+      = render 'wisatas/peta', wisata: @wisata
+    .col-md-12.info-wisata
+      p.glyphicon.glyphicon-map-marker 
+        | #{@wisata.alamat}
       br
-      .row
-        - @wisata.daerah.wisatas.each do |wisata|
-          .col-xs-3
-            =image_tag (wisata.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
-            p
-              =link_to wisata.nama, wisata
-    .col-sm-5.wisata-review
-      - unless @reviews.where("foto IS NOT NULL").count == 0
-        .row
-          - @reviews.where("foto IS NOT NULL")[0..4].each do |review|
-            .col-md-4
-              .thumbnail
-                =image_tag(review.foto, class: "img-responsive", style: "height: 70px; width: 122px;") if review.foto?      
-          .thumbnail
-            = link_to(image_tag('more'), album_wisata_path) 
-
-    
-      h2 Review  
-      - if user_signed_in?
-        = simple_form_for(@review, url: wisata_reviews_path(@wisata)) do |f|
-          = f.error_notification
-          = f.hidden_field :wisata_id, value: @wisata.id
-          .form-inputs
-            = f.input :content
-          .form-inputs
-            = f.input :foto
-          .form-actions
-            = f.button :submit, class: "btn btn-info btn-review"
-        br    
-      - if @wisata.reviews.any?
-        #reviews
-          = render @reviews
-        = will_paginate @reviews
-hr
+      p.glyphicon.glyphicon-info-sign
+      - if @wisata.kategori_id == 6
+        |    Kisaran Harga makanan untuk 1 orang :
+        |    #{@wisata.harga}
+      - else
+        |    Harga Tiket Masuk : 
+        |    #{@wisata.harga}
+      br
+      p.glyphicon.glyphicon-phone-alt title="Phone"
+        | #{@wisata.telp}
+      br
+      h4 style="font-weight: 800;" Deskripsi
+      p.text-justify 
+        | #{@wisata.deskripsi}
+    .row
+      .col-md-12 style="margin-top: 10px;"
+        #accordion.panel-group aria-multiselectable="true" role="tablist" 
+          .panel.panel-default
+            #headingOne.panel-heading role="tab" style="background-color: #22A7F0;"
+              h4.panel-title.glyphicon.glyphicon-facetime-video
+                a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button" 
+                  |  Video Wisata #{@wisata.nama}
+            #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel" 
+              .panel-body
+                .embed-responsive.embed-responsive-4by3 style="padding-bottom: 50%;"
+                  <iframe class="embed-responsive-item video" src="https://www.youtube.com/embed/5ta-TcEZkP0"></iframe>
+          .panel.panel-default
+            #headingTwo.panel-heading role="tab" style="background-color: #22A7F0;"
+              h4.panel-title.glyphicon.glyphicon-user
+                a.collapsed aria-controls="collapseTwo" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button" 
+                  |  Guide 
+            #collapseTwo.panel-collapse.collapse aria-labelledby="headingTwo" role="tabpanel" 
+              .panel-body
+                = render 'guide_form' if guide_signed_in?
+                -@wisata.guides.each do |guide|
+                  .col-sm-3.text-center
+                    =image_tag (guide.foto), {:class => "img-responsive"}
+                    =link_to guide.nama, guide
+          .panel.panel-default
+            #headingThree.panel-heading role="tab" style="background-color: #22A7F0;"
+              h4.panel-title.glyphicon.glyphicon-user
+                a.collapsed aria-controls="collapseThree" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button" 
+                  |  Tempat Wisata #{@wisata.daerah.nama} Lainnya
+            #collapseThree.panel-collapse.collapse aria-labelledby="headingThree" role="tabpanel" 
+              .panel-body
+                - @wisata.daerah.wisatas.each do |wisata|
+                  .col-xs-3
+                    =image_tag (wisata.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
+                    p
+                      =link_to wisata.nama, wisata
+          .panel.panel-default
+            #headingFour.panel-heading role="tab" style="background-color: #22A7F0;"
+              h4.panel-title.glyphicon.glyphicon-home
+                a.collapsed aria-controls="collapseFour" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" role="button" 
+                  |  Penginapan Sekitar #{@wisata.nama} 
+            #collapseFour.panel-collapse.collapse aria-labelledby="headingFour" role="tabpanel" 
+              .panel-body
+                = render 'guide_form' if guide_signed_in?
+                -@wisata.guides.each do |guide|
+                  .col-sm-3.text-center
+                    =image_tag (guide.foto), {:class => "img-responsive"}
+                    =link_to guide.nama, guide
+          .panel.panel-default
+            #headingFive.panel-heading role="tab" style="background-color: #22A7F0;"
+              h4.panel-title.glyphicon.glyphicon-cutlery
+                a.collapsed aria-controls="collapseFive" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" role="button" 
+                  |  Restaurant Sekitar #{@wisata.nama} 
+            #collapseFive.panel-collapse.collapse aria-labelledby="headingFive" role="tabpanel" 
+              .panel-body
+                = render 'guide_form' if guide_signed_in?
+                -@wisata.guides.each do |guide|
+                  .col-sm-3.text-center
+                    =image_tag (guide.foto), {:class => "img-responsive"}
+                    =link_to guide.nama, guide
+  .col-sm-7.panel-review
+    - unless @reviews.where("foto IS NOT NULL").count == 0
+      .row style="margin-left: 0px; margin-right: 0px; margin-left: 50px;"
+        - @reviews.where("foto IS NOT NULL")[0..2].each do |review|
+          .col-md-3 style="margin-bottom: 5px; padding-left:0px; padding-right: 0px;"
+            a.hovereffect href=review.foto data-lightbox=review.foto
+              =image_tag(review.foto, class: "img-responsive", style: "height: 100px; width: 320px;") if review.foto?      
+        = link_to "More Photos", album_wisata_path, :class => "btn btn-default btn-info", :style => "background-color: pink; height: 100px; align-text: center;"
+    br
+    - if user_signed_in?
+      = simple_form_for(@review, url: wisata_reviews_path(@wisata)) do |f|
+        = f.error_notification
+        = f.hidden_field :wisata_id, value: @wisata.id
+        .form-inputs
+          = f.input :content
+        .form-inputs
+          = f.input :foto
+        .form-actions
+          = f.button :submit, class: "btn btn-info btn-review"
+    br
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title
+          | Review Wisata
+      .panel-body.panel-home-review
+        - if @wisata.reviews.any?
+          #reviews
+            = render @reviews
+          = will_paginate @reviews

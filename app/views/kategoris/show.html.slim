@@ -1,17 +1,15 @@
-p#notice= notice
-.container.container-custom1 style="margin-top:20px;" 
-  .row
-    .col-md-8.page-kategori
-      .panel.panel-default
-        .panel-heading
-          .panel-title
-            | Daerah Wisata #{@kategori.nama}
-        = image_tag(@kategori.foto, class: "img-responsive")      
-      - @wisatas.each do |wisata|
-        = render wisata
-    .col-md-4.text-center.text2
-      = render 'wisatas/wisatakategori'
-
+.row.set-row
+  .col-md-8.page-kategori
+    .panel.panel-default
+      .panel-heading
+        .panel-title
+          | Daerah Wisata #{@kategori.nama}
+      = image_tag(@kategori.foto, class: "img-responsive")      
+    - @wisatas.each do |wisata|
+      = render wisata
+  .col-md-4.kolom-kategori.text-center.text2
+    = render 'wisatas/wisatakategori'
+    = render 'static_pages/footer'
 
 
 

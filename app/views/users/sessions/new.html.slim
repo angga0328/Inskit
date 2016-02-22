@@ -1,29 +1,35 @@
-.row
-    .col-md-6.col-md-offset-3
-      .panel.panel-default.panel-v-login
-        .panel-heading
-          h4.panel-title Login Traveler
-        .panel-body
-          =form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| 
-            .form-group
-              label.col-sm-2.control-label for="inputEmail3"  Email
-              .col-sm-10
-                =f.email_field :email, :class => "form-control", :placeholder => "Email", :autofocus => true, required: true
-                br
-            .form-group
-              label.col-sm-2.control-label for="inputPassword3"  Password
-              .col-sm-10
-                 =f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password", required: true
-            .form-group
-              .col-sm-offset-2.col-sm-10
-                -if devise_mapping.rememberable?
-                  .checkbox
-                    label
-                      =f.check_box :remember_me 
-                    | Remember me
-            .form-group
-              .col-sm-offset-2.col-sm-10
-                =f.submit "Log in", :class => "btn btn-default pull-right", style: "margin-bottom: 5px;"
-              =render "users/shared/links"
-              
+.col-md-6.col-md-offset-3.login-traveler
+  .panel.panel-default.panel-login-traveler
+    .panel-heading
+      h4.panel-title Login Traveler
+    .panel-body
+      =form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| 
+        .form-group
+          label.col-sm-2.control-label for="inputEmail"  Email
+          .col-sm-10
+            .input-group
+              =f.email_field :email, :class => "form-control", :placeholder => "Email", :autofocus => true, required: true
+              span.input-group-addon.glyphicon.glyphicon-envelope  
+            br
+        .form-group
+          label.col-sm-2.control-label for="inputPassword"  Password
+          .col-sm-10
+            .input-group
+              =f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password", required: true
+              span.input-group-addon.glyphicon.glyphicon-lock
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            -if devise_mapping.rememberable?
+              .checkbox
+                label
+                  =f.check_box :remember_me 
+                | Remember me
+        .form-group
+          .row
+            .col-sm-6
+              center
+                =f.submit "Log in", :class => "btn btn-default", :style => "margin-left: 30px;"
+            =render "users/shared/links"
+    .panel-footer.text-center
+      | @Indonesiaku 2016
 

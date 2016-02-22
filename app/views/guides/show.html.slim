@@ -1,79 +1,74 @@
-.container.container-profile
+.col-md-12.guide-profile
   h4.text-center
     | Profile Guide
-  hr 
-  .row
-    .profile-guide
-      .col-md-5.toppad
-        .panel.panel-info.panel-guide-wisata
-          .panel-heading
-            h3.panel-title = @guide.nama
-          .panel-body
-            .row
-              .col-md-3.col-lg-3 align="center" 
-                =image_tag (@guide.foto), class: "img-circle img-responsive", alt: "User Pict"
-                h6 style="font-style: italic; font-weight:700px;"
-                  = @guide.bio
-                =link_to like_guide_path(@guide), method: :put do
-                  span.icon-heart style="margin-right:5px; color: #C6222F;"
-                    | #{@guide.get_upvotes.size}
-                =link_to dislike_guide_path(@guide), method: :put do
-                  span.icon-heart-broken style="color: #C6222F;"
-                    | #{@guide.get_downvotes.size}                
-              .col-md-9.col-lg-9
-                table.table.table-user-information
-                  tbody
-                    tr
-                      td Email
-                      td = @guide.email
-                    tr
-                      td Registrasi
-                      td = @guide.created_at
-                    tr
-                      td Alamat
-                      td = @guide.alamat
+  hr
+  .col-md-4.data-guide
+    .panel.panel-info.panel-guide-wisata
+      .panel-heading
+        h4.panel-title.text-center.nama-guide = @guide.nama
+      .panel-body
+        .row
+          .col-md-3 align="center" 
+            =image_tag (@guide.foto), class: "img-circle img-responsive"
+            h6 style="font-style: italic; font-weight:700px;"
+              = @guide.bio
+            =link_to like_guide_path(@guide), method: :put do
+              span.icon-heart style="margin-right:5px; color: #C6222F;"
+                | #{@guide.get_upvotes.size}
+            =link_to dislike_guide_path(@guide), method: :put do
+              span.icon-heart-broken style="color: #C6222F;"
+                | #{@guide.get_downvotes.size}                
+          .col-md-9
+            table.table.table-user-information
+              tbody
+                tr
+                  td Email
+                  td = @guide.email
+                tr
+                  td Registrasi
+                  td = @guide.created_at
+                tr
+                  td Alamat
+                  td = @guide.alamat
 
-                    td Telepon
-                    td
-                      = @guide.telp
-                      br
-
-        
-        .row                   
-          .col-md-12 style="padding-left:15px; padding-right:15px;"
-            .panel.panel-default.panel-guide-wisata
-              .panel-heading
-                .panel-title
-                  | Lokasi Wisata Guide
+                td Telepon
+                td
+                  = @guide.telp
+                  br               
+      .col-md-12 style="padding-left:15px; padding-right:15px;"
+        #accordion.panel-group aria-multiselectable="true" role="tablist" 
+          .panel.panel-default
+            #headingOne.panel-heading role="tab" style="background-color: #22A7F0;"
+              h4.panel-title.icon-location2
+                a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button" 
+                  |  Lokasi Wisata Guide #{@guide.nama}
+            #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel" 
               .panel-body
                 - @guide.wisatas.each do |wisata|
                   .col-sm-4
                     = image_tag(wisata.foto, class: "img-responsive", style: "width: 112px; height:85px;")
                     h5.text-center
                       =link_to wisata.nama, wisata
-        
-        
-        
-    .col-md-7
-      .panel.panel-default.panel-review.panel-review-profile style="margin-top:0px;"
-        - if user_signed_in?
-          = simple_form_for(@review, url: guide_reviews_path(@guide)) do |f|
-            = f.error_notification
-            = f.hidden_field :guide_id, value: @guide.id
-            .form-inputs
-              = f.input :content
-            .form-inputs
-              = f.input :foto
-            .form-inputs
-              =f.association :wisata, label_method: :nama, collection: @guide.wisatas
-            .form-actions
-              = f.button :submit, class: "btn btn-info "
-        br
-
-        .panel-heading
-          h3.panel-title
-            | Review #{@guide.nama}
-        .panel-body
-          #reviews
-            = render @reviews
-          = will_paginate @reviews
+    = render "static_pages/footer"
+  .col-md-7
+    .panel.panel-default.panel-review.panel-review-profile style="margin-top:0px;"
+      - if user_signed_in?
+        = simple_form_for(@review, url: guide_reviews_path(@guide)) do |f|
+          = f.error_notification
+          = f.hidden_field :guide_id, value: @guide.id
+          .form-inputs
+            = f.input :content
+          .form-inputs
+            = f.input :foto
+          .form-inputs
+            =f.association :wisata, label_method: :nama, collection: @guide.wisatas
+          .form-actions
+            = f.button :submit, class: "btn btn-info "
+      br
+      .panel-heading
+        h3.panel-title
+          | Review #{@guide.nama}
+      .panel-body
+        #reviews
+          = render @reviews
+        = will_paginate @reviews

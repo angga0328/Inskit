@@ -1,3 +1,23 @@
-// Place all the styles related to the guides controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.guide-profile {
+  margin-top: 50px;
+  .data-guide {
+    margin-left: 10px;
+    margin-top: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+  }
+  hr {
+    border-color: #DADADA -moz-use-text-color -moz-use-text-color;
+    margin-bottom: 0px;
+  }
+  h4 {
+    color: #3786C8;
+    font-weight: 800;
+  }
+  .panel-title {
+    color: white;
+  }
+  .nama-guide {
+    color: #3786C8;
+  }
+}

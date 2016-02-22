@@ -1,15 +1,13 @@
-.container.container-custom1 style="margin-top:20px;" 
-  .row
-    .col-md-12.page-daerah
-      .panel.panel-default
-        .panel-heading
-          .panel-title
-            = @berita.title
-        .panel-body
-          = image_tag(@berita.foto, class: "img-responsive center-block", style: "height: 300px;")
-          br
-          p style ="color: grey;"
-            | Tanggal Terbit #{@berita.created_at}
-          p style="text-align:justify;"
-            = simple_format(@berita.content)
-              
+.col-md-12.berita
+  .panel.panel-default
+    .panel-heading
+      .panel-title.text-center.title
+        = @berita.title
+    .panel-body
+      = image_tag(@berita.foto, class: "img-responsive center-block", style: "height: 300px;")
+      br
+      .col-md-12.konten-berita
+        p style ="color: grey;"
+          | Tanggal Terbit #{@berita.created_at.to_date}
+        p style="text-align:justify;"
+          = simple_format(@berita.content)

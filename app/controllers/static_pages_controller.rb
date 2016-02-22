@@ -15,6 +15,7 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+    @daerahs = Daerah.all
   end
 
   def popular_location

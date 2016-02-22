@@ -1,5 +1,5 @@
-div 
-  #basic_map style=("width: 600px; height: 400px;")
+div
+  #basic_map style=("width: 525px; height: 300px;")
 
 javascript:
   handler = Gmaps.build('Google');
@@ -11,10 +11,11 @@ javascript:
     },
     function(){
       markers = handler.addMarkers([
-        { lat: #{wisata.latitude}, lng: #{wisata.longitude}}
+        { lat: #{wisata.latitude}, lng: #{wisata.longitude},
+        "infowindow": "Wisata " +  "#{wisata.nama}"}
       ]);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      handler.getMap().setZoom(15);
+      handler.getMap().setZoom(17);
     }
   );

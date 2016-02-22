@@ -1,9 +1,9 @@
-.container.container-profile
-  h4.text-center
+.col-md-12.profile-traveler
+  h4.text-center.judul-profile
     | Profile Traveler
   hr style="margin-bottom: 20px;"
-  .col-md-4
-    .row.row-profile
+  .col-md-4.data-traveler
+    .row
       .col-md-5
         = image_tag(@user.foto, class: "img-responsive")
       .col-md-7
@@ -22,7 +22,8 @@
           .panel-body.panel-bd-home-bio
             h5 style="font-style: italic;"
               = @user.bio
-  .col-md-8
+    = render "static_pages/footer"
+  .col-md-8.review-traveler
     .panel.panel-default.panel-review.panel-review-profile
       .panel-heading
         h3.panel-title

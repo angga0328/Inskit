@@ -1,17 +1,17 @@
-.container
-  .panel.panel-default.page-popular-location
-    .panel-heading
-      h3.panel-title style="text-align:center;"  Popular Location
-    .panel-body
+.panel.panel-default.page-popular-location
+  .panel-heading
+    h3.panel-title style="text-align:center;"  Popular Location
+  .panel-body
+    .col-md-12.popular
       - @wisatas.each do |wisata|
         .col-sm-3.page-popular
           .hovereffect
-            = image_tag(wisata.foto, class: "img-responsive center-block", style: "width:300px; height:200px")
+            = image_tag(wisata.foto, class: "img-responsive center-block", style: "width:400px; height:200px")
             .overlay
               h2 
                 = wisata.nama
               span.glyphicon.glyphicon-heart style="color:white;"
                 | #{wisata.get_upvotes.size}
               =link_to 'Lihat', wisata, class: "info"
-              span.glyphicon.glyphicon-comment.comment-v1
-                span.badge =wisata.reviews.count
+              span.glyphicon.glyphicon-comment style="color:white;"
+                = wisata.reviews.count

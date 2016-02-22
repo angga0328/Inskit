@@ -1,14 +1,22 @@
-      .col-md-12.media.daerah-wisata
-        .col-xs-4.media-img
-            = image_tag(wisata.foto, class: "img-responsive")
-        .col-xs-8.media-konten
-          h2.title
-            = link_to wisata.nama, wisata
-          h5.alamat = wisata.alamat
-          h5.notelp = wisata.telp
-          h5.rating
-            span.icon-heart style="color: #C6222F;"
-              | #{wisata.get_upvotes.size}
-            span.icon-heart-broken style="color: #C6222F;"
-              | #{wisata.get_downvotes.size}
-        .col-md-12.media-caption = wisata.deskripsi
+.col-md-12.media.daerah-wisata
+  .col-md-4.kolom-gambar
+      = image_tag(wisata.foto, class: "img-responsive media-img")
+  .col-md-8.konten
+    h2.title
+      = link_to wisata.nama, wisata
+      span.jarak-tgl
+        .glyphicon.glyphicon-calendar
+        |   #{wisata.created_at.to_date} 
+      span.jarak-tgl
+        span.icon-heart style=""
+          | #{wisata.get_upvotes.size}
+        span.icon-heart-broken style="color: #C6222F;"
+          | #{wisata.get_downvotes.size}
+    h5
+      span.glyphicon.glyphicon-map-marker.jarak
+      = wisata.alamat
+    h5
+      span.glyphicon.glyphicon-phone-alt.jarak
+      = wisata.telp
+    p.col-md-12.deskripsi 
+      = wisata.deskripsi
