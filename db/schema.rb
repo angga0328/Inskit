@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216085213) do
+ActiveRecord::Schema.define(version: 20160223060653) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20160216085213) do
     t.text     "alamat"
     t.text     "deskripsi"
     t.string   "telp"
-    t.integer  "harga"
+    t.string   "harga"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "foto"
@@ -106,8 +106,8 @@ ActiveRecord::Schema.define(version: 20160216085213) do
     t.string   "nama"
     t.text     "alamat"
     t.text     "deskripsi"
-    t.integer  "telp"
-    t.integer  "harga"
+    t.string   "telp"
+    t.string   "harga"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "foto"
@@ -164,6 +164,15 @@ ActiveRecord::Schema.define(version: 20160216085213) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "wisata_id"
+  end
 
   create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"

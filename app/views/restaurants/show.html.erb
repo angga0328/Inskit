@@ -42,7 +42,8 @@
 
 <p>
   <strong>Foto:</strong>
-  <%= @restaurant.foto %>
+  <%= image_tag(@restaurant.foto, class: "img-responsive") %>
+  <%= render 'restaurants/peta', restaurant: @restaurant %>
 </p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
