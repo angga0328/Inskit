@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223060653) do
+ActiveRecord::Schema.define(version: 20160224102517) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -201,7 +201,7 @@ ActiveRecord::Schema.define(version: 20160223060653) do
     t.string   "foto"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "harga"
+    t.string   "harga"
     t.integer  "cached_votes_total",      default: 0
     t.integer  "cached_votes_score",      default: 0
     t.integer  "cached_votes_up",         default: 0
