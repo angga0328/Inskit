@@ -11,7 +11,6 @@
         = link_to dislike_wisata_path(@wisata), method: :put do
           span.icon-heart-broken.icon-broken
         | #{@wisata.get_downvotes.size}
-
 .row.set-row
   .col-md-5.kolom-informasi
     .embed-responsive.embed-responsive-4by3.peta
@@ -40,8 +39,9 @@
           .panel.panel-default
             #headingOne.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
               h4.panel-title.glyphicon.glyphicon-facetime-video
-                a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button" 
-                  |  Video Wisata #{@wisata.nama}
+                a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button"
+                  - @wisata.videos.each do |video|
+                    |  Video Wisata oleh #{video.author}
             #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel" 
               .panel-body
                 - @wisata.videos.each do |video|

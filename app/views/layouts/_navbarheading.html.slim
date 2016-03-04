@@ -82,15 +82,12 @@ nav.navbar.navbar-static-top.navbar-new
               li.divider role="separator"
               li
                 = link_to 'sign out', destroy_admin_session_path, method: :delete
-
-
-
         - else
-          li style='padding-top:15px;'
+          li style='padding-top:15px; color: #FFFFFF;'
             | Login as
           li
             =link_to 'Traveler', new_user_session_path, :style => "text-decoration: underline;"
-          li style='padding-top:15px;'
+          li style='padding-top:15px; color: #FFFFFF;'
             | or
           li
             =link_to 'Guide', new_guide_session_path, :style => "text-decoration: underline;"

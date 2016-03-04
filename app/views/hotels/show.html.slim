@@ -8,7 +8,7 @@
   .col-md-4
     .embed-responsive.embed-responsive-4by3
       = render 'hotels/peta', hotel: @hotel
-    = link_to "Ketahui lebih lanjut", "#{@hotel.website}", class: "btn btn-success pull-right"
+    = link_to "Ketahui lebih lanjut", "#{@hotel.website}", class: "btn btn-success pull-right", target: "_blank"
 .row.set-row
   .col-md-6.box
     .panel.panel-default.panel-deskripsi
