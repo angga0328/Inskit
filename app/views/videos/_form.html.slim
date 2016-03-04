@@ -1,0 +1,9 @@
+= simple_form_for(@video) do |f| 
+  = f.error_notification 
+  .form-inputs
+    = f.association :wisata, label_method: :nama 
+    = f.input :title 
+    = f.input :author 
+    = f.input :link 
+  .form-actions
+    = f.button :submit 

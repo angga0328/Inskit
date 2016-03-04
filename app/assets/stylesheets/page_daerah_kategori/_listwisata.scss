@@ -48,45 +48,56 @@
 .kolom-kategori {
   position: fixed;
   margin-left: 905px;
-  margin-top: 50px;
   .daerah-kategori {
     margin-bottom: 0px;
     .btn-info {
       border-color: transparent;
     }
+    .panel-heading {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      background-color: #4183D7;
+    }
     .panel-title {
       text-align: center;
       font-weight: 800;
-      color: #3786C8;
+      color: #FFFFFF;
     }
   }
 }
 .page-daerah {
-  margin-top: 50px;
-  box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 -0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
   .panel {
+    margin-bottom: 0px;
     .panel-heading {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      background-color: #4183D7;
       .panel-title {
         text-align: center;
         font-weight: 800;
-        color: #3786C8;
+        color: #FFFFFF;
       }
     }
   }
 }
 .page-kategori {
-  margin-top: 50px;
-  box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 -0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
   .panel {
+    margin-bottom: 0px;
     .panel-heading {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      background-color: #4183D7;
       .panel-title {
         text-align: center;
         font-weight: 800;
-        color: #3786C8;
+        color: #FFFFFF;
       }
     }
   }
 }
 .daerah-kategori {
   margin-top: 0px;
+  .icon-list {
+    font-weight: 800;
+  }
 }

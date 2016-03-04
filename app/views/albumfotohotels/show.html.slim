@@ -1,0 +1,9 @@
+p#notice = notice 
+p
+  strong Hotel:
+  = @albumfotohotel.hotel_id
+p
+  strong Foto:
+  = image_tag (@albumfotohotel.foto) 
+= link_to 'Edit', edit_albumfotohotel_path(@albumfotohotel)
+= link_to 'Back', albumfotohotels_path %

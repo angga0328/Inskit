@@ -1,0 +1,9 @@
+p#notice = notice
+p
+  strong Restaurant:
+  = @albumfotorestoran.restaurant_id 
+p
+  strong Foto:
+  = @albumfotorestoran.foto 
+= link_to 'Edit', edit_albumfotorestoran_path(@albumfotorestoran)
+= link_to 'Back', albumfotorestorans_path 

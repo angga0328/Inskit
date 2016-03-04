@@ -1,16 +1,18 @@
 .panel.panel-default.panel-popular
   .panel-heading
     h3.panel-title
-      =link_to 'Popular Location', 'popular-location'
+      | Lokasi Populer
+      = link_to 'Lainnya >>', 'popular-location', class: "pull-right"
   .panel-body.panel-home-popular
     -@wisatas[0..2].each do |wisata|
       .col-md-4.padding
         .hovereffect
           = image_tag(wisata.foto, class: "img-responsive center-block ukuran")
           .overlay
-            h2 = wisata.nama
+            h2 
+              = wisata.nama
             span.glyphicon.glyphicon-heart style="color:white;"
               | #{wisata.get_upvotes.size}
             =link_to 'Lihat', wisata, class: "info"
-            span.glyphicon.glyphicon-comment.comment-v1
-              span.badge =wisata.reviews.count
+            span.icon-bubble style="color:white;"
+              = wisata.reviews.count

@@ -1,0 +1,18 @@
+p#notice = notice
+h1 Listing Albumfotohotels
+table
+  thead
+    tr
+      th Hotel
+      th Foto
+      th colspan="3" 
+  tbody
+    - @albumfotohotels.each do |albumfotohotel| 
+    tr
+      td = albumfotohotel.hotel 
+      td = albumfotohotel.foto 
+      td = link_to 'Show', albumfotohotel 
+      td = link_to 'Edit', edit_albumfotohotel_path(albumfotohotel) 
+      td = link_to 'Destroy', albumfotohotel, method: :delete, data:   confirm: 'Are you sure?'   
+br
+= link_to 'New Albumfotohotel', new_albumfotohotel_path 

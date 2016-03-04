@@ -1,0 +1,18 @@
+p#notice = notice
+h1 Listing Albumfotorestorans
+table
+  thead
+    tr
+      th Restaurant
+      th Foto
+      th colspan="3" 
+  tbody
+    - @albumfotorestorans.each do |albumfotorestoran| 
+    tr
+      td = albumfotorestoran.restaurant_id 
+      td = albumfotorestoran.foto 
+      td = link_to 'Show', albumfotorestoran 
+      td = link_to 'Edit', edit_albumfotorestoran_path(albumfotorestoran) 
+      td = link_to 'Destroy', albumfotorestoran, method: :delete, data:   confirm: 'Are you sure?'   
+br
+= link_to 'New Albumfotorestoran', new_albumfotorestoran_path

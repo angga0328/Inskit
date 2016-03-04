@@ -1,0 +1,91 @@
+.panel-kategori {
+  background: none;
+  box-shadow: none;
+  border: 0px;
+  .panel-body {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    .btn-custom-kategori {
+      border-bottom: 0px solid rgba(90, 87, 87, 0.51);
+      background: #1BBC9B;
+      &:hover,
+      &:focus {
+        background-color: #4183D7;
+        color: #1BBC9B;
+      }
+      color: #FFFFFF;
+      .btn {
+        padding: 10px 100px;
+        background: none;
+        font-weight: 800;
+        &:hover,
+        &:focus {
+          background: #fff;
+          color: #1BBC9B;
+        }
+      }
+    }
+  }
+}
+.btn-berita {
+  background-color: #198BCB;
+  border-color: transparent;
+  color: white;
+  &:hover,
+  &:focus {
+    background: #6aafd8;
+    color: #045783;
+    border-color: #6aafd8;
+  }
+}
+.btn-guide {
+  background-color: #198bcb;
+  border-color: #198bcb;
+  color: white;
+  margin-left: 300px;
+  margin-bottom: 10px;
+  &:hover,
+  &:focus {
+    background: #6AAFD8;
+    color: #045783;
+    border-color: #198bcb;
+  }
+}
+.btn-unguide {
+  background-color: #c6222f;
+  border-color: transparent;
+  color: white;
+  margin-left: 300px;
+  margin-bottom: 10px;
+  &:hover,
+  &:focus {
+    background: #db4954;
+    color: #790009;
+    border-color: #c6222f;
+  }
+}
+.tombol-delete {
+  .btn {
+    font-size: 12px;
+    background-color: #c6222f;
+    border-color: #c6222f;
+    margin-right: 15px;
+    color: white;
+    &:hover,
+    &:focus {
+      background-color: #db4954;
+      color: #790009;
+    }
+  }
+}
+.btn-review {
+  background-color: #198BCB;
+  border-color: transparent;
+  color: white;
+  &:hover,
+  &:focus {
+    background: #6aafd8;
+    color: #045783;
+    border-color: #6aafd8;
+  }
+}

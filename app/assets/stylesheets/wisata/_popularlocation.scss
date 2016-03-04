@@ -4,17 +4,21 @@
 }
 .page-popular-location {
   margin-top: 50px;
-  box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 -0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
   .img-responsive {}
   .panel-heading {
+    background-color: #4183D7;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
     .panel-title {
       text-align: center;
       font-weight: 800;
-      color: #3786C8;
+      color: #FFFFFF;
     }
   }
+  .panel-body {
+    padding: 0px 0px;
+  }
   .popular {
-    box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 -0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
     padding-right: 0px;
     padding-left: 0px;
   }

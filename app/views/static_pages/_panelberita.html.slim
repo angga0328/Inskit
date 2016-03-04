@@ -1,7 +1,8 @@
 .panel.panel-default.panel-berita
   .panel-heading
     h3.panel-title
-      =link_to 'Events', beritas_path
+      | Berita
+      = link_to 'Lainnya >>', beritas_path, class: "pull-right"
   .panel-body.panel-home-berita
     -@beritas.order('created_at DESC')[0..1].each do |berita|
       .col-md-6.padding

@@ -1,6 +1,6 @@
 .panel.panel-default.page-popular-location
   .panel-heading
-    h3.panel-title style="text-align:center;"  Popular Location
+    h3.panel-title Lokasi Popular
   .panel-body
     .col-md-12.popular
       - @wisatas.each do |wisata|
@@ -13,5 +13,5 @@
               span.glyphicon.glyphicon-heart style="color:white;"
                 | #{wisata.get_upvotes.size}
               =link_to 'Lihat', wisata, class: "info"
-              span.glyphicon.glyphicon-comment style="color:white;"
+              span.icon-bubble style="color:white;"
                 = wisata.reviews.count
