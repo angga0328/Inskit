@@ -1,0 +1,101 @@
+.row.set-row.margin-atas
+  .col-md-8.bagian-kiri
+    = image_tag(@hotel.foto, class: "img-responsive foto-hotel", style: "width: 880px; height: 280px;")
+    .well.well-sm.well-hotel
+      h2.nama-hotel
+        .icon-office
+          |  #{@hotel.nama}
+  .col-md-4
+    .embed-responsive.embed-responsive-4by3
+      = render 'hotels/peta', hotel: @hotel
+    = link_to "Ketahui lebih lanjut", "#{@hotel.website}", class: "btn btn-success pull-right"
+.row.set-row
+  .col-md-6.box
+    .panel.panel-default.panel-deskripsi
+      .panel-heading.heading-panel Deskripsi Hotel #{@hotel.nama}
+      .panel-body.text-justify
+        |  #{@hotel.deskripsi}
+    .panel.panel-default.detail-info
+      .panel-heading.detail-heading Detail Info
+      .panel-body
+        table.table
+          tbody
+            tr
+              td Alamat
+              td = @hotel.alamat
+            tr
+              td Harga Mulai dari 
+              td = @hotel.harga
+            tr
+              td Jumlah Kamar 
+              td = @hotel.jumlahkamar
+            tr
+              td Telepon
+              td 
+                = @hotel.telp
+                br    
+  .col-md-6
+    .panel.panel-default.panel-album-hotel
+      .panel-heading.album-heading Foto-foto Hotel
+      .panel-body
+        - @hotel.albumfotohotels.each do |albumfotohotel|
+          .col-md-3.kolom-foto-hotel
+            a.hovereffect href=albumfotohotel.foto data-lightbox="image-1"
+              =image_tag (albumfotohotel.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
+              .overlay
+                p.info Click me
+
+
+
+/ #background-hotel style= 'background: url("#{@hotel.foto}") center center no-repeat scroll; height: 300px;'
+/<p id="notice"><%= notice %></p>
+/
+/<p>
+/  <strong>Wisata:</strong>
+/  <%= @hotel.wisata_id %>
+/</p>
+/
+/<p>
+/  <strong>Nama:</strong>
+/  <%= @hotel.nama %>
+/</p>
+/
+/<p>
+/  <strong>Alamat:</strong>
+/  <%= @hotel.alamat %>
+/</p>
+/
+/<p>
+/  <strong>Deskripsi:</strong>
+/  <%= @hotel.deskripsi %>
+/</p>
+/
+/<p>
+/  <strong>Telp:</strong>
+/  <%= @hotel.telp %>
+/</p>
+/
+/<p>
+/  <strong>Harga:</strong>
+/  Rp.    
+/  <%= @hotel.harga %>
+/</p>
+/
+/<p>
+/  <strong>Latitude:</strong>
+/  <%= @hotel.latitude %>
+/</p>
+/
+/<p>
+/  <strong>Longitude:</strong>
+/  <%= @hotel.longitude %>
+/</p>
+/
+/<p>
+/  <strong>Foto:</strong>
+/  <%= image_tag(@hotel.foto, class: "img-responsive") %>
+/  <%= render 'hotels/peta', hotel: @hotel %>
+/</p>
+/
+/<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
+/<%= link_to 'Back', hotels_path %>

@@ -1,3 +1,25 @@
+.well-wisata {
+  background-color: #4183D7;
+  .nama-wisata {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ffffff;
+    .icon-hati {
+      color: #C6222F;
+      &:hover,
+      &:focus {
+        color: #FFFFFF;
+      }
+    }
+    .icon-broken {
+      color: #C6222F;
+      &:hover,
+      &:focus {
+        color: #FFFFFF;
+      }
+    }
+  }
+}
 .kolom-header {
   height: 300px;
   border: 1px solid rgba(128, 128, 128, 0.5);

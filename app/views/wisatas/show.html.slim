@@ -1,15 +1,17 @@
-.row.set-row
-  .business-header.kolom-header style= 'background: url("#{@wisata.foto}") center center no-repeat scroll;'
-    .col-lg-12.nama-rating
-      h1.tagline
-        =@wisata.nama
-        .rating.heart-show
-          = link_to like_wisata_path(@wisata), method: :put do
-            span.icon-heart
-          | #{@wisata.get_upvotes.size}
-          = link_to dislike_wisata_path(@wisata), method: :put do
-            span.icon-heart-broken
-          | #{@wisata.get_downvotes.size}
+.row.set-row.margin-atas
+  .col-md-12.bagian-atas
+    = image_tag(@wisata.foto, class: "img-responsive", style: "height: 350px; width: 1500px;")
+    .well.well-sm.well-wisata
+      h2.nama-wisata
+        span.icon-map
+          |  #{@wisata.nama} 
+        = link_to like_wisata_path(@wisata), method: :put do
+          span.icon-heart.icon-hati
+        | #{@wisata.get_upvotes.size}
+        = link_to dislike_wisata_path(@wisata), method: :put do
+          span.icon-heart-broken.icon-broken
+        | #{@wisata.get_downvotes.size}
+
 .row.set-row
   .col-md-5.kolom-informasi
     .embed-responsive.embed-responsive-4by3.peta
@@ -36,16 +38,16 @@
       .col-md-12 style="margin-top: 10px;"
         #accordion.panel-group aria-multiselectable="true" role="tablist" 
           .panel.panel-default
-            #headingOne.panel-heading role="tab" style="background-color: #22A7F0;"
+            #headingOne.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
               h4.panel-title.glyphicon.glyphicon-facetime-video
                 a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button" 
                   |  Video Wisata #{@wisata.nama}
             #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel" 
               .panel-body
                 .embed-responsive.embed-responsive-4by3 style="padding-bottom: 50%;"
-                  <iframe class="embed-responsive-item video" src="https://www.youtube.com/embed/5ta-TcEZkP0"></iframe>
+                  = embed(@video.title)
           .panel.panel-default
-            #headingTwo.panel-heading role="tab" style="background-color: #22A7F0;"
+            #headingTwo.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
               h4.panel-title.glyphicon.glyphicon-user
                 a.collapsed aria-controls="collapseTwo" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button" 
                   |  Guide 
@@ -57,8 +59,8 @@
                     =image_tag (guide.foto), {:class => "img-responsive"}
                     =link_to guide.nama, guide
           .panel.panel-default
-            #headingThree.panel-heading role="tab" style="background-color: #22A7F0;"
-              h4.panel-title.glyphicon.glyphicon-user
+            #headingThree.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
+              h4.panel-title.icon-map 
                 a.collapsed aria-controls="collapseThree" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button" 
                   |  Tempat Wisata #{@wisata.daerah.nama} Lainnya
             #collapseThree.panel-collapse.collapse aria-labelledby="headingThree" role="tabpanel" 
@@ -69,19 +71,19 @@
                     p
                       =link_to wisata.nama, wisata
           .panel.panel-default
-            #headingFour.panel-heading role="tab" style="background-color: #22A7F0;"
+            #headingFour.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
               h4.panel-title.glyphicon.glyphicon-home
                 a.collapsed aria-controls="collapseFour" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" role="button" 
                   |  Penginapan Sekitar #{@wisata.nama} 
             #collapseFour.panel-collapse.collapse aria-labelledby="headingFour" role="tabpanel" 
               .panel-body
-                = render 'guide_form' if guide_signed_in?
-                -@wisata.guides.each do |guide|
-                  .col-sm-3.text-center
-                    =image_tag (guide.foto), {:class => "img-responsive"}
-                    =link_to guide.nama, guide
+                - @wisata.hotels.each do |hotel|
+                  .col-xs-3
+                    =image_tag (hotel.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
+                    p
+                      =link_to hotel.nama, hotel
           .panel.panel-default
-            #headingFive.panel-heading role="tab" style="background-color: #22A7F0;"
+            #headingFive.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
               h4.panel-title.glyphicon.glyphicon-cutlery
                 a.collapsed aria-controls="collapseFive" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" role="button" 
                   |  Restaurant Sekitar #{@wisata.nama} 
@@ -121,3 +123,17 @@
           #reviews
             = render @reviews
           = will_paginate @reviews
+          
+          
+/.row.set-row
+/  .business-header.kolom-header style= 'background: url("#{@wisata.foto}") center center no-repeat scroll;'
+/    .col-lg-12.nama-rating
+/      h1.tagline
+/        =@wisata.nama
+/        .rating.heart-show
+/          = link_to like_wisata_path(@wisata), method: :put do
+/            span.icon-heart
+/          | #{@wisata.get_upvotes.size}
+/          = link_to dislike_wisata_path(@wisata), method: :put do
+/            span.icon-heart-broken
+/          | #{@wisata.get_downvotes.size}

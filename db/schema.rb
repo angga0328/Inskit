@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224102517) do
+ActiveRecord::Schema.define(version: 20160303122801) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 20160224102517) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "albumfotohotels", force: :cascade do |t|
+    t.integer  "hotel_id"
+    t.string   "foto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "albumfotorestorans", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.string   "foto"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "beritas", force: :cascade do |t|
     t.string   "title"
@@ -90,8 +104,10 @@ ActiveRecord::Schema.define(version: 20160224102517) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "foto"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "website"
+    t.string   "jumlahkamar"
   end
 
   create_table "kategoris", force: :cascade do |t|

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :albumfotohotels
+  resources :albumfotorestorans
   resources :videos
   mount RailsAdmin::Engine => '/admins', as: 'rails_admin'
   resources :restaurants

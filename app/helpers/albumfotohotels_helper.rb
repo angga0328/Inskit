@@ -1,0 +1,2 @@
+module AlbumfotohotelsHelper
+end

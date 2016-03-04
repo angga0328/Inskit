@@ -15,6 +15,7 @@ class WisatasController < ApplicationController
     @reviews = @wisata.reviews
   end
   
+  
   # GET /wisatas/1
   # GET /wisatas/1.json
   def show

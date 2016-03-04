@@ -1,0 +1,12 @@
+<%= simple_form_for(@albumfotohotel) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :hotel, label_method: :nama %>
+    <%= f.input :foto %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

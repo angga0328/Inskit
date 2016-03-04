@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hotel:</strong>
+  <%= @albumfotohotel.hotel_id %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag (@albumfotohotel.foto) %>
+</p>
+
+<%= link_to 'Edit', edit_albumfotohotel_path(@albumfotohotel) %> |
+<%= link_to 'Back', albumfotohotels_path %>
