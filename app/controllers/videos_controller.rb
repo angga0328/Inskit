@@ -9,7 +9,6 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
-   
   end
 
   # GET /videos/new

@@ -44,8 +44,9 @@
                   |  Video Wisata #{@wisata.nama}
             #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel" 
               .panel-body
-                .embed-responsive.embed-responsive-4by3 style="padding-bottom: 50%;"
-                  = embed(@video.title)
+                - @wisata.videos.each do |video|
+                  .embed-responsive.embed-responsive-4by3 style="padding-bottom: 50%;"
+                    = embed (video.link)
           .panel.panel-default
             #headingTwo.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
               h4.panel-title.glyphicon.glyphicon-user
@@ -89,11 +90,11 @@
                   |  Restaurant Sekitar #{@wisata.nama} 
             #collapseFive.panel-collapse.collapse aria-labelledby="headingFive" role="tabpanel" 
               .panel-body
-                = render 'guide_form' if guide_signed_in?
-                -@wisata.guides.each do |guide|
-                  .col-sm-3.text-center
-                    =image_tag (guide.foto), {:class => "img-responsive"}
-                    =link_to guide.nama, guide
+                - @wisata.restaurants.each do |restaurant|
+                  .col-xs-3
+                    =image_tag (restaurant.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
+                    p
+                      =link_to restaurant.nama, restaurant
   .col-sm-7.panel-review
     - unless @reviews.where("foto IS NOT NULL").count == 0
       .row style="margin-left: 0px; margin-right: 0px; margin-left: 50px;"

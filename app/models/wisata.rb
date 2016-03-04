@@ -8,7 +8,8 @@ class Wisata < ActiveRecord::Base
   has_many :guide_wisatas, dependent: :destroy
   has_many :guides, through: :guide_wisatas
   has_many :hotels
-  has_one :videos
+  has_many :restaurants
+  has_many :videos
 
   acts_as_votable
 
