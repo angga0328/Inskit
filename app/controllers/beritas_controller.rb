@@ -10,6 +10,7 @@ class BeritasController < ApplicationController
   # GET /beritas/1
   # GET /beritas/1.json
   def show
+
   end
 
   # GET /beritas/new

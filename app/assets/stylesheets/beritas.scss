@@ -1,16 +1,25 @@
 .list-berita {
   margin-top: 50px;
+  .panel-heading {
+    background-color: #4183D7;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+  }
   .panel-title {
     text-align: center;
     font-weight: 800;
-    color: #3786C8;
+    color: #FFFFFF;
   }
 }
 .berita {
-  margin-top: 50px;
   .title {
     font-weight: 800;
-    color: black;
+    color: #FFFFFF;
+  }
+  .panel-heading {
+    background-color: #4183D7;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
   }
   .konten-berita {
     border: 2px solid rgba(128, 128, 128, 0.5);
