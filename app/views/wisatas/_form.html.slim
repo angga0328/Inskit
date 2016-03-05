@@ -1,57 +1,57 @@
-        =simple_form_for(@wisata) do |f|
-          = f.error_notification
-          .form-group
-            label.col-sm-2.control-label for="inputtitleberita"
-            .col-sm-12
-              =f.input :nama, :placeholder => "Nama Daerah", :autofocus => true, required: true
-              br
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.input :alamat
-              br              
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.input :deskripsi
-              br              
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.input :harga
-              br              
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.association :daerah, label_method: :nama
-              br              
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.association :kategori, label_method: :nama
-              br              
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.input :telp
-              br              
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.input :latitude
-              br              
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.input :longitude
-              br              
-          .form-group
-            label.col-sm-2.control-label for="inputFoto"
-            .col-sm-12
-              =f.input :foto
-              br              
-          .form-group
-            .col-sm-offset-2.col-sm-10
-              =f.submit class: "btn btn-default pull-right"                     
-              
-              
+=simple_form_for(@wisata) do |f|
+  = f.error_notification
+  .form-group
+    label.col-sm-2.control-label for="inputtitleberita"
+    .col-sm-12
+      =f.input :nama, :placeholder => "Nama Daerah", :autofocus => true, required: true
+      br
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.input :alamat
+      br              
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.input :deskripsi
+      br              
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.input :harga
+      br              
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.association :daerah, label_method: :nama
+      br              
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.association :kategori, label_method: :nama
+      br              
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.input :telp
+      br              
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.input :latitude
+      br              
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.input :longitude
+      br              
+  .form-group
+    label.col-sm-2.control-label for="inputFoto"
+    .col-sm-12
+      =f.input :foto
+      br              
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      =f.submit class: "btn btn-default pull-right"                     
+
+

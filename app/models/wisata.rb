@@ -10,7 +10,7 @@ class Wisata < ActiveRecord::Base
   has_many :hotels
   has_many :restaurants
   has_many :videos
-
+  
   acts_as_votable
 
   def self.search(search)

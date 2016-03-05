@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   mount_uploader :foto, FotoUploader
   has_many :reviews, dependent: :destroy
   after_create :twitterimage
+  
   acts_as_voter
 
   def twitter
