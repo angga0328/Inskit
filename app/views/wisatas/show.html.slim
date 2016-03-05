@@ -28,7 +28,7 @@
                   #home.tab-pane.active role="tabpanel" style="color: #000000;"
                     | Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,  retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
                   #profile.tab-pane role="tabpanel" style="color: #000000;"
-                    | Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,  retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+                    | Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,  retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit 
 .row.set-row
   .col-md-5.kolom-informasi
     .embed-responsive.embed-responsive-4by3.peta
@@ -153,17 +153,42 @@
           #reviews
             = render @reviews
           = will_paginate @reviews
+          
+a href="#" class="scrollToTop" 
+  button.btn.btn-success
+    .glyphicon.glyphicon-chevron-up
+    |  Kembali ke Atas
 
 javascript: 
+  $(document).ready(function(){
+	
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollToTop').fadeIn();
+		} else {
+			$('.scrollToTop').fadeOut();
+		}
+	});
+	
+	//Click event to scroll to top
+	$('.scrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+	
+  });
+  
   $('#myTabs a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
-  })
+  });
   
   $('#myTabs a[href="#profile"]').tab('show') // Select tab by name
   $('#myTabs a:first').tab('show') // Select first tab
   $('#myTabs a:last').tab('show') // Select last tab
   $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
+  
 
 
 

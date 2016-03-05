@@ -1,0 +1,14 @@
+.scrollToTop {
+  background: none;
+  margin: 0;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 100;
+  display: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+.scrollToTop:hover {
+  text-decoration: none;
+}
