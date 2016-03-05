@@ -1,27 +1,28 @@
-.row
-  .col-md-6.col-md-offset-3
-    .panel.panel-default.panel-v-berita
-      .panel-heading
-        h4.panel-title Isikan Saran
-      .panel-body
-        =simple_form_for(@saran) do |f|
-          = f.error_notification 
-          .form-group
-            label.col-sm-2.control-label for="inputSaran"
-            .col-sm-12
-              =f.input :nama, :placeholder => "Masukkan nama kalian", :autofocus => true, required: true
-              
-          .form-group
-            label.col-sm-2.control-label for="inputemail" 
-            .col-sm-12
-              =f.input :email, :placeholder => "Email", required: true
-              
-          .form-group
-            label.col-sm-2.control-label for="inputPesan" 
-            .col-sm-12
-              =f.input :pesan, :placeholder => "Silahkan masukkan pesan kalian disini"
-              
-          .form-group
-            .col-sm-offset-2.col-sm-10
-              =f.submit "Kirim Pesan",  :class => "btn btn-default pull-right"
-              
+.col-md-6.col-md-offset-3.form-saran
+  .panel.panel-default.panel-saran
+    .panel-heading
+      h4.panel-title Isikan Saran
+    .panel-body
+      =simple_form_for(@saran) do |f|
+        = f.error_notification 
+        .form-group
+          label.col-sm-2.control-label for="inputSaran"
+          .col-sm-12
+            =f.input :nama, :placeholder => "Masukkan nama kalian", :autofocus => true, required: true
+
+        .form-group
+          label.col-sm-2.control-label for="inputemail" 
+          .col-sm-12
+            =f.input :email, :placeholder => "Email", required: true
+
+        .form-group
+          label.col-sm-2.control-label for="inputPesan" 
+          .col-sm-12
+            =f.input :pesan, :placeholder => "Silahkan masukkan pesan kalian disini"
+
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            =f.submit "Kirim Pesan",  :class => "btn btn-default pull-right"
+    .panel-footer.text-center
+      | @Indonesiaku 2016
+

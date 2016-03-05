@@ -1,4 +1,6 @@
 .fix-about {
+  margin-left: 510px;
+  margin-right: 510px;
   .card {
     padding-top: 20px;
     margin: 10px 0 20px 0;
@@ -214,4 +216,10 @@
     height: 32px;
     line-height: 18px;
   }
+}
+.page-header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #4183D7;
+  color: #FFFFFF;
 }

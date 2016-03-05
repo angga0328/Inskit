@@ -1,3 +1,37 @@
-// Place all the styles related to the sarans controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-saran {
+  margin-top: 50px;
+  .panel-saran {
+    box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+    margin-top: 50px;
+    margin-bottom: 216px;
+    .btn {
+      background-color: #198BCB;
+      color: white;
+      font-weight: 800;
+      &:hover,
+      &:focus {
+        background: #6AAFD8;
+        color: #045783;
+      }
+    }
+    .panel-heading {
+      background-color: #198BCB;
+      .panel-title {
+        font-weight: 800;
+        color: white;
+      }
+    }
+    .panel-body {
+      .form-group {
+        .link-login {
+          float: left;
+        }
+      }
+    }
+    .panel-footer {
+      background-color: #198BCB;
+      font-weight: 800;
+      color: white;
+    }
+  }
+}

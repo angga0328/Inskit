@@ -2,7 +2,7 @@
   .panel-heading
     h3.panel-title
       | Wisata Populer
-      = link_to 'Lainnya >>', 'popular-location', class: "pull-right"
+      = link_to 'Lainnya', 'popular-location', class: "pull-right glyphicon glyphicon-chevron-right"
   .panel-body.panel-home-popular
     -@wisatas[0..2].each do |wisata|
       .col-md-4.padding
