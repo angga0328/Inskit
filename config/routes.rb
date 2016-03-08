@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :jenishotels
+  resources :menurestorans
   resources :albumfotohotels
   resources :albumfotorestorans
   resources :videos

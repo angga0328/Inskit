@@ -9,7 +9,7 @@ table
   tbody
     - @albumfotorestorans.each do |albumfotorestoran| 
     tr
-      td = albumfotorestoran.restaurant_id 
+      td = albumfotorestoran.restaurant 
       td = albumfotorestoran.foto 
       td = link_to 'Show', albumfotorestoran 
       td = link_to 'Edit', edit_albumfotorestoran_path(albumfotorestoran) 

@@ -1,0 +1,15 @@
+p#notice = notice
+p
+  strong Restaurant:
+  = @menurestoran.restaurant_id 
+p
+  strong Restaurant:
+  = @menurestoran.wisata_id 
+p
+  strong Nama menu:
+  = @menurestoran.nama_menu 
+p
+  strong Foto:
+  = @menurestoran.foto 
+= link_to 'Edit', edit_menurestoran_path(@menurestoran)
+= link_to 'Back', menurestorans_path 

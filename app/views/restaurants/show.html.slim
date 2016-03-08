@@ -3,7 +3,7 @@
     = image_tag(@restaurant.foto, class: "img-responsive foto-hotel", style: "width: 880px; height: 280px;")
     .well.well-sm.well-hotel
       h2.nama-hotel
-        .icon-office
+        .icon-spoon-knife
           |  #{@restaurant.nama}
   .col-md-4
     .embed-responsive.embed-responsive-4by3
@@ -24,6 +24,9 @@
               td Alamat
               td = @restaurant.alamat
             tr
+              td Jam Buka
+              td = @restaurant.jambuka
+            tr
               td Harga Mulai dari 
               td = @restaurant.harga
             tr
@@ -31,16 +34,25 @@
               td 
                 = @restaurant.telp
                 br    
-/  .col-md-6
-/    .panel.panel-default.panel-album-hotel
-/      .panel-heading.album-heading Foto-foto Hotel
-/      .panel-body
-/        - @hotel.albumfotohotels.each do |albumfotohotel|
-/          .col-md-3.kolom-foto-hotel
-/            a.hovereffect href=albumfotohotel.foto data-lightbox="image-1"
-/              =image_tag (albumfotohotel.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
-/              .overlay
-/                p.info Click me
+  .col-md-6
+    .panel.panel-default.panel-album-hotel
+      .panel-heading.album-heading Menu Restaurant
+      .panel-body
+        - @restaurant.menurestorans.each do |menurestoran|
+          .col-md-3.kolom-foto-hotel
+            a.hovereffect href=menurestoran.foto data-lightbox="image-1"
+              =image_tag (menurestoran.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
+              .overlay
+                p.info Click me
+    .panel.panel-default.panel-album-hotel
+      .panel-heading.album-heading Foto-foto Restaurant
+      .panel-body
+        - @restaurant.albumfotorestorans.each do |albumfotorestoran|
+          .col-md-3.kolom-foto-hotel
+            a.hovereffect href=albumfotorestoran.foto data-lightbox="image-1"
+              =image_tag (albumfotorestoran.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
+              .overlay
+                p.info Click me
 
 
 

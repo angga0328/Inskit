@@ -1,0 +1,2 @@
+module MenurestoransHelper
+end

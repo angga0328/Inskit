@@ -1,9 +1,7 @@
 = simple_form_for(@albumfotorestoran) do |f|
   = f.error_notification
-
   .form-inputs
-    = f.input :restaurant_id
+    = f.association :restaurant, label_method: :nama 
     = f.input :foto
-
   .form-actions
     = f.button :submit

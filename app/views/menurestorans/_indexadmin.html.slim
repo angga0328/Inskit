@@ -1,0 +1,21 @@
+p#notice = notice 
+h1 Listing Menurestorans
+table
+  thead
+    tr
+      th Restaurant
+      th Nama menu
+      th Foto
+      th colspan="3" 
+  tbody
+    - @menurestorans.each do |menurestoran| 
+      tr
+        td = menurestoran.restaurant 
+        td = menurestoran.wisata 
+        td = menurestoran.nama_menu 
+        td = menurestoran.foto 
+        td = link_to 'Show', menurestoran 
+        td = link_to 'Edit', edit_menurestoran_path(menurestoran) 
+        td = link_to 'Destroy', menurestoran, method: :delete, data:   {confirm: 'Are you sure?'}  
+br
+= link_to 'New Menurestoran', new_menurestoran_path 

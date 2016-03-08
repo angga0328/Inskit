@@ -15,6 +15,19 @@
       .panel-heading.heading-panel Deskripsi Hotel #{@hotel.nama}
       .panel-body.text-justify
         |  #{@hotel.deskripsi}
+        br
+        button.btn.btn-success type="button" data-toggle="modal" data-target="#myModal" style="margin-bottom: 10px;"
+          | Deskripsi Lengkap 
+          .glyphicon.glyphicon-book
+        #myModal.modal.fade.modal-info tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+          .modal-dialog.modal-lg style="margin-top: 60px;"
+            .modal-content.info-tips    
+              .panel.panel-default
+                .panel-heading 
+                  h3.panel-title style="font-weight: 800;"
+                    | Deskripsi tentang #{@hotel.nama}
+                .panel-body.text-justify
+                  = simple_format(@hotel.fulldeskripsi)
     .panel.panel-default.detail-info
       .panel-heading.detail-heading Detail Info
       .panel-body
@@ -42,6 +55,15 @@
           .col-md-3.kolom-foto-hotel
             a.hovereffect href=albumfotohotel.foto data-lightbox="image-1"
               =image_tag (albumfotohotel.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
+              .overlay
+                p.info Click me
+    .panel.panel-default.panel-album-hotel
+      .panel-heading.album-heading Jenis Kamar dan Harga Hotel
+      .panel-body
+        - @hotel.jenishotels.each do |jenishotel|
+          .col-md-3.kolom-foto-hotel
+            a.hovereffect href=jenishotel.foto data-lightbox="image-1"
+              =image_tag (jenishotel.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
               .overlay
                 p.info Click me
 

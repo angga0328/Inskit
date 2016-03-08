@@ -1,0 +1,12 @@
+p#notice = notice 
+p
+  strong Hotel:
+  = @jenishotel.hotel_id 
+p
+  strong Jenis kamar:
+  = @jenishotel.jenis_kamar 
+p
+  strong Foto:
+  = @jenishotel.foto
+= link_to 'Edit', edit_jenishotel_path(@jenishotel)
+= link_to 'Back', jenishotels_path 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303122801) do
+ActiveRecord::Schema.define(version: 20160307075758) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -104,10 +104,22 @@ ActiveRecord::Schema.define(version: 20160303122801) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "foto"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "website"
     t.string   "jumlahkamar"
+    t.string   "jamreservasi"
+    t.string   "hargakamar"
+    t.text     "fulldeskripsi"
+    t.text     "transportasi"
+  end
+
+  create_table "jenishotels", force: :cascade do |t|
+    t.integer  "hotel_id"
+    t.string   "jenis_kamar"
+    t.string   "foto"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "kategoris", force: :cascade do |t|
@@ -115,6 +127,15 @@ ActiveRecord::Schema.define(version: 20160303122801) do
     t.string   "foto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "menurestorans", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.string   "nama_menu"
+    t.string   "foto"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "wisata_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -127,8 +148,12 @@ ActiveRecord::Schema.define(version: 20160303122801) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "foto"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "jambuka"
+    t.string   "menu"
+    t.text     "fulldeskripsi"
+    t.text     "transportasi"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -225,6 +250,10 @@ ActiveRecord::Schema.define(version: 20160303122801) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.string   "jambuka"
+    t.text     "fulldeskripsi"
+    t.text     "tips"
+    t.text     "transportasi"
   end
 
   add_index "wisatas", ["cached_votes_down"], name: "index_wisatas_on_cached_votes_down"

@@ -10,6 +10,7 @@ class Wisata < ActiveRecord::Base
   has_many :hotels
   has_many :restaurants
   has_many :videos
+  has_many :menurestorans
   
   acts_as_votable
 

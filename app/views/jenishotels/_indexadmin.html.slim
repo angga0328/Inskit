@@ -1,0 +1,20 @@
+p#notice = notice
+h1 Listing Jenishotels
+table
+  thead
+    tr
+      th Hotel
+      th Jenis kamar
+      th Foto
+      th colspan="3" 
+  tbody
+    - @jenishotels.each do |jenishotel| 
+    tr
+      td = jenishotel.hotel 
+      td = jenishotel.jenis_kamar 
+      td = jenishotel.foto 
+      td = link_to 'Show', jenishotel 
+      td = link_to 'Edit', edit_jenishotel_path(jenishotel) 
+      td = link_to 'Destroy', jenishotel, method: :delete, data:   confirm: 'Are you sure?'   
+br
+= link_to 'New Jenishotel', new_jenishotel_path 

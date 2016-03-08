@@ -4,7 +4,7 @@ class AlbumfotohotelsController < ApplicationController
   # GET /albumfotohotels
   # GET /albumfotohotels.json
   def index
-    @albumfotohotels = Albumfotohotel.all
+    @albumfotohotels = Albumfotohotel.all.paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /albumfotohotels/1
