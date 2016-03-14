@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'privacy' => 'static_pages#privacy'
   get 'contact' => 'static_pages#contact'
   get 'popular-location' => 'static_pages#popular_location'
+  get 'saran' => 'sarans#new'
   resources :reviews, only: [:create, :destroy]
   devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   devise_for :guides

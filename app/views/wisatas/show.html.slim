@@ -77,7 +77,7 @@
       .col-md-12 style="margin-top: 10px;"
         #accordion.panel-group aria-multiselectable="true" role="tablist" 
           .panel.panel-default
-            #headingOne.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
+            #headingOne.panel-heading.title-accordion role="tab" style="background-color: #239995;"
               h4.panel-title.glyphicon.glyphicon-facetime-video
                 a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button"
                   - @wisata.videos.each do |video|
@@ -88,7 +88,7 @@
                   .embed-responsive.embed-responsive-4by3 style="padding-bottom: 50%;"
                     = embed (video.link)
           .panel.panel-default
-            #headingTwo.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
+            #headingTwo.panel-heading.title-accordion role="tab" style="background-color: #239995;"
               h4.panel-title.glyphicon.glyphicon-user
                 a.collapsed aria-controls="collapseTwo" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button" 
                   |  Guide 
@@ -100,7 +100,7 @@
                     =image_tag (guide.foto), {:class => "img-responsive"}
                     =link_to guide.nama, guide
           .panel.panel-default
-            #headingThree.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
+            #headingThree.panel-heading.title-accordion role="tab" style="background-color: #239995;"
               h4.panel-title.icon-map 
                 a.collapsed aria-controls="collapseThree" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button" 
                   |  Tempat Wisata #{@wisata.daerah.nama} Lainnya
@@ -112,7 +112,7 @@
                     p
                       =link_to wisata.nama, wisata
           .panel.panel-default
-            #headingFour.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
+            #headingFour.panel-heading.title-accordion role="tab" style="background-color: #239995;"
               h4.panel-title.glyphicon.glyphicon-home
                 a.collapsed aria-controls="collapseFour" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" role="button" 
                   |  Penginapan Sekitar #{@wisata.nama} 
@@ -124,7 +124,7 @@
                     p
                       =link_to hotel.nama, hotel
           .panel.panel-default
-            #headingFive.panel-heading.title-accordion role="tab" style="background-color: #4183D7;"
+            #headingFive.panel-heading.title-accordion role="tab" style="background-color: #239995;"
               h4.panel-title.glyphicon.glyphicon-cutlery
                 a.collapsed aria-controls="collapseFive" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" role="button" 
                   |  Restaurant Sekitar #{@wisata.nama} 

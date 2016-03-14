@@ -8,6 +8,15 @@
   display: none;
   text-decoration: none;
   color: #ffffff;
+  .btn-success {
+    background-color: #239995;
+    border-color: #239995;
+    &:hover,
+    &:focus {
+      background-color: #155C59;
+      color: #FFFFFF;
+    }
+  }
 }
 .scrollToTop:hover {
   text-decoration: none;

@@ -7,11 +7,11 @@
     padding-top: 0px;
     .btn-custom-kategori {
       border-bottom: 0px solid rgba(90, 87, 87, 0.51);
-      background: #1BBC9B;
+      background: #239995;
       &:hover,
       &:focus {
-        background-color: #4183D7;
-        color: #1BBC9B;
+        background-color: #155C59;
+        color: #FFFFFF;
       }
       color: #FFFFFF;
       .btn {
@@ -20,22 +20,21 @@
         font-weight: 800;
         &:hover,
         &:focus {
-          background: #fff;
-          color: #1BBC9B;
+          background: #155C59;
+          color: #FFFFFF;
         }
       }
     }
   }
 }
 .btn-berita {
-  background-color: #198BCB;
+  background-color: #239995;
   border-color: transparent;
   color: white;
   &:hover,
   &:focus {
-    background: #6aafd8;
-    color: #045783;
-    border-color: #6aafd8;
+    background-color: #155C59;
+    color: #FFFFFF;
   }
 }
 .btn-guide {

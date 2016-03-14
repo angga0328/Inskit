@@ -3,27 +3,41 @@
   ol.carousel-indicators
     li.active data-slide-to="0" data-target="#carousel-example-generic" 
     li data-slide-to="1" data-target="#carousel-example-generic" 
-    li data-slide-to="2" data-target="#carousel-example-generic" 
+    li data-slide-to="2" data-target="#carousel-example-generic"
+    li data-slide-to="3" data-target="#carousel-example-generic" 
+    li data-slide-to="4" data-target="#carousel-example-generic" 
   /! Wrapper for slides
   .carousel-inner role="listbox"
     .item.active
       center
-        img.img-responsive =image_tag ("http://lorempixel.com/1500/300/cats")
+        img.img-responsive =image_tag ("borobudur")
         .carousel-caption
-          h3 Antonius Angga Kurniawan
-          p Every Day is a Good Day
+          h3 Candi Borobudur, Yogyakarta
+          p "Indonesia has an interesting history"
     .item
       center
-        img.img-responsive =image_tag ("http://lorempixel.com/1500/300/food")
+        img.img-responsive =image_tag ("wayang")
         .carousel-caption
-          h3 Antonius Angga Kurniawan
-          p Every Day is a Good Day
+          h3 Museum Wayang, Jakarta
+          p "Know It, Love It and Keep It"          
     .item
       center
-        img.img-responsive =image_tag ("http://lorempixel.com/1500/300/nightlife")
+        img.img-responsive =image_tag ("rajaampat")
         .carousel-caption
-          h3 Antonius Angga Kurniawan
-          p Every Day is a Good Day
+          h3 Raja Ampat, Papua
+          p "A wise traveler always love his own country"
+    .item
+      center
+        img.img-responsive =image_tag ("bromo")
+        .carousel-caption
+          h3 Gunung Bromo, Malang Jawa Timur
+          p "Sometimes we need to come to a new place, to be grateful"
+    .item
+      center
+        img.img-responsive =image_tag ("komodo")
+        .carousel-caption
+          h3 Pulau Komodo, Nusa Tenggara Timur
+          p "Protect endangered species in Indonesia"
   /! Controls
   a.left.carousel-control data-slide="prev" href="#carousel-example-generic" role="button" 
     span.glyphicon.glyphicon-chevron-left aria-hidden="true" 

@@ -1,9 +1,19 @@
 .well-wisata {
-  background-color: #4183D7;
+  background-color: #173e43;
   .nama-wisata {
     margin-top: 0px;
     margin-bottom: 0px;
     color: #ffffff;
+    .btn-success {
+      color: #fff;
+      background-color: #239995;
+      border-color: #239995;
+      &:hover,
+      &:focus {
+        background-color: #155C59;
+        color: #FFFFFF;
+      }
+    }
     .icon-hati {
       color: #C6222F;
       &:hover,

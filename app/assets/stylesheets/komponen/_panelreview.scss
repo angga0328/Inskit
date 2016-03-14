@@ -6,7 +6,7 @@
   margin-bottom: 0px;
   .panel-heading {
     box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
-    background-color: #4183D7;
+    background-color: #173e43;
     color: #ffffff;
     border-radius: 0px;
   }
@@ -26,7 +26,7 @@
 .nama-periview {
   a {
     font-weight: 600;
-    color: #198bcb;
+    color: #239995;
   }
 }
 .tgl-tweet {
@@ -35,9 +35,10 @@
 }
 .nama-wisata-direview {
   font-size: small;
-  .namawisata {
-    color: #198bcb;
+  a {
+    color: #239995;
   }
+  .namawisata {}
 }
 .panel-home-review {
   border-bottom: 1px solid rgba(3, 5, 5, 0.2);
