@@ -1,10 +1,10 @@
-.container
-  .panel.panel-default.page-popular-location
-    .panel-heading
-      h3.panel-title style="text-align:center;"  Album #{@wisata.nama}
-    .panel-body
-      - @reviews.order('created_at DESC').where("foto IS NOT NULL").each do |review|
-        .col-sm-3.page-album
-          .hovereffect
-            a href=review.foto data-lightbox="image-1" data-title=review.user.nama
-              =image_tag(review.foto, class: "img-responsive", style: "width:300px; height:200px;")
+.panel.panel-default.page-popular-location
+  .panel-heading
+    h3.panel-title style="text-align:center;"  Album #{@wisata.nama}
+  .panel-body
+    - @reviews.order('created_at DESC').where("foto IS NOT NULL").each do |review|
+      .col-md-3.popular
+        a.hovereffect href=review.foto data-lightbox="image-1" data-title=review.user.nama
+          =image_tag(review.foto, class: "img-responsive", style: "width: 400px; height:200px;")
+          .overlay
+            p.info Click me

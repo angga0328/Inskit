@@ -38,23 +38,20 @@
   }
 }
 .btn-guide {
-  background-color: #198bcb;
-  border-color: #198bcb;
+  background-color: #239995;
+  border-color: #239995;
   color: white;
-  margin-left: 300px;
   margin-bottom: 10px;
   &:hover,
   &:focus {
-    background: #6AAFD8;
-    color: #045783;
-    border-color: #198bcb;
+    background: #155C59;
+    color: #FFFFFF;
   }
 }
 .btn-unguide {
   background-color: #c6222f;
   border-color: transparent;
   color: white;
-  margin-left: 300px;
   margin-bottom: 10px;
   &:hover,
   &:focus {
@@ -78,13 +75,12 @@
   }
 }
 .btn-review {
-  background-color: #198BCB;
+  background-color: #239995;
   border-color: transparent;
   color: white;
   &:hover,
   &:focus {
-    background: #6aafd8;
-    color: #045783;
-    border-color: #6aafd8;
+    background: #155C59;
+    color: #FFFFFF;
   }
 }

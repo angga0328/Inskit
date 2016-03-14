@@ -28,11 +28,11 @@
                 .tab-content
                   #home.tab-pane.active.text-justify role="tabpanel" style="color: #000000;"
                     .panel.panel-default
-                      .panel-body
+                      .panel-body.teks
                         = simple_format(@wisata.tips)
                   #profile.tab-pane.text-justify role="tabpanel" style="color: #000000;"
                     .panel.panel-default
-                      .panel-body
+                      .panel-body.teks
                         = simple_format(@wisata.transportasi)
 /! Row bagian bawah sampai Review                    
 .row.set-row
@@ -98,7 +98,7 @@
                 -@wisata.guides.each do |guide|
                   .col-sm-3.text-center
                     =image_tag (guide.foto), {:class => "img-responsive"}
-                    =link_to guide.nama, guide
+                    =link_to guide.nama, guide, :style => "color: #239995;"
           .panel.panel-default
             #headingThree.panel-heading.title-accordion role="tab" style="background-color: #239995;"
               h4.panel-title.icon-map 
@@ -107,10 +107,10 @@
             #collapseThree.panel-collapse.collapse aria-labelledby="headingThree" role="tabpanel" 
               .panel-body
                 - @wisata.daerah.wisatas.each do |wisata|
-                  .col-xs-3
+                  .col-xs-3 
                     =image_tag (wisata.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
                     p
-                      =link_to wisata.nama, wisata
+                      =link_to wisata.nama, wisata, :style => "color: #239995;"
           .panel.panel-default
             #headingFour.panel-heading.title-accordion role="tab" style="background-color: #239995;"
               h4.panel-title.glyphicon.glyphicon-home
@@ -122,7 +122,7 @@
                   .col-xs-3
                     =image_tag (hotel.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
                     p
-                      =link_to hotel.nama, hotel
+                      =link_to hotel.nama, hotel, :style => "color: #239995;"
           .panel.panel-default
             #headingFive.panel-heading.title-accordion role="tab" style="background-color: #239995;"
               h4.panel-title.glyphicon.glyphicon-cutlery
@@ -134,7 +134,7 @@
                   .col-xs-3
                     =image_tag (restaurant.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
                     p
-                      =link_to restaurant.nama, restaurant
+                      =link_to restaurant.nama, restaurant, :style => "color: #239995;"
   /! Kolom Menu Makanan sampai Review Wisata
   .col-sm-7.panel-review
     - if @wisata.kategori_id == 6 
@@ -147,14 +147,14 @@
                 =image_tag (menurestoran.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
                 .overlay
                   p.info Click me
-
+                  
     - unless @reviews.where("foto IS NOT NULL").count == 0
       .row style="margin-left: 0px; margin-right: 0px; margin-left: 50px;"
         - @reviews.where("foto IS NOT NULL")[0..2].each do |review|
           .col-md-3 style="margin-bottom: 5px; padding-left:0px; padding-right: 0px;"
             a.hovereffect href=review.foto data-lightbox=review.foto
-              =image_tag(review.foto, class: "img-responsive", style: "height: 100px; width: 320px;") if review.foto?      
-        = link_to "More Photos", album_wisata_path, :class => "btn btn-default btn-info", :style => "background-color: pink; height: 100px; align-text: center;"
+              =image_tag(review.foto, class: "img-responsive", style: "height: 100px; width: 320px;") if review.foto?
+        =link_to(image_tag('three'), album_wisata_path, :class => "img-responsive")
     br
     - if user_signed_in?
       = simple_form_for(@review, url: wisata_reviews_path(@wisata)) do |f|
@@ -182,6 +182,8 @@ a href="#" class="scrollToTop"
     .glyphicon.glyphicon-chevron-up
     |  Kembali ke Atas
 
+
+/! Javascript
 javascript: 
   $(document).ready(function(){
 	

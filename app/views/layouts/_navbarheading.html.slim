@@ -37,7 +37,7 @@ nav.navbar.navbar-static-top.navbar-new
       ul.nav.navbar-nav.list-inline 
         = form_tag(wisatas_path, :method => "get", class: "navbar-form navbar-left", role: "search") do
           .form-group
-            = search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Posts"
+            = search_field_tag :search, params[:search], class: "form-control", placeholder: "nama tempat wisata"
             button.btn.btn-default.btn-search type="submit" style="border-radius: 0px;"
               i.glyphicon.glyphicon-search
 

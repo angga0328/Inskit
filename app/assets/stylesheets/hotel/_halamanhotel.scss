@@ -1,26 +1,58 @@
 .bagian-kiri {
   .foto-hotel {}
   .well-hotel {
-    background-color: #4183D7;
+    background-color: #173e43;
     color: #ffffff;
   }
   .nama-hotel {
     margin-top: 0px;
   }
 }
+.bagian-kanan {
+  .btn-success {
+    background-color: #239995;
+    border-color: transparent;
+    color: white;
+    &:hover,
+    &:focus {
+      background: #155C59;
+      color: #FFFFFF;
+    }
+  }
+}
 .panel-deskripsi {
+  .btn-success {
+    background-color: #239995;
+    border-color: transparent;
+    color: white;
+    &:hover,
+    &:focus {
+      background: #155C59;
+      color: #FFFFFF;
+    }
+  }
+  .full-deskripsi {
+    color: #FFFFFF;
+    background-color: #173e43;
+  }
   .heading-panel {
     font-weight: 800;
+    color: #FFFFFF;
+    background-color: #173e43;
   }
 }
 .detail-info {
   .detail-heading {
     font-weight: 800;
+    color: #FFFFFF;
+    background-color: #173e43;
   }
 }
 .panel-album-hotel {
   .album-heading {
     font-weight: 800;
+    color: #FFFFFF;
+    background-color: #173e43;
   }
   .kolom-foto-hotel {
     padding-left: 5px;

@@ -5,7 +5,7 @@
       h2.nama-hotel
         .icon-office
           |  #{@hotel.nama}
-  .col-md-4
+  .col-md-4.bagian-kanan
     .embed-responsive.embed-responsive-4by3
       = render 'hotels/peta', hotel: @hotel
     = link_to "Ketahui lebih lanjut", "#{@hotel.website}", class: "btn btn-success pull-right", target: "_blank"
@@ -21,9 +21,9 @@
           .glyphicon.glyphicon-book
         #myModal.modal.fade.modal-info tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
           .modal-dialog.modal-lg style="margin-top: 60px;"
-            .modal-content.info-tips    
+            .modal-content  
               .panel.panel-default
-                .panel-heading 
+                .panel-heading.full-deskripsi 
                   h3.panel-title style="font-weight: 800;"
                     | Deskripsi tentang #{@hotel.nama}
                 .panel-body.text-justify

@@ -4,19 +4,24 @@
     margin-top: 25px;
     border-radius: 20px;
     box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+    .panel-info > .panel-heading {
+      color: #31708f;
+      background-color: #173e43;
+      border-color: #bce8f1;
+    }
   }
   hr {
     border-color: #DADADA -moz-use-text-color -moz-use-text-color;
     margin-bottom: 0px;
   }
   h4 {
-    color: #3786C8;
+    color: #239995;
     font-weight: 800;
   }
   .panel-title {
     color: white;
   }
   .nama-guide {
-    color: #3786C8;
+    color: #FFFFFF;
   }
 }

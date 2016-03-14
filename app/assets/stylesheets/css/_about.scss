@@ -217,9 +217,19 @@
     line-height: 18px;
   }
 }
-.page-header {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #4183D7;
-  color: #FFFFFF;
+.about {
+  .panel-default > .panel-heading {
+    color: #FFFFFF;
+    background-color: #173e43;
+  }
+  .panel-title {
+    font-weight: 900;
+  }
+  .info {
+    .title {
+      a {
+        color: #239995;
+      }
+    }
+  }
 }

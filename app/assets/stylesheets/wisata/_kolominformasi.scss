@@ -28,7 +28,22 @@
   border: 2px solid rgba(128, 128, 128, 0.5);
   border-radius: 20px;
   box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+  .btn-success {
+    color: white;
+    background-color: #239995;
+    border-color: transparent;
+    &:hover,
+    &:focus {
+      background: #155C59;
+      color: #FFFFFF;
+    }
+  }
   .modal-info {
     margin-top: 50px;
+    .panel-default > .panel-heading {
+      color: #FFFFFF;
+      background-color: #173e43;
+      border-color: #ddd;
+    }
   }
 }
