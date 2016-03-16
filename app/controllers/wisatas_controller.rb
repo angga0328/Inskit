@@ -1,5 +1,6 @@
 class WisatasController < ApplicationController
   before_action :set_wisata, only: [:show, :edit, :update, :destroy, :like, :dislike, :album]
+  before_action :authenticate_user!, except: [:index, :show, :edit, :update, :destroy, :album]
 
   # GET /wisatas
   # GET /wisatas.json

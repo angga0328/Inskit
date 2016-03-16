@@ -1,5 +1,6 @@
 class GuidesController < ApplicationController
   before_action :set_guide, only: [:show, :like, :dislike]
+  before_action :authenticate_user!, except: [:show]
 
   def like
     @guide.upvote_by current_user

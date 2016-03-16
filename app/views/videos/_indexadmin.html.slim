@@ -9,13 +9,13 @@ table
       th colspan="3" 
   tbody
     - @videos.each do |video| 
-    tr
-      td = video.wisata
-      td = video.title
-      td = video.author
-      td = video.link
-      td = link_to 'Show', video
-      td = link_to 'Edit', edit_video_path(video)
-      td = link_to 'Destroy', video, method: :delete, data:   confirm: 'Are you sure?'  
+      tr
+        td = video.wisata
+        td = video.title
+        td = video.author
+        td = video.link
+        td = link_to 'Show', video
+        td = link_to 'Edit', edit_video_path(video)
+        td = link_to 'Destroy', video, method: :delete, data:  {confirm: 'Are you sure?'}, class: "btn btn-default" 
 br
 = link_to 'New Video', new_video_path 

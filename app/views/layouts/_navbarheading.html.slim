@@ -45,38 +45,37 @@ nav.navbar.navbar-static-top.navbar-new
         -if user_signed_in?
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
-              | Profile 
+              = current_user.email
               span.caret
-            ul.dropdown-menu.dropdown-profile
+            ul.dropdown-menu.dropdown-profile style= "margin-top: 0px;"
               li
-                = link_to '@' +current_user.username, current_user
+                = link_to ' @' +current_user.username, current_user, class: "glyphicon glyphicon-user", style: "font-size: 16px;"
               li.divider role="separator"
               li
-                = link_to 'settings', edit_user_registration_path
+                = link_to ' settings', edit_user_registration_path, class: "glyphicon glyphicon-wrench", style: "font-size: 16px;"
               li.divider role="separator"
               li
-                = link_to 'sign out', destroy_user_session_path, method: :delete
+                = link_to ' signout', destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-off", style: "font-size: 16px;"
         -elsif guide_signed_in?
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
-              | Profile 
+              = current_guide.email
               span.caret
-            ul.dropdown-menu.dropdown-profile
+            ul.dropdown-menu.dropdown-profile style= "margin-top: 0px;"
               li
-                = link_to '@' +current_guide.nama, current_guide
+                = link_to ' @' +current_guide.nama, current_guide, class: "glyphicon glyphicon-user", style: "font-size: 16px;"
               li.divider role="separator"
               li
-                = link_to 'settings', edit_guide_registration_path
+                = link_to ' settings', edit_guide_registration_path, class: "glyphicon glyphicon-wrench", style: "font-size: 16px;"
               li.divider role="separator"
               li
-                = link_to 'sign out', destroy_guide_session_path, method: :delete
-                h
+                = link_to ' signout', destroy_guide_session_path, method: :delete, class: "glyphicon glyphicon-off", style: "font-size: 16px;"
         -elsif admin_signed_in?
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
-              | Admin
+              | Administrator
               span.caret
-            ul.dropdown-menu.dropdown-profile
+            ul.dropdown-menu.dropdown-profile style= "margin-top: 0px;"
               li
                 = link_to 'settings', edit_admin_registration_path
               li.divider role="separator"
