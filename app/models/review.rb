@@ -8,7 +8,7 @@ class Review < ActiveRecord::Base
   before_create :post_to_twitter
 
   def post_to_twitter
-    unless user.twitter?
+    unless self.user.twitter
       if content.length < 123
         user.twitter.update(content + " via @")
       else 
