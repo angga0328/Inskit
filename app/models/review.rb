@@ -8,10 +8,12 @@ class Review < ActiveRecord::Base
   before_create :post_to_twitter
 
   def post_to_twitter
-    if content.length < 102
-      user.twitter.update(content + " via https://indonesiaku.herokuapp.com")
-    else 
-      user.twitter.update(content[0..98] + " ... via https://indonesiaku.herokuapp.com") if user.twitterlink && user.uid
+    unless self.user.twitter
+      if content.length < 102
+        user.twitter.update(content + " via https://indonesiaku.herokuapp.com")
+      else 
+        user.twitter.update(content[0..98] + " ... via https://indonesiaku.herokuapp.com") if user.twitterlink && user.uid
+      end
     end
   end
 end
