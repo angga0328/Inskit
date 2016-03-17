@@ -1,0 +1,101 @@
+.well-wisata {
+  background-color: #173e43;
+  .nama-wisata {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ffffff;
+    .btn-success {
+      color: #fff;
+      background-color: #239995;
+      border-color: #239995;
+      &:hover,
+      &:focus {
+        background-color: #155C59;
+        color: #FFFFFF;
+      }
+    }
+    .icon-hati {
+      color: #C6222F;
+      &:hover,
+      &:focus {
+        color: #FFFFFF;
+      }
+    }
+    .icon-broken {
+      color: #C6222F;
+      &:hover,
+      &:focus {
+        color: #FFFFFF;
+      }
+    }
+  }
+  .modal-info {
+    margin-top: 50px;
+    .info-tips {
+      background-color: #F0F0F0;
+      font-size: 20px;
+      .nav-tabs > li.active > a,
+      .nav-tabs > li.active > a:hover,
+      .nav-tabs > li.active > a:focus {
+        color: #FFFFFF;
+        background-color: #239995;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+      a {
+        color: #FFFFFF;
+        text-decoration: none;
+      }
+      .tab-info {
+        background-color: #173e43;
+      }
+      .tab-content {
+        .teks {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+.kolom-header {
+  height: 300px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  margin-top: 60px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  box-shadow: -12px 0 10px -4px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+  .wisata-foto {
+    height: 400px;
+    width: 1500px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .tagline {
+    margin-left: 10px;
+    //    margin-top: -100px;
+    //    color: white;
+    //    text-shadow: 2px 2px 4px #000000;
+  }
+  .nama-rating {
+    margin-top: 200px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  .rating {
+    padding-top: 5px;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px #000000;
+    a {
+      color: white;
+      font-size: 30px;
+      text-shadow: 2px 2px 4px #000000;
+      &:hover,
+      &:focus {
+        color: #C6222F;
+      }
+    }
+  }
+}

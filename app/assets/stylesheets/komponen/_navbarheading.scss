@@ -1,0 +1,217 @@
+.navbar-new {
+  margin-bottom: 0px;
+  .img-logo {
+    width: 150px;
+    margin-top: 8px;
+  }
+  .panah-kebawah {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 10px;
+  }
+  .menu-kebawahnya {
+    width: 50%;
+    margin-left: 70px;
+  }
+  .jarak-dgn-logo {
+    margin-left: 50px;
+  }
+  .form-control {
+    height: 32px;
+  }
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+.navbar-form {
+  .form-control {
+    border-radius: 0px;
+  }
+  button {
+    &:hover,
+    &:focus {
+      background: #155C59;
+      color: #ffffff;
+    }
+  }
+  .btn {
+    border: 0px;
+  }
+}
+.btn-info {
+  background-color: #239995;
+  border-radius: 0px;
+  &:hover,
+  &:focus {
+    background: #155C59;
+    color: #FFFFFF;
+  }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  font-weight: 800;
+  a {
+    color: #ffffff;
+  }
+  background-color: #239995;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: #155C59;
+}
+.navbar-nav>li>.dropdown-menu {
+  margin-top: 20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.navbar-default .navbar-nav>li>a {
+  width: 200px;
+  font-weight: bold;
+}
+.mega-dropdown {
+  position: static !important;
+  width: 100%;
+}
+.mega-dropdown-menu {
+  padding: 20px 0px;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.mega-dropdown-menu:before {
+  content: "";
+  border-bottom: 15px solid #fff;
+  border-right: 17px solid transparent;
+  border-left: 17px solid transparent;
+  position: absolute;
+  top: -15px;
+  left: 285px;
+  z-index: 10;
+}
+.mega-dropdown-menu:after {
+  content: "";
+  border-bottom: 17px solid #ccc;
+  border-right: 19px solid transparent;
+  border-left: 19px solid transparent;
+  position: absolute;
+  top: -17px;
+  left: 283px;
+  z-index: 8;
+}
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #239995;
+  white-space: normal;
+}
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+  background-color: #155C59;
+  color: #FFFFFF;
+}
+.mega-dropdown-menu .dropdown-header {
+  color: #6aafd8;
+  font-size: 18px;
+  font-weight: bold;
+}
+.mega-dropdown-menu form {
+  margin: 3px 20px;
+}
+.mega-dropdown-menu .form-group {
+  margin-bottom: 3px;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #155C59;
+  color: #FFFFFF;
+}
+.navbar-kanan {
+  padding-right: 5px;
+  color: #d35400;
+}
+.nav > li {
+  .dropdown-kategori > li > a {
+    color: #239995;
+    text-align: center;
+    &:hover,
+    &:focus {
+      background-color: #155C59;
+      color: #FFFFFF;
+    }
+  }
+}
+.dropdown-profile > li > a {
+  color: #239995;
+  &:hover,
+  &:focus {
+    background-color: #155C59;
+    color: #FFFFFF;
+  }
+}
+.search-form .form-group {
+  transition: all 0.35s, border-radius 0s;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-left: 20px;
+}
+.search-form .form-group input.form-control {
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display: block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 100%;
+  border-radius: 4px 25px 25px 4px;
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #3596e0;
+  left: initial;
+  font-size: 14px;
+}

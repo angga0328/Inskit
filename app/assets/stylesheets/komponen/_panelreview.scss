@@ -1,0 +1,69 @@
+.panel-review {
+  z-index: 10;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  margin-bottom: 0px;
+  .panel-heading {
+    box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+    background-color: #173e43;
+    color: #ffffff;
+    border-radius: 0px;
+  }
+  .panel-body {
+    box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 -0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+  }
+  .panel-title {
+    text-align: center;
+    font-weight: 800;
+  }
+}
+.review-side {
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(65, 65, 65, 0.19);
+  padding-bottom: 5px;
+}
+.nama-periview {
+  a {
+    font-weight: 600;
+    color: #239995;
+  }
+}
+.tgl-tweet {
+  text-align: right;
+  color: gray;
+}
+.nama-wisata-direview {
+  font-size: small;
+  a {
+    color: #239995;
+  }
+  .namawisata {}
+}
+.panel-home-review {
+  border-bottom: 1px solid rgba(3, 5, 5, 0.2);
+  min-height: 230px;
+  .media {
+    .media-img {
+      margin-top: 10px;
+      width: 100px;
+      height: 80px;
+      padding-left: 15px
+    }
+    .media-konten {
+      margin-top: -10px;
+      text-align: justify;
+      .like-comment {
+        .tanggal-review {
+          padding-left: 50px;
+        }
+        .comment {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .media-review {
+    margin-top: 25px;
+  }
+}

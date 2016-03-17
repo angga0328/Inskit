@@ -1,0 +1,111 @@
+.daerah-wisata {
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  border-radius: 20px;
+  padding-bottom: 10px;
+  box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+  .kolom-gambar {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 10px;
+  }
+  .media-img {
+    width: 100%;
+    height: 200px;
+  }
+  .konten {
+    margin-top: 10px;
+    .deskripsi {
+      padding-left: 0px;
+      padding-right: 0px;
+      text-align: justify;
+      max-height: 100px;
+      overflow: hidden;
+    }
+  }
+  h5 {
+    .jarak {
+      padding-right: 10px;
+    }
+  }
+  .title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 22px;
+    a {
+      color: #239995;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+    .jarak-tgl {
+      padding-left: 20px;
+      font-size: 15px;
+      .icon-heart {
+        color: #C6222F;
+        font-size: 15px;
+      }
+      .icon-heart-broken {
+        color: #C6222F;
+        font-size: 15px;
+      }
+    }
+  }
+}
+.kolom-kategori {
+  position: fixed;
+  margin-left: 905px;
+  .daerah-kategori {
+    margin-bottom: 0px;
+    .btn-info {
+      border-color: transparent;
+    }
+    .panel-heading {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      background-color: #173e43;
+    }
+    .panel-title {
+      text-align: center;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+  }
+}
+.page-daerah {
+  .panel {
+    margin-bottom: 0px;
+    .panel-heading {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      background-color: #173e43;
+      .panel-title {
+        text-align: center;
+        font-weight: 800;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+.page-kategori {
+  .panel {
+    margin-bottom: 0px;
+    .panel-heading {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      background-color: #173e43;
+      .panel-title {
+        text-align: center;
+        font-weight: 800;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+.daerah-kategori {
+  margin-top: 0px;
+  .icon-list {
+    font-weight: 800;
+  }
+}

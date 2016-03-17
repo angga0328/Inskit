@@ -1,0 +1,49 @@
+.kolom-informasi {
+  .ukuran-video {
+    width: 560px;
+    height: 285px;
+    margin-left: 100px;
+  }
+  .title-accordion {
+    color: #FFFFFF;
+  }
+}
+.peta {
+  padding-bottom: 60%;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 240px;
+  width: 100%;
+  border: 0;
+}
+.info-wisata {
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
+  .btn-success {
+    color: white;
+    background-color: #239995;
+    border-color: transparent;
+    &:hover,
+    &:focus {
+      background: #155C59;
+      color: #FFFFFF;
+    }
+  }
+  .modal-info {
+    margin-top: 50px;
+    .panel-default > .panel-heading {
+      color: #FFFFFF;
+      background-color: #173e43;
+      border-color: #ddd;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.panel-kategori {
+  background: none;
+  box-shadow: none;
+  border: 0px;
+  .panel-body {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    .btn-custom-kategori {
+      border-bottom: 0px solid rgba(90, 87, 87, 0.51);
+      background: #239995;
+      &:hover,
+      &:focus {
+        background-color: #155C59;
+        color: #FFFFFF;
+      }
+      color: #FFFFFF;
+      .btn {
+        padding: 10px 100px;
+        background: none;
+        font-weight: 800;
+        &:hover,
+        &:focus {
+          background: #155C59;
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+.btn-berita {
+  background-color: #239995;
+  border-color: transparent;
+  color: white;
+  &:hover,
+  &:focus {
+    background-color: #155C59;
+    color: #FFFFFF;
+  }
+}
+.btn-guide {
+  background-color: #239995;
+  border-color: #239995;
+  color: white;
+  margin-bottom: 10px;
+  &:hover,
+  &:focus {
+    background: #155C59;
+    color: #FFFFFF;
+  }
+}
+.btn-unguide {
+  background-color: #c6222f;
+  border-color: transparent;
+  color: white;
+  margin-bottom: 10px;
+  &:hover,
+  &:focus {
+    background: #db4954;
+    color: #790009;
+    border-color: #c6222f;
+  }
+}
+.tombol-delete {
+  .btn {
+    font-size: 12px;
+    background-color: #c6222f;
+    border-color: #c6222f;
+    margin-right: 15px;
+    color: white;
+    &:hover,
+    &:focus {
+      background-color: #db4954;
+      color: #790009;
+    }
+  }
+}
+.btn-review {
+  background-color: #239995;
+  border-color: transparent;
+  color: white;
+  &:hover,
+  &:focus {
+    background: #155C59;
+    color: #FFFFFF;
+  }
+}
