@@ -5,4 +5,7 @@ class Hotel < ActiveRecord::Base
   mount_uploader :foto, FotoUploader
   reverse_geocoded_by :latitude, :longitude
   
+  def name
+    nama
+  end
 end

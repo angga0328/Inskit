@@ -13,6 +13,10 @@ class Wisata < ActiveRecord::Base
   has_many :menurestorans
   
   acts_as_votable
+  
+  def name
+    nama
+  end
 
   def self.search(search)
     where("nama LIKE ?", "%#{search}%")
