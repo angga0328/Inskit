@@ -15,6 +15,9 @@ gem 'devise', '~> 3.5', '>= 3.5.3'
 gem 'simple_form', '~> 3.2'
 gem 'carrierwave', '~> 0.10.0'
 
+gem 'mini_magick', '3.8.0'
+gem 'fog', '1.36.0'
+
 gem 'geocoder', '~> 1.2', '>= 1.2.13'
 gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
 gem 'acts_as_votable', '~> 0.10.0'
