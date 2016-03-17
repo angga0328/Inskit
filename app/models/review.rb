@@ -5,15 +5,13 @@ class Review < ActiveRecord::Base
   belongs_to :wisata
   belongs_to :guide
   mount_uploader :foto, FotoUploader
-  after_create :post_to_twitter
+  before_create :post_to_twitter
 
   def post_to_twitter
-    unless self.user.twitter
-      if content.length < 123
-        user.twitter.update(content + " via @")
-      else 
-        user.twitter.update(content[0..117] + " ... via @") if user.twitterlink && user.uid
-      end
+    if content.length < 123
+      user.twitter.update(content + " via @")
+    else 
+      user.twitter.update(content[0..17] + " ... via @") if user.twitterlink && user.uid
     end
   end
 end
