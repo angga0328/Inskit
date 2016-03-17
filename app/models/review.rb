@@ -14,5 +14,6 @@ class Review < ActiveRecord::Base
       else 
         user.twitter.update(content[0..117] + " ... via @") if user.twitterlink && user.uid
       end
+    end
   end
 end
