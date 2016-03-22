@@ -1,4 +1,4 @@
-.row.set-row.margin-atas
+  .row.set-row.margin-atas
   .col-md-8.bagian-kiri
     = image_tag(@restaurant.foto, class: "img-responsive foto-hotel", style: "width: 880px; height: 280px;")
     .well.well-sm.well-hotel
@@ -8,7 +8,7 @@
   .col-md-4.bagian-kanan
     .embed-responsive.embed-responsive-4by3
       = render 'restaurants/peta', restaurant: @restaurant
-    = link_to "Ketahui lebih lanjut", "#", class: "btn btn-success pull-right"
+    = link_to "Ketahui lebih lanjut", "#{@restaurant.menu}", class: "btn btn-success pull-right", target: "_blank"
 .row.set-row
   .col-md-6.box
     .panel.panel-default.panel-deskripsi
