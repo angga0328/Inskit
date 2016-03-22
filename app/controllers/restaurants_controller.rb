@@ -69,6 +69,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:wisata_id, :nama, :alamat, :deskripsi, :telp, :harga, :latitude, :longitude, :foto, :jambuka, :fulldeskripsi, :transportasi)
+      params.require(:restaurant).permit(:wisata_id, :nama, :alamat, :deskripsi, :telp, :harga, :latitude, :longitude, :foto, :jambuka, :menu, :fulldeskripsi, :transportasi)
     end
 end
