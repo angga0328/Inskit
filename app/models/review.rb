@@ -1,6 +1,5 @@
 class Review < ActiveRecord::Base
-  before_create :post_to_twitter
-
+  # before_create :post_to_twitter
   belongs_to :user
   belongs_to :wisata
   belongs_to :guide

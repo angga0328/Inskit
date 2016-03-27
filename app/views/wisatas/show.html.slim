@@ -41,22 +41,23 @@
     .embed-responsive.embed-responsive-4by3.peta
       = render 'wisatas/peta', wisata: @wisata
     .col-md-12.info-wisata
-      p.glyphicon.glyphicon-map-marker 
-        | #{@wisata.alamat}
-      br
-      p.glyphicon.glyphicon-info-sign
-      - if @wisata.kategori_id == 6
-        |    Kisaran Harga makanan untuk 1 orang :
-        |    #{@wisata.harga}
-      - else
-        |    Harga Tiket Masuk : 
-        |    #{@wisata.harga}
-      br
-      p.icon-clock2 title="JamBuka"
+      p
+        .glyphicon.glyphicon-map-marker 
+        |  #{@wisata.alamat}
+      p
+        .glyphicon.glyphicon-info-sign
+        - if @wisata.kategori_id == 6
+          |    Kisaran Harga makanan untuk 1 orang :
+          |    #{@wisata.harga}
+        - else
+          |    Harga Tiket Masuk : 
+          |    #{@wisata.harga}
+      p
+        .glyphicon.glyphicon-time
         |  Jam Buka: #{@wisata.jambuka}
-      p.glyphicon.glyphicon-phone-alt title="Phone"
+      p
+        .glyphicon.glyphicon-phone-alt
         | #{@wisata.telp}
-      br
       h4 style="font-weight: 800;" Deskripsi
       p.text-justify 
         | #{@wisata.deskripsi}
