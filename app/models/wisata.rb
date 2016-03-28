@@ -20,7 +20,5 @@ class Wisata < ActiveRecord::Base
 
   def self.search(search)
     where("nama iLIKE ?", "%#{search}%")
-    where("alamat iLIKE ?", "%#{search}%")
-    where("deskripsi iLIKE ?", "%#{search}%")
   end
 end
