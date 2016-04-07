@@ -11,9 +11,9 @@ class DaerahsController < ApplicationController
   # GET /daerahs/1.json
   def show
     if params[:kategori_id]
-      @wisatas = @daerah.wisatas.where(kategori_id: params[:kategori_id])
+      @wisatas = @daerah.wisatas.where(kategori_id: params[:kategori_id]).order(:cached_votes_up => :desc, :created_at => :desc)
     else
-      @wisatas = @daerah.wisatas.order(:cached_votes_up => :desc)
+      @wisatas = @daerah.wisatas.order(:cached_votes_up => :desc, :created_at => :desc)
     end
   end
 
