@@ -1,29 +1,32 @@
-.col-md-12.profile-traveler
-  h4.text-center.judul-profile
+.col-md-12.guide-profile
+  h4.text-center
     | Profile Traveler
-  hr style="margin-bottom: 20px;"
-  .col-md-4.data-traveler
-    .row
-      .col-md-5
-        = image_tag(@user.foto, class: "img-responsive")
-      .col-md-7
-        h4.nama
-          = @user.nama
-        h5.username
-          | @#{@user.username}
-        h5.like-comment
-          | Total Review Saya
-          br
-          span.glyphicon.glyphicon-comment.comment
-            span.badge.badge-custom #{@user.reviews.count}
-    .row
-      .col-md-12
-        .panel.panel-default.panel-bio
-          .panel-body.panel-bd-home-bio
-            h5 style="font-style: italic;"
-              = @user.bio
+  hr
+  .col-md-5.data-guide
+    .panel.panel-info.panel-guide-wisata
+      .panel-heading
+        h4.panel-title.text-center.nama-guide = @user.nama
+      .panel-body
+        .row
+          .col-md-3 align="center" 
+            =image_tag (@user.foto), class: "img-circle img-responsive"
+            h6 style="font-style: italic; font-weight:700px;"
+              = @user.bio              
+          .col-md-9
+            table.table.table-user-information
+              tbody
+                tr
+                  td Email
+                  td = @user.email
+                tr
+                  td Registrasi
+                  td = @user.created_at.to_date
+                tr
+                  td Username
+                  td = @user.username
+                  br               
     = render "static_pages/footer"
-  .col-md-8.review-traveler
+  .col-md-7.review-traveler
     .panel.panel-default.panel-review.panel-review-profile
       .panel-heading
         h3.panel-title
@@ -41,6 +44,7 @@ a href="#" class="scrollToTop"
 javascript: 
   $(document).ready(function(){
 	
+	//Check to see if the window is top if not then display button
 	$(window).scroll(function(){
 		if ($(this).scrollTop() > 100) {
 			$('.scrollToTop').fadeIn();
@@ -49,10 +53,62 @@ javascript:
 		}
 	});
 	
+	//Click event to scroll to top
 	$('.scrollToTop').click(function(){
 		$('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
 	
   });
+
+
+/.col-md-12.profile-traveler
+/  h4.text-center.judul-profile
+/    | Profile Traveler
+/  hr style="margin-bottom: 20px;"
+/  .col-md-4.data-traveler
+/    .row
+/      .col-md-5
+/        = image_tag(@user.foto, class: "img-responsive")
+/      .col-md-7
+/        h4.nama
+/          = @user.nama
+/        h5.username
+/          | @#{@user.username}
+/        h5.like-comment
+/          | Total Review Saya
+/          br
+/          span.glyphicon.glyphicon-comment.comment
+/            span.badge.badge-custom #{@user.reviews.count}
+/    .row
+/      .col-md-12
+/        .panel.panel-default.panel-bio
+/          .panel-body.panel-bd-home-bio
+/            h5 style="font-style: italic;"
+/              = @user.bio
+/    = render "static_pages/footer"
+
+/
+/a href="#" class="scrollToTop" 
+/  button.btn.btn-success
+/    .glyphicon.glyphicon-chevron-up
+/    |  Kembali ke Atas
+/
+/javascript: 
+/  $(document).ready(function(){
+/	
+/	$(window).scroll(function(){
+/		if ($(this).scrollTop() > 100) {
+/			$('.scrollToTop').fadeIn();
+/		} else {
+/			$('.scrollToTop').fadeOut();
+/		}
+/	});
+/	
+/	$('.scrollToTop').click(function(){
+/		$('html, body').animate({scrollTop : 0},800);
+/		return false;
+/	});
+/	
+/  });
 
