@@ -74,6 +74,11 @@
       .btn-pilih-kategori {
         margin-top: 0px;
         background-color: #002d40;
+        &:hover,
+        &:focus {
+          background-color: #011d29;
+          color: #ffffff;
+        }
       }
     }
   }
