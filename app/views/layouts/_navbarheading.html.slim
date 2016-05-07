@@ -1,46 +1,42 @@
-nav.navbar.navbar-static-top.navbar-new 
+nav.navbar.navbar-default
   .container-fluid
+    /! Brand and toggle get grouped for better mobile display
     .navbar-header
       button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      ul.list-inline
-        li
-          =link_to root_path
-            =image_tag ('inskit1.png'), :class => "img-responsive img-logo"
+      .navbar-brand
+        =link_to root_path
+          =image_tag ('inskit1.png'), :class => "img-responsive img-logo", :alt => "logo"
+    /! Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav.list-inline.jarak-dgn-logo
-        li.dropdown.mega-dropdown
-          a.dropdown-toggle data-toggle="dropdown" href="#"
-            | Jelajahi Indonesia
-            span.glyphicon.glyphicon-chevron-down.pull-right.panah-kebawah
-          ul.dropdown-menu.mega-dropdown-menu.row.menu-kebawahnya
-            - Daerah.all.each do |daerah|
-                li.col-sm-4
-                  ul
-                    li.dropdown-header
-                    li
-                      =link_to daerah.nama, daerah
-      ul.nav.navbar-nav.list-inline
+      ul.nav.navbar-nav
         li.dropdown
-          a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
+          a.dropdown-toggle data-toggle="dropdown" href="#" 
+            | Jelajahi Indonesia
+            b.caret
+          ul.dropdown-menu.multi-column.columns-3
+            .row
+              .col-sm-12
+                ul.multi-column-dropdown
+                  - Daerah.all.each do |daerah|
+                      li.col-sm-4
+                        =link_to daerah.nama, daerah
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
             | Kategori Pariwisata
-            span.glyphicon.glyphicon-chevron-down.pull-right.panah-kebawah 
-          ul.dropdown-menu.dropdown-kategori style="top: 30px; left: 27px;"
+            span.caret
+          ul.dropdown-menu.dropdown-kategori
             - Kategori.all.each do |kategori|
-              li.dropdown-header
-              li
-                = link_to kategori.nama, kategori
-
-      ul.nav.navbar-nav.list-inline 
-        = form_tag(wisatas_path, :method => "get", class: "navbar-form navbar-left", role: "search") do
-          .form-group
-            = search_field_tag :search, params[:search], class: "form-control", placeholder: "nama tempat wisata"
-            button.btn.btn-default.btn-search type="submit" style="border-radius: 0px;"
-              i.glyphicon.glyphicon-search
-
+                li
+                  =link_to kategori.nama, kategori
+      form.navbar-form.navbar-left role="search" 
+        .form-group
+          input.form-control placeholder="nama tempat wisata" type="text" 
+        button.btn.btn-default type="submit"
+          i.glyphicon.glyphicon-search
       ul.nav.navbar-nav.navbar-right
         -if user_signed_in?
           li.dropdown
@@ -84,7 +80,7 @@ nav.navbar.navbar-static-top.navbar-new
         - else
           li style='padding-top:15px; color: #FFFFFF;'
             | Login as
-          li
+          li  
             =link_to 'Traveler', new_user_session_path, :style => "text-decoration: underline;"
           li style='padding-top:15px; color: #FFFFFF;'
             | or
