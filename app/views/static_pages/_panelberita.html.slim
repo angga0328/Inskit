@@ -7,7 +7,7 @@
     -@beritas.order('created_at DESC')[0..1].each do |berita|
       .col-md-12.padding
         .hovereffect
-          = image_tag(berita.foto, class: "img-responsive center-block ukuran")
+          = image_tag(berita.foto, class: "img-responsive center-block")
           .overlay
             h2 = berita.title
             =link_to 'Lihat', berita, class: "info"
