@@ -32,11 +32,11 @@ nav.navbar.navbar-default
             - Kategori.all.each do |kategori|
                 li
                   =link_to kategori.nama, kategori
-      form.navbar-form.navbar-left role="search" 
+      = form_tag(wisatas_path, :method => "get", class: "navbar-form navbar-left", role: "search") do
         .form-group
-          input.form-control placeholder="nama tempat wisata" type="text" 
-        button.btn.btn-default type="submit"
-          i.glyphicon.glyphicon-search
+          = search_field_tag :search, params[:search], class: "form-control", placeholder: "nama tempat wisata"
+          button.btn.btn-default.btn-search type="submit" style="border-radius: 0px;"
+            i.glyphicon.glyphicon-search
       ul.nav.navbar-nav.navbar-right
         -if user_signed_in?
           li.dropdown
