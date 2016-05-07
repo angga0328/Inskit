@@ -58,7 +58,6 @@
     margin-bottom: 0px;
     .btn-info {
       border-color: transparent;
-      margin-top: 0px;
     }
     .panel-heading {
       border-top-right-radius: 0px;
@@ -72,6 +71,10 @@
     }
     .panel-body {
       padding-top: 0px;
+      .btn-pilih-kategori {
+        margin-top: 0px;
+        background-color: #002d40;
+      }
     }
   }
 }
