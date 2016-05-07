@@ -7,21 +7,21 @@
   }
 }
 .navbar-default {
-  background-color: #239995;
-  border-color: #239995;
+  background-color: #1aa6b7;
+  border-color: #1aa6b7;
 }
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
   &:hover,
   &:focus {
-    background: #155C59;
+    background: #086f84;
     color: #FFFFFF;
   }
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #155C59;
+  background-color: #086f84;
   color: #FFFFFF;
 }
 .navbar-form {
@@ -30,7 +30,7 @@
     height: 34px;
     &:hover,
     &:focus {
-      background: #155C59;
+      background: #086f84;
       color: #ffffff;
     }
   }
@@ -56,12 +56,12 @@
   color: #000000;
 }
 .dropdown-kategori li a {
-  color: #239995;
+  color: #1aa6b7;
   font-weight: normal;
   text-align: center;
   &:hover,
   &:focus {
-    background: #155C59;
+    background: #086f84;
     color: #ffffff;
   }
 }
@@ -69,7 +69,7 @@
   color: #000000;
   &:hover,
   &:focus {
-    background: #155C59;
+    background: #086f84;
     color: #ffffff;
   }
 }
@@ -87,7 +87,7 @@
 }
 .multi-column-dropdown li a:hover {
   text-decoration: none;
-  background-color: #155C59;
+  background-color: #086f84;
   color: #FFFFFF;
 }
 @media (max-width: 767px) {
