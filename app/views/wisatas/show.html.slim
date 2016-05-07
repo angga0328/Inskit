@@ -78,7 +78,7 @@
       .col-md-12 style="margin-top: 10px;"
         #accordion.panel-group aria-multiselectable="true" role="tablist" 
           .panel.panel-default
-            #headingOne.panel-heading.title-accordion role="tab" style="background-color: #239995;"
+            #headingOne.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-facetime-video
                 a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button"
                   - @wisata.videos.each do |video|
@@ -89,7 +89,7 @@
                   .embed-responsive.embed-responsive-4by3 style="padding-bottom: 50%;"
                     = embed (video.link)
           .panel.panel-default
-            #headingTwo.panel-heading.title-accordion role="tab" style="background-color: #239995;"
+            #headingTwo.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-user
                 a.collapsed aria-controls="collapseTwo" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button" 
                   |  Guide 
@@ -99,9 +99,9 @@
                 -@wisata.guides.each do |guide|
                   .col-sm-3.text-center
                     =image_tag (guide.foto), {:class => "img-responsive"}
-                    =link_to guide.nama, guide, :style => "color: #239995;"
+                    =link_to guide.nama, guide, :style => "color: #1aa6b7;"
           .panel.panel-default
-            #headingThree.panel-heading.title-accordion role="tab" style="background-color: #239995;"
+            #headingThree.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.icon-map 
                 a.collapsed aria-controls="collapseThree" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button" 
                   |  Tempat Wisata #{@wisata.daerah.nama} Lainnya
@@ -111,9 +111,9 @@
                   .col-xs-3 
                     =image_tag (wisata.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
                     p
-                      =link_to wisata.nama, wisata, :style => "color: #239995;"
+                      =link_to wisata.nama, wisata, :style => "color: #1aa6b7;"
           .panel.panel-default
-            #headingFour.panel-heading.title-accordion role="tab" style="background-color: #239995;"
+            #headingFour.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-home
                 a.collapsed aria-controls="collapseFour" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" role="button" 
                   |  Penginapan Sekitar #{@wisata.nama} 
@@ -123,9 +123,9 @@
                   .col-xs-3
                     =image_tag (hotel.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
                     p
-                      =link_to hotel.nama, hotel, :style => "color: #239995;"
+                      =link_to hotel.nama, hotel, :style => "color: #1aa6b7;"
           .panel.panel-default
-            #headingFive.panel-heading.title-accordion role="tab" style="background-color: #239995;"
+            #headingFive.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-cutlery
                 a.collapsed aria-controls="collapseFive" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" role="button" 
                   |  Restaurant Sekitar #{@wisata.nama} 
@@ -135,7 +135,7 @@
                   .col-xs-3
                     =image_tag (restaurant.foto), {:class => "img-responsive", style: "width:140; height:80px;"} 
                     p
-                      =link_to restaurant.nama, restaurant, :style => "color: #239995;"
+                      =link_to restaurant.nama, restaurant, :style => "color: #1aa6b7;"
   /! Kolom Menu Makanan sampai Review Wisata
   .col-sm-7.panel-review
     - if @wisata.kategori_id == 6 
