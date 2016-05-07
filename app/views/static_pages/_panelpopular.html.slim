@@ -5,7 +5,7 @@
       = link_to 'Lainnya', 'popular-location', class: "pull-right glyphicon glyphicon-chevron-right"
   .panel-body.panel-home-popular
     -@wisatas[0..2].each do |wisata|
-      .col-md-4.padding
+      .col-md-12.padding
         .hovereffect
           = image_tag(wisata.foto, class: "img-responsive center-block ukuran")
           .overlay
