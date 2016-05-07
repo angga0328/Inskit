@@ -155,7 +155,7 @@
           .col-md-3 style="margin-bottom: 5px; padding-left:0px; padding-right: 0px;"
             a.hovereffect href=review.foto data-lightbox=review.foto
               =image_tag(review.foto, class: "img-responsive", style: "height: 100px; width: 320px;") if review.foto?
-        =link_to(image_tag('three'), album_wisata_path, :class => "img-responsive")
+        =link_to(image_tag('more'), album_wisata_path, :class => "img-responsive")
     br
     - if user_signed_in?
       = simple_form_for(@review, url: wisata_reviews_path(@wisata)) do |f|

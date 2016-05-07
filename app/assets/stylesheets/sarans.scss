@@ -5,17 +5,17 @@
     margin-top: 50px;
     margin-bottom: 216px;
     .btn {
-      background-color: #239995;
+      background-color: #1aa6b7;
       color: white;
       font-weight: 800;
       &:hover,
       &:focus {
-        background-color: #155C59;
+        background-color: #086f84;
         color: #FFFFFF;
       }
     }
     .panel-heading {
-      background-color: #173e43;
+      background-color: #002d40;
       .panel-title {
         font-weight: 800;
         color: white;
@@ -29,7 +29,7 @@
       }
     }
     .panel-footer {
-      background-color: #173e43;
+      background-color: #002d40;
       font-weight: 800;
       color: white;
     }
