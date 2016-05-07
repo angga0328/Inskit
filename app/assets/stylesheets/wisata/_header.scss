@@ -1,16 +1,16 @@
 .well-wisata {
-  background-color: #173e43;
+  background-color: #002d40;
   .nama-wisata {
     margin-top: 0px;
     margin-bottom: 0px;
     color: #ffffff;
     .btn-success {
       color: #fff;
-      background-color: #239995;
-      border-color: #239995;
+      background-color: #1aa6b7;
+      border-color: #1aa6b7;
       &:hover,
       &:focus {
-        background-color: #155C59;
+        background-color: #086f84;
         color: #FFFFFF;
       }
     }
@@ -38,7 +38,7 @@
       .nav-tabs > li.active > a:hover,
       .nav-tabs > li.active > a:focus {
         color: #FFFFFF;
-        background-color: #239995;
+        background-color: #1aa6b7;
         border: 1px solid #ddd;
         border-bottom-color: transparent;
         cursor: default;
