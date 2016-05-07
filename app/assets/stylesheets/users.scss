@@ -1,9 +1,7 @@
 .profile-traveler {
-  box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
   .data-traveler {
     position: fixed; //ini dibikin fix jadinya kalo dikecilin jadi engga responsive
-    box-shadow: 0 0px 0px 0px rgba(39, 19, 19, 0.3), 0 -0px 0px 0px rgba(39, 19, 19, 0.3), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
-    border-radius: 20px;
+    border: 2px solid rgba(128, 128, 128, 0.5);
   }
   .review-traveler {
     margin-left: 450px;
@@ -13,7 +11,7 @@
     margin-bottom: 0px;
   }
   h4 {
-    color: #239995;
+    color: #1aa6b7;
     font-weight: 800;
   }
 }
