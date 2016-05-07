@@ -1,8 +1,6 @@
 .daerah-wisata {
   border: 2px solid rgba(128, 128, 128, 0.5);
-  border-radius: 20px;
   padding-bottom: 10px;
-  box-shadow: 0 0px 0px 0px rgba(114, 114, 114, 0.29), 0 0px 0px 0px rgba(114, 114, 114, 0.29), -12px 0 10px -4px rgba(114, 114, 114, 0.29), 12px 0 10px -4px rgba(114, 114, 114, 0.29);
   .kolom-gambar {
     padding-left: 0px;
     padding-right: 0px;
@@ -60,16 +58,20 @@
     margin-bottom: 0px;
     .btn-info {
       border-color: transparent;
+      margin-top: 0px;
     }
     .panel-heading {
       border-top-right-radius: 0px;
       border-top-left-radius: 0px;
-      background-color: #173e43;
+      background-color: #002d40;
     }
     .panel-title {
       text-align: center;
       font-weight: 800;
       color: #FFFFFF;
+    }
+    .panel-body {
+      padding-top: 0px;
     }
   }
 }
@@ -79,7 +81,7 @@
     .panel-heading {
       border-top-right-radius: 0px;
       border-top-left-radius: 0px;
-      background-color: #173e43;
+      background-color: #002d40;
       .panel-title {
         text-align: center;
         font-weight: 800;
@@ -94,7 +96,7 @@
     .panel-heading {
       border-top-right-radius: 0px;
       border-top-left-radius: 0px;
-      background-color: #173e43;
+      background-color: #002d40;
       .panel-title {
         text-align: center;
         font-weight: 800;
