@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'pg', '0.17.1'
 
 gem 'slim', '~> 3.0', '>= 3.0.6'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
@@ -24,15 +25,11 @@ gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 
 gem 'rails_admin', '~> 0.8.1'
 
-gem "rename"
-
-gem 'chartkick', '~> 1.4', '>= 1.4.1'
-gem 'groupdate', '~> 2.5', '>= 2.5.2'
-gem 'active_median', '~> 0.1.2'
-
 gem 'lightbox2-rails'
 gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'
 gem 'twitter', '~> 5.15'
+
+gem 'acts_as_commentable_with_threading'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
@@ -40,18 +37,13 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'railroady'
-  gem 'sqlite3'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem "rails-erd"
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end
-
