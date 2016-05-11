@@ -28,6 +28,7 @@
     = render "static_pages/footer"
   .col-md-7.review-traveler
     .panel.panel-default.panel-review.panel-review-profile
+      = render 'follow_form' if user_signed_in?
       .panel-heading
         h3.panel-title
           | Review #{@user.nama}
@@ -60,55 +61,3 @@ javascript:
 	});
 	
   });
-
-
-/.col-md-12.profile-traveler
-/  h4.text-center.judul-profile
-/    | Profile Traveler
-/  hr style="margin-bottom: 20px;"
-/  .col-md-4.data-traveler
-/    .row
-/      .col-md-5
-/        = image_tag(@user.foto, class: "img-responsive")
-/      .col-md-7
-/        h4.nama
-/          = @user.nama
-/        h5.username
-/          | @#{@user.username}
-/        h5.like-comment
-/          | Total Review Saya
-/          br
-/          span.glyphicon.glyphicon-comment.comment
-/            span.badge.badge-custom #{@user.reviews.count}
-/    .row
-/      .col-md-12
-/        .panel.panel-default.panel-bio
-/          .panel-body.panel-bd-home-bio
-/            h5 style="font-style: italic;"
-/              = @user.bio
-/    = render "static_pages/footer"
-
-/
-/a href="#" class="scrollToTop" 
-/  button.btn.btn-success
-/    .glyphicon.glyphicon-chevron-up
-/    |  Kembali ke Atas
-/
-/javascript: 
-/  $(document).ready(function(){
-/	
-/	$(window).scroll(function(){
-/		if ($(this).scrollTop() > 100) {
-/			$('.scrollToTop').fadeIn();
-/		} else {
-/			$('.scrollToTop').fadeOut();
-/		}
-/	});
-/	
-/	$('.scrollToTop').click(function(){
-/		$('html, body').animate({scrollTop : 0},800);
-/		return false;
-/	});
-/	
-/  });
-
