@@ -8,9 +8,9 @@
       =time_ago_in_words(review.created_at)
     .col-sm-12.nama-wisata-direview
       span
-        =link_to '@' +review.wisata.nama, review.wisata if review.wisata
+        =link_to '@' + review.wisata.nama, review.wisata if review.wisata
       span
-        =link_to ' @' +review.guide.nama, review.guide if review.guide
+        =link_to '@' + review.guide.nama, review.guide if review.guide
       .row
         .col-sm-12.text-justify
           =review.content
@@ -22,3 +22,5 @@
       - if admin_signed_in?
         = link_to review , method: :delete, class: "btn btn-danger pull-right", data:   {confirm: 'Are you sure?'}
           i.glyphicon.glyphicon-trash
+    /  - if user_signed_in?
+    /    = render partial: "comments/template", locals: {commentable: review, new_comment: @comment}

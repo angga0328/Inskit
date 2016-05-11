@@ -40,7 +40,6 @@ Daerah.create!(nama: "Maluku Utara")
 Daerah.create!(nama: "Papua Barat")
 Daerah.create!(nama: "Papua")
 
-
 Kategori.create!(nama: "Alam")
 Kategori.create!(nama: "Hiburan")
 Kategori.create!(nama: "Budaya")
@@ -48,6 +47,7 @@ Kategori.create!(nama: "Edukasi")
 Kategori.create!(nama: "Religi")
 Kategori.create!(nama: "Kuliner")
 
-User.create!(nama: "buncis", email: "buncis@buncis.com", password: "buncis10", password_confirmation: "buncis10")
+User.create!(nama: "buncis", username: "buncis", email: "buncis@buncis.com", password: "buncis10", password_confirmation: "buncis10")
+User.create!(nama: "okta", username: "okta", email: "okta@buncis.com", password: "buncis10", password_confirmation: "buncis10")
 Guide.create!(nama: "anto", email: "guide@buncis.com", password: "buncis10", password_confirmation: "buncis10")
 Wisata.create!(nama: "trans studio", daerah_id: 1, kategori_id: 1)

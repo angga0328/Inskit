@@ -8,8 +8,13 @@ Rails.application.routes.draw do
   resources :restaurants
   resources :hotels
   resources :sarans
+  resources :comments
+  
   resources :reviews, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+
   resources :users, only: [:show, :index] do
     member do
       get :following, :followers
@@ -30,6 +35,7 @@ Rails.application.routes.draw do
   get 'saran' => 'sarans#new'
 
   devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
   devise_for :guides
 
   resources :wisatas do
@@ -40,8 +46,6 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: [:create, :destroy]
   end
-
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :guides, only: [:show, :index] do
     member do

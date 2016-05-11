@@ -11,12 +11,12 @@ class WisatasController < ApplicationController
       @wisatas = Wisata.all.order(:cached_votes_up => :desc)
     end
   end
-  
+
   def album
     @reviews = @wisata.reviews
   end
-  
-  
+
+
   # GET /wisatas/1
   # GET /wisatas/1.json
   def show
