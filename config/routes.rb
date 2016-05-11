@@ -9,8 +9,14 @@ Rails.application.routes.draw do
   resources :hotels
   resources :sarans
   resources :comments
-  
-  resources :reviews, only: [:create, :destroy]
+
+  resources :reviews, only: [:create, :destroy] do
+    member do
+      put "like", to: "reviews#like"
+      put "dislike", to: "reviews#dislike"
+    end
+  end
+
   resources :relationships, only: [:create, :destroy]
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 

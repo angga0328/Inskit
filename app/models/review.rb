@@ -7,7 +7,8 @@ class Review < ActiveRecord::Base
   before_create :post_to_twitter
 
   acts_as_commentable
-
+  acts_as_votable
+  
   def post_to_twitter
     unless self.user.twitter
       if content.length < 102

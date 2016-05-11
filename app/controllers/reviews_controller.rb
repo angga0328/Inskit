@@ -17,6 +17,18 @@ class ReviewsController < ApplicationController
   end
 
 
+  def like
+    @review = Review.find(params[:id])
+    @review.upvote_by current_user
+    redirect_to :back
+  end
+
+  def dislike
+    @review = Review.find(params[:id])
+    @review.downvote_by current_user
+    redirect_to :back
+  end
+
   private
     def review_params
       params.require(:review).permit(:content, :wisata_id, :foto, :guide_id)
