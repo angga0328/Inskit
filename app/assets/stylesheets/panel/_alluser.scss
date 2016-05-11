@@ -88,6 +88,9 @@
       background-color: #239995;
       color: white;
       font-weight: 800;
+      border-radius: 0;
+      width: auto;
+      height: auto;
       &:hover,
       &:focus {
         background-color: #155C59;
