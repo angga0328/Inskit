@@ -1,2 +1,8 @@
-= notification.body
-br
+.col-md-12
+  .media.well.well-notification
+    .media-body
+      h5.media-heading
+        b
+          | #{notification.body} 
+        | #{notification.subject == "ikuti" ? " telah mengikuti kamu." : " telah mengomentari review kamu."}
+      br

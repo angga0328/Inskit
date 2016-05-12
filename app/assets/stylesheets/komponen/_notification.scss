@@ -1,0 +1,16 @@
+.well-notification {
+  height: 50px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+.notifikasi {
+  margin-top: 50px;
+  .panel-notifikasi-heading {
+    background-color: #173e43;
+    border-radius: 0px;
+    .panel-title {
+      font-weight: 800;
+      color: white;
+    }
+  }
+}
