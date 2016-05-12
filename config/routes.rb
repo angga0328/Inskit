@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notifications/index'
+
   mount RailsAdmin::Engine => '/admins', as: 'rails_admin'
   resources :jenishotels
   resources :menurestorans
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   resources :hotels
   resources :sarans
   resources :comments
-
+  resources :notifications, only:[:index]
   resources :reviews, only: [:create, :destroy] do
     member do
       put "like", to: "reviews#like"

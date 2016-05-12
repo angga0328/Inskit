@@ -3,6 +3,7 @@ class RelationshipsController < ApplicationController
   def create
     user = User.find(params[:followed_id])
     current_user.follow(user)
+    user.notify("notif", current_user.username+" telah mengikuti kamu")
     redirect_to user
   end
 
