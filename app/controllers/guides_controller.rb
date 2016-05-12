@@ -13,6 +13,7 @@ class GuidesController < ApplicationController
   end
 
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @reviews = @guide.reviews.order('created_at DESC').page(params[:page]).per_page(10)
     if user_signed_in?
       @review = current_user.reviews.build

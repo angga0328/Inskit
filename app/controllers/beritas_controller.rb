@@ -10,11 +10,12 @@ class BeritasController < ApplicationController
   # GET /beritas/1
   # GET /beritas/1.json
   def show
-
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
 
   # GET /beritas/new
   def new
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @berita = Berita.new
   end
 

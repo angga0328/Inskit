@@ -10,10 +10,11 @@ class AlbumfotorestoransController < ApplicationController
   # GET /albumfotorestorans/1
   # GET /albumfotorestorans/1.json
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
-
   # GET /albumfotorestorans/new
   def new
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @albumfotorestoran = Albumfotorestoran.new
   end
 

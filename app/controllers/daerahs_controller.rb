@@ -10,6 +10,7 @@ class DaerahsController < ApplicationController
   # GET /daerahs/1
   # GET /daerahs/1.json
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     if params[:kategori_id]
       @wisatas = @daerah.wisatas.where(kategori_id: params[:kategori_id]).order(:cached_votes_up => :desc, :created_at => :desc)
     else

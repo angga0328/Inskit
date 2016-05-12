@@ -43,6 +43,19 @@
     color: #FFFFFF;
   }
 }
+.btn-komen {
+  background-color: #1aa6b7;
+  border-color: transparent;
+  color: white;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  &:hover,
+  &:focus {
+    background-color: #086f84;
+    color: #FFFFFF;
+  }
+}
 .btn-guide {
   background-color: #1aa6b7;
   border-color: #1aa6b7;

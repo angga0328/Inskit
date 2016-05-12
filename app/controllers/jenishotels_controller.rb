@@ -10,6 +10,7 @@ class JenishotelsController < ApplicationController
   # GET /jenishotels/1
   # GET /jenishotels/1.json
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
 
   # GET /jenishotels/new

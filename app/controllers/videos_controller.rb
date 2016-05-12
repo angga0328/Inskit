@@ -9,10 +9,12 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
 
   # GET /videos/new
   def new
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @video = Video.new
   end
 

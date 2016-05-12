@@ -4,5 +4,5 @@
       h5.media-heading
         b
           | #{notification.body} 
-        | #{notification.subject == "ikuti" ? " telah mengikuti kamu." : " telah mengomentari review kamu."}
+        | #{notification.subject == "ikuti" ? " telah mengikuti kamu." : notification.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
       br

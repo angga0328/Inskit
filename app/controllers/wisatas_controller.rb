@@ -5,6 +5,7 @@ class WisatasController < ApplicationController
   # GET /wisatas
   # GET /wisatas.json
   def index
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     if params[:search]
       @wisatas = Wisata.search(params[:search]).order(:cached_votes_up => :desc)
     else
@@ -20,6 +21,7 @@ class WisatasController < ApplicationController
   # GET /wisatas/1
   # GET /wisatas/1.json
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @reviews = @wisata.reviews.order('created_at DESC').page(params[:page]).per_page(10)
     if user_signed_in?
       @review = current_user.reviews.build

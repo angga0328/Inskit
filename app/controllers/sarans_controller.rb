@@ -10,15 +10,18 @@ class SaransController < ApplicationController
   # GET /sarans/1
   # GET /sarans/1.json
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
 
   # GET /sarans/new
   def new
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @saran = Saran.new
   end
 
   # GET /sarans/1/edit
   def edit
+    
   end
 
   # POST /sarans

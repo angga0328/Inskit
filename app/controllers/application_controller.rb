@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def devise_parameter_sanitizer
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     if resource_class == User
       User::ParameterSanitizer.new(User, :user, params)
     elsif resource_class == Guide

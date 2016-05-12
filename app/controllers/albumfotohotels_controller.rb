@@ -10,6 +10,7 @@ class AlbumfotohotelsController < ApplicationController
   # GET /albumfotohotels/1
   # GET /albumfotohotels/1.json
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
 
   # GET /albumfotohotels/new

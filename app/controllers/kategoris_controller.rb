@@ -10,6 +10,7 @@ class KategorisController < ApplicationController
   # GET /kategoris/1
   # GET /kategoris/1.json
   def show
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @wisatas = @kategori.wisatas.order(:cached_votes_up => :desc, :created_at => :desc)
   end
 

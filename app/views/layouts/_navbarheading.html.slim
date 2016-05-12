@@ -37,6 +37,20 @@ nav.navbar.navbar-default
           = search_field_tag :search, params[:search], class: "form-control", placeholder: "nama tempat wisata"
           button.btn.btn-default.btn-search type="submit" style="border-radius: 0px;"
             i.glyphicon.glyphicon-search
+
+      ul.nav.navbar-nav
+        -if user_signed_in?
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
+              span.icon-bell
+            ul.dropdown-menu.dropdown-notif style= "margin-top: 0px;"
+              - @notifications.each do |notif|
+                li
+                  b
+                    | #{notif.body}
+                  | #{notif.subject == "ikuti" ? " telah mengikuti kamu." : notif.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
+                li.divider
+
       ul.nav.navbar-nav.navbar-right
         -if user_signed_in?
           li.dropdown
