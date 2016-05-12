@@ -17,7 +17,16 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
 
   acts_as_voter
+  acts_as_messageable
 
+  def mailboxer_email(object)
+    if object.class==Mailboxer::Notification
+     return nil
+    else
+     email
+    end
+  end
+  
   # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)

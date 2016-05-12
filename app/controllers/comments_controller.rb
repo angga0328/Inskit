@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         make_child_comment
+        commentable.user.notify("notif", current_user.username+" telah mengomentari review anda")
         format.html  { redirect_to(:back, :notice => 'Comment was successfully added.') }
       else
         format.html  { render :action => "new" }
@@ -44,4 +45,4 @@ class CommentsController < ApplicationController
     @comment.move_to_child_of(parent_comment)
   end
 
-end 
+end

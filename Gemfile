@@ -31,6 +31,8 @@ gem 'twitter', '~> 5.15'
 
 gem 'acts_as_commentable_with_threading'
 
+gem 'mailboxer'
+
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
