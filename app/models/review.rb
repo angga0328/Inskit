@@ -8,7 +8,8 @@ class Review < ActiveRecord::Base
 
   acts_as_commentable
   acts_as_votable
-  
+  acts_as_messageable
+
   def post_to_twitter
     unless self.user.twitter
       if content.length < 102
