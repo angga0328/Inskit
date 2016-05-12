@@ -18,10 +18,16 @@
     .col-sm-10.col-sm-offset-2 style="padding-left: 26px;"
       a href=review.foto data-lightbox=review.foto
         =image_tag(review.foto, class: "img-responsive", style: "width:400px;") if review.foto?
+      a.pull-right href="#review" aria-controls="collapseExample" aria-expanded="false" data-toggle="collapse" style="color:grey;"
+        span.icon-bubble
+        | comments
+      #review.collapse
+        .well
+          - if user_signed_in?
+            - @new_comment = Comment.build_from(review, current_user.id, "")
+            = render partial: "comments/template", locals: {commentable: review, new_comment: @new_comment}
     .tombol-delete  
       - if admin_signed_in?
         = link_to review , method: :delete, class: "btn btn-danger pull-right", data:   {confirm: 'Are you sure?'}
           i.glyphicon.glyphicon-trash
-      - if user_signed_in?
-        - @new_comment = Comment.build_from(review, current_user.id, "")
-        = render partial: "comments/template", locals: {commentable: review, new_comment: @new_comment}
+

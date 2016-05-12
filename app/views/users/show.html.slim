@@ -11,7 +11,7 @@
           .col-md-3 align="center" 
             =image_tag (@user.foto), class: "img-circle img-responsive"
             h6 style="font-style: italic; font-weight:700px;"
-              = @user.bio              
+              = @user.bio
           .col-md-9
             table.table.table-user-information
               tbody
@@ -24,11 +24,12 @@
                 tr
                   td Username
                   td = @user.username
-                  br               
+                  br
+                tr
+                  td = render 'follow_form' if user_signed_in? && current_user.id != @user.id
     = render "static_pages/footer"
   .col-md-7.review-traveler
     .panel.panel-default.panel-review.panel-review-profile
-      = render 'follow_form' if user_signed_in?
       .panel-heading
         h3.panel-title
           | Review #{@user.nama}

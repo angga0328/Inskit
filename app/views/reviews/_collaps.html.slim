@@ -1,0 +1,7 @@
+button.btn.btn-primary aria-controls="collapseExample" aria-expanded="false" data-target="#review" data-toggle="collapse" type="button" 
+  | Button with data-target
+#review.collapse
+  .well
+    - if user_signed_in?
+      - @new_comment = Comment.build_from(review, current_user.id, "")
+      = render partial: "comments/template", locals: {commentable: review, new_comment: @new_comment}           

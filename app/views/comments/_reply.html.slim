@@ -1,9 +1,19 @@
 - comments.each do |comment|
   .comments-show
     .comment
-      p
-        = comment.body
-        = comment.user.username  
+      .review-side
+        .row
+          .col-sm-2
+            = image_tag(comment.user.foto, class: "img-responsive img-circle", style: "height:90px; width: 90px;")
+          .col-sm-10 style="padding-left: 0px; padding-right:0px;"
+            .col-sm-8.nama-periview
+              =link_to comment.user.nama, comment.user
+            .col-sm-4.tgl-tweet
+              =time_ago_in_words(comment.created_at)
+            .col-sm-12.nama-wisata-direview
+              .row
+                .col-sm-12.text-justify
+                  = comment.body
 /        br
       .comment-nav
         a.comment-reply[href="#"]
@@ -18,3 +28,4 @@
           .field.form-group
             = submit_tag "Post Reply", class: 'btn btn-primary'
     = render partial: "comments/reply", locals: {comments: comment.children}
+    
