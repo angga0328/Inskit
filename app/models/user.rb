@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
      email
     end
   end
-  
+
   # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
@@ -44,10 +44,10 @@ class User < ActiveRecord::Base
 
   def twitter
     @client ||= Twitter::REST::Client.new do |config|
-      config.consumer_key        = 'tKVBot5vLarsaklyRUEaYt5xs'
-      config.consumer_secret     = '7vs5aJViuT8PsLvy0SSJXFAaC5qSa9zyHclWkDkWqo9SbdSf0P'
-      config.access_token        = token
-      config.access_token_secret = secret
+      config.consumer_key        = 'QuqTKLz0pYQnvY5kdfU8CLmDV'
+      config.consumer_secret     = 'CayiHN1brVvjqLgLmzFszkUDw9CM8pOIde0NBY4LMFSmGwZ23x'
+      config.access_token        = self.token
+      config.access_token_secret = self.secret
     end
   end
 
