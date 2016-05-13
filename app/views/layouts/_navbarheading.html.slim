@@ -46,16 +46,17 @@ nav.navbar.navbar-default
                 | #{unreadnotif}
             ul.dropdown-menu.dropdown-notif style= "margin-top: 0px;"
               - if notif
-                - notifications.count > 0 
-                  - @notifications[0..9].each do |notif|
-                    li
-                      .icon-happy
-                        b
-                          =  notif.body.html_safe
-                        | #{notif.subject == "ikuti" ? " telah mengikuti kamu." : notif.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
-                    li.divider
-                  li.text-center
-                    = link_to "View more", notifications_path, class: "text-center"
+                - @notifications != nil 
+                  - @notifications.count > 0 
+                    - @notifications[0..9].each do |notif|
+                      li
+                        .icon-happy
+                          b
+                            =  notif.body.html_safe
+                          | #{notif.subject == "ikuti" ? " telah mengikuti kamu." : notif.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
+                      li.divider
+                    li.text-center
+                      = link_to "View more", notifications_path, class: "text-center"
                   
       ul.nav.navbar-nav.navbar-right
         -if user_signed_in?
