@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         make_child_comment
-        commentable.user.notify("komen", current_user.username)
+        commentable.user.notify("komen", "#{view_context.link_to current_user.username, commentable.wisata}" )
         format.html  { redirect_to(:back, :notice => 'Comment was successfully added.') }
       else
         format.html  { render :action => "new" }

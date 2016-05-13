@@ -7,12 +7,15 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
 
   def privacy
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
 
   def about
+    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
   end
 
   def contact

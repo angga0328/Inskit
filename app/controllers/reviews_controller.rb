@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   def like
     @review = Review.find(params[:id])
     @review.upvote_by current_user
-    @review.user.notify("notif", current_user.username)
+    @review.user.notify("notif", "#{view_context.link_to current_user.username, @review.wisata}")
     redirect_to :back
   end
 

@@ -28,9 +28,9 @@
     .col-sm-10.col-sm-offset-2 style="padding-left: 26px;"
       a href=review.foto data-lightbox=review.foto
         =image_tag(review.foto, class: "img-responsive", style: "width:400px;") if review.foto?
-      a.pull-right href="#review#{review.id}" aria-expanded="false" data-toggle="collapse" style="color:grey;"
-        span.icon-bubble
-        |  #{review.comment_threads.count} comments 
+        a.pull-right href="#review#{review.id}" aria-expanded="false" aria-controls="review#{review.id}" data-toggle="collapse"  style="color:grey;"
+          span.icon-bubble
+          |  #{review.comment_threads.count} comments 
   .row 
     .col-sm-10.col-sm-offset-2 style="padding-left: 26px;"
       .collapse id="review#{review.id}"

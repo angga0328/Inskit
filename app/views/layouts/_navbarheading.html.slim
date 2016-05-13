@@ -46,9 +46,10 @@ nav.navbar.navbar-default
             ul.dropdown-menu.dropdown-notif style= "margin-top: 0px;"
               - @notifications.each do |notif|
                 li
-                  b
-                    | #{notif.body}
-                  | #{notif.subject == "ikuti" ? " telah mengikuti kamu." : notif.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
+                  .icon-happy
+                    b
+                      =  notif.body.html_safe
+                    | #{notif.subject == "ikuti" ? " telah mengikuti kamu." : notif.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
                 li.divider
 
       ul.nav.navbar-nav.navbar-right
@@ -100,7 +101,6 @@ nav.navbar.navbar-default
             | or
           li
             =link_to 'Guide', new_guide_session_path, :style => "text-decoration: underline;"
-            
             
 
 /.search-form action= ""
