@@ -13,3 +13,15 @@
     background-color: #1aa6b7;
   }
 }
+.btn-follow {
+  background-color: #1aa6b7;
+  margin-top: 10px;
+  &:hover,
+  &:focus {
+    background-color: #086f84;
+    color: #FFFFFF;
+  }
+}
+.btn-unfollow {
+  margin-top: 10px;
+}

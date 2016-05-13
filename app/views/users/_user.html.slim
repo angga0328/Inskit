@@ -1,2 +1,8 @@
-h2 
-  = user.username
+.col-md-3
+  .thumbnail.follow-wingwers
+    =image_tag (user.foto), {:class => "img-responsive"}
+    .caption
+      h3 = user.username
+      p 
+      p
+        = button_to "Visit", user, class: "btn btn-primary btn-follow", method: :get

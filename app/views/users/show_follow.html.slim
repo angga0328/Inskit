@@ -1,2 +1,18 @@
-- if @users.any?
-  = render @users
+.panel.panel-default.panel-follow
+  .panel-heading.panel-followingwers
+    h3.panel-title.text-center 
+      | #{tipe == "Following" ? "Following" : "Followers"}
+  .panel-body
+    .row
+      .col-md-10.col-md-offset-1
+        .row.set-row        
+          - if @users.any?
+            = render @users
+
+
+/- @no = "1"
+/
+/- if @no == "1"
+/
+/
+/- else

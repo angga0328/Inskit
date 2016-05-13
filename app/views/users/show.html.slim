@@ -12,6 +12,7 @@
             =image_tag (@user.foto), class: "img-circle img-responsive"
             h6 style="font-style: italic; font-weight:700px;"
               = @user.bio
+              = render 'follow_form' if user_signed_in? && current_user.id != @user.id
           .col-md-9
             table.table.table-user-information
               tbody
@@ -26,9 +27,11 @@
                   td = @user.username
                   br
                 tr
-                  td = render 'follow_form' if user_signed_in? && current_user.id != @user.id
-                  = link_to 'followers', followers_user_path(@user)
-                  = link_to 'following', following_user_path(@user)
+                  td 
+                    = button_to "Followers", followers_user_path(@user), class: "btn btn-primary btn-follow", method: :get
+                  td 
+                    = button_to "Following", following_user_path(@user), class: "btn btn-primary btn-follow", method: :get
+                      
     = render "static_pages/footer"
   .col-md-7.review-traveler
     .panel.panel-default.panel-review.panel-review-profile

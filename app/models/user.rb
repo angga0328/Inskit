@@ -52,17 +52,18 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.username = auth.info.nickname
-      user.nama =  auth.info.name
-      user.bio = auth.info.description
-      user.fotourl = auth.info.image
-      user.token = auth.credentials.token
-      user.secret = auth.credentials.secret
-      user.twitterlink = true
-    end
+    user = User.where(provider: auth.provider, uid: auth.uid).first_or_initialize
+    user.provider = auth.provider
+    user.uid = auth.uid
+    user.username = auth.info.nickname
+    user.nama =  auth.info.name
+    user.bio = auth.info.description
+    user.fotourl = auth.info.image
+    user.token = auth.credentials.token
+    user.secret = auth.credentials.secret
+    user.twitterlink = true
+    user.save
+    user
   end
 
   def self.new_with_session(params, session)
