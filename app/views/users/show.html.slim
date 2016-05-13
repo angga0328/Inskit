@@ -28,9 +28,9 @@
                   br
                 tr
                   td 
-                    = button_to "Followers", followers_user_path(@user), class: "btn btn-primary btn-follow", method: :get
+                    = button_to "#{@user.followers.count} Followers", followers_user_path(@user), class: "btn btn-primary btn-follow", method: :get
                   td 
-                    = button_to "Following", following_user_path(@user), class: "btn btn-primary btn-follow", method: :get
+                    = button_to "#{@user.following.count} Following", following_user_path(@user), class: "btn btn-primary btn-follow", method: :get
                       
     = render "static_pages/footer"
   .col-md-7.review-traveler
