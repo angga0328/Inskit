@@ -11,12 +11,13 @@ class Review < ActiveRecord::Base
   acts_as_messageable
 
   def post_to_twitter
-    unless self.user.twitter
-      if content.length < 102
-        user.twitter.update(content + " via https://indonesiaku.herokuapp.com")
-      else
-        user.twitter.update(content[0..98] + " ... via https://indonesiaku.herokuapp.com") if user.twitterlink && user.uid
-      end
+    if user.twitterlink && user.uid
+      user.twitter.update(content)
     end
+    # if content.length < 102
+    #   user.twitter.update(content + " via https://indonesiaku.herokuapp.com")
+    # else
+    #   user.twitter.update(content[0..98] + " ... via https://indonesiaku.herokuapp.com") if user.twitterlink && user.uid
+    # end
   end
 end
