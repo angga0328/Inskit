@@ -38,20 +38,24 @@ nav.navbar.navbar-default
           button.btn.btn-default.btn-search type="submit" style="border-radius: 0px;"
             i.glyphicon.glyphicon-search
 
-      ul.nav.navbar-nav
+      ul.nav.navbar-nav.nav-notif
         -if user_signed_in?
           li.dropdown
-            a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
+            a.dropdown-toggle href="#" data-toggle="dropdown" role="button" id="notif-bt" onClick="coba_notif()"
               span.icon-bell
+                | #{unreadnotif}
             ul.dropdown-menu.dropdown-notif style= "margin-top: 0px;"
-              - @notifications.each do |notif|
-                li
-                  .icon-happy
-                    b
-                      =  notif.body.html_safe
-                    | #{notif.subject == "ikuti" ? " telah mengikuti kamu." : notif.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
-                li.divider
-
+              - if notif
+                - @notifications[0..9].each do |notif|
+                  li
+                    .icon-happy
+                      b
+                        =  notif.body.html_safe
+                      | #{notif.subject == "ikuti" ? " telah mengikuti kamu." : notif.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
+                  li.divider
+                li.text-center
+                  = link_to "View more", notifications_path, class: "text-center"
+                  
       ul.nav.navbar-nav.navbar-right
         -if user_signed_in?
           li.dropdown
@@ -102,7 +106,6 @@ nav.navbar.navbar-default
           li
             =link_to 'Guide', new_guide_session_path, :style => "text-decoration: underline;"
             
-
 /.search-form action= ""
 /          .form-group.has-feedback
 /            input#search.form-control name="search" placeholder="search" type="text"

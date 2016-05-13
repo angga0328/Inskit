@@ -15,7 +15,6 @@ class SaransController < ApplicationController
 
   # GET /sarans/new
   def new
-    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @saran = Saran.new
   end
 

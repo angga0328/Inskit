@@ -15,8 +15,16 @@
   }
 }
 .dropdown-notif {
-  width: 350px;
+  width: 400px;
+  .view-more-center {
+    text-align: center;
+  }
   li {
     padding-left: 10px;
+  }
+}
+.nav-notif {
+  .jumlah-notif {
+    color: #ffffff;
   }
 }

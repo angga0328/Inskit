@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   resources :hotels
   resources :sarans
   resources :comments
-  resources :notifications, only:[:index]
+  resources :notifications, only:[:index] do
+    collection do 
+      put "markasread", to: "notifications#markasread"
+    end
+  end
   resources :reviews, only: [:create, :destroy] do
     member do
       put "like", to: "reviews#like"

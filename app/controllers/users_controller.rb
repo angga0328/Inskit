@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   def index
   end
 
+ 
+  
   def following
     @title = "Following"
     @user  = User.find(params[:id])
@@ -19,7 +21,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @notifications = current_user != nil ? current_user.mailbox.notifications : nil
     @reviews = @user.reviews.order('created_at DESC').page(params[:page]).per_page(10)
   end
 
