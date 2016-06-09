@@ -3,7 +3,7 @@
     .panel.panel-default
       .panel-heading
         .panel-title
-          | Daerah Wisata #{@daerah.nama}
+          | #{@daerah.nama} Tourism
       = image_tag(@daerah.foto, class: "img-responsive", style: "width: 880px; height: 280px;")
     - @wisatas.each do |wisata|
       = render wisata
@@ -14,7 +14,7 @@
 a href="#" class="scrollToTop" 
   button.btn.btn-success
     .glyphicon.glyphicon-chevron-up
-    |  Kembali ke Atas
+    |  Back to Top
 
 javascript: 
   $(document).ready(function(){

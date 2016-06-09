@@ -1,6 +1,6 @@
 .panel.panel-default.list-berita
   .panel-heading
-    h3.panel-title.text-center  Daftar Berita
+    h3.panel-title.text-center  List of News
   .panel-body
     .col-md-12
       - Berita.all.order('created_at DESC').each do |berita|
@@ -14,4 +14,4 @@
               h4.berita-title = berita.title
               p
                 a role="button"
-                  = button_to "Baca", berita_path(berita), class: "btn btn-primary btn-berita", method: :get
+                  = button_to "Read", berita_path(berita), class: "btn btn-primary btn-berita", method: :get

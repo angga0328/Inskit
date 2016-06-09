@@ -8,11 +8,11 @@
   .col-md-4.bagian-kanan
     .embed-responsive.embed-responsive-4by3
       = render 'restaurants/peta', restaurant: @restaurant
-    = link_to "Ketahui lebih lanjut", "#{@restaurant.menu}", class: "btn btn-success pull-right", target: "_blank"
+    = link_to "Find out more", "#{@restaurant.menu}", class: "btn btn-success pull-right", target: "_blank"
 .row.set-row
   .col-md-6.box
     .panel.panel-default.panel-deskripsi
-      .panel-heading.heading-panel Deskripsi Restaurant #{@restaurant.nama}
+      .panel-heading.heading-panel Description of the #{@restaurant.nama}
       .panel-body.text-justify
         |  #{@restaurant.deskripsi}
     .panel.panel-default.detail-info
@@ -21,38 +21,38 @@
         table.table
           tbody
             tr
-              td Alamat
+              td Address
               td = @restaurant.alamat
             tr
-              td Jam Buka
+              td Opening hours
               td = @restaurant.jambuka
             tr
-              td Harga Mulai dari 
+              td Price starting from 
               td = @restaurant.harga
             tr
-              td Telepon
+              td Phone
               td 
                 = @restaurant.telp
                 br    
   .col-md-6
     .panel.panel-default.panel-album-hotel
-      .panel-heading.album-heading Menu Restaurant
+      .panel-heading.album-heading Restaurant Menu
       .panel-body
         - @restaurant.menurestorans.each do |menurestoran|
           .col-md-3.kolom-foto-hotel
             a.hovereffect href=menurestoran.foto data-lightbox="image-1"
               =image_tag (menurestoran.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
               .overlay
-                p.info Click me
+                p.info Show
     .panel.panel-default.panel-album-hotel
-      .panel-heading.album-heading Foto-foto Restaurant
+      .panel-heading.album-heading Photos of the Restaurant
       .panel-body
         - @restaurant.albumfotorestorans.each do |albumfotorestoran|
           .col-md-3.kolom-foto-hotel
             a.hovereffect href=albumfotorestoran.foto data-lightbox="image-1"
               =image_tag (albumfotorestoran.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
               .overlay
-                p.info Click me
+                p.info Show
 
 
 

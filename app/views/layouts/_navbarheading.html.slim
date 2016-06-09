@@ -34,7 +34,7 @@ nav.navbar.navbar-default
                   =link_to kategori.nama, kategori
       = form_tag(wisatas_path, :method => "get", class: "navbar-form navbar-left", role: "search") do
         .form-group
-          = search_field_tag :search, params[:search], class: "form-control", placeholder: "nama tempat wisata"
+          = search_field_tag :search, params[:search], class: "form-control", placeholder: "name of the tourist attractions"
           button.btn.btn-default.btn-search type="submit" style="border-radius: 0px;"
             i.glyphicon.glyphicon-search
 
@@ -53,7 +53,7 @@ nav.navbar.navbar-default
                         .icon-happy
                           b
                             =  notif.body.html_safe
-                          | #{notif.subject == "ikuti" ? " telah mengikuti kamu." : notif.subject == "notif" ? " telah menyukai review kamu." : " telah mengomentari review kamu."}
+                          | #{notif.subject == "ikuti" ? " has followed you." : notif.subject == "notif" ? " has liked your review." : " has commented on your review."}
                       li.divider
                     li.text-center
                       = link_to "View more", notifications_path, class: "text-center"

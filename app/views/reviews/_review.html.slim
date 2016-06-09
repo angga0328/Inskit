@@ -15,11 +15,11 @@
         |
       br
       = link_to like_review_path(review), method: :put do
-        span.icon-heart.icon-hati data-toggle="tooltip" data-placement="bottom" title="Silahkan Login terlebih dahulu"
+        span.icon-heart.icon-hati data-toggle="tooltip" data-placement="bottom" title="Please login"
       | #{review.get_upvotes.size}
       = link_to dislike_review_path(review), method: :put do
         |  
-        span.icon-heart-broken.icon-broken data-toggle="tooltip" data-placement="bottom" title="Silahkan Login terlebih dahulu"
+        span.icon-heart-broken.icon-broken data-toggle="tooltip" data-placement="bottom" title="Please login"
       | #{review.get_downvotes.size}
       .row
         .col-sm-12.text-justify

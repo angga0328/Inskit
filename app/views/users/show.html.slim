@@ -20,7 +20,7 @@
                   td Email
                   td = @user.email
                 tr
-                  td Registrasi
+                  td Date of Registration
                   td = @user.created_at.to_date
                 tr
                   td Username
@@ -37,7 +37,7 @@
     .panel.panel-default.panel-review.panel-review-profile
       .panel-heading
         h3.panel-title
-          | Ulasan #{@user.nama}
+          | Reviews by #{@user.nama}
       .panel-body
         #reviews
           = render @reviews
@@ -46,7 +46,7 @@
 a href="#" class="scrollToTop" 
   button.btn.btn-success
     .glyphicon.glyphicon-chevron-up
-    |  Kembali ke Atas
+    |  Back to Top
 
 javascript: 
   $(document).ready(function(){

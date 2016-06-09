@@ -1,14 +1,14 @@
 .col-md-6.col-md-offset-3.form-saran
   .panel.panel-default.panel-saran
     .panel-heading
-      h4.panel-title Isikan Saran
+      h4.panel-title feedback Suggestions
     .panel-body
       =simple_form_for(@saran) do |f|
         = f.error_notification 
         .form-group
           label.col-sm-2.control-label for="inputSaran"
           .col-sm-12
-            =f.input :nama, :placeholder => "Masukkan nama kalian", :autofocus => true, required: true
+            =f.input :nama, :placeholder => "Enter your name", :autofocus => true, required: true
 
         .form-group
           label.col-sm-2.control-label for="inputemail" 
@@ -18,11 +18,11 @@
         .form-group
           label.col-sm-2.control-label for="inputPesan" 
           .col-sm-12
-            =f.input :pesan, :placeholder => "Silahkan masukkan pesan kalian disini"
+            =f.input :pesan, :placeholder => "Enter your Suggestions"
 
         .form-group
           .col-sm-offset-2.col-sm-10
-            =f.submit "Kirim Pesan",  :class => "btn btn-default pull-right"
+            =f.submit "Send Suggestions",  :class => "btn btn-default pull-right"
     .panel-footer.text-center
       | @Inskit 2016
 

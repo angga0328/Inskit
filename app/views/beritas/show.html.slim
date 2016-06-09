@@ -8,6 +8,6 @@
       br
       .col-md-12.konten-berita
         p style ="color: grey;"
-          | Tanggal Terbit #{@berita.created_at.to_date}
+          | Date News #{@berita.created_at.to_date}
         p style="text-align:justify;"
           = simple_format(@berita.content)

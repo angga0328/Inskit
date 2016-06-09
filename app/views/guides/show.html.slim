@@ -25,13 +25,13 @@
                   td Email
                   td = @guide.email
                 tr
-                  td Registrasi
+                  td Date of Registration
                   td = @guide.created_at.to_date
                 tr
-                  td Alamat
+                  td Address
                   td = @guide.alamat
 
-                td Telepon
+                td Phone
                 td
                   = @guide.telp
                   br               
@@ -41,7 +41,7 @@
             #headingOne.panel-heading role="tab" style="background-color: #002d40;"
               h4.panel-title.icon-location2
                 a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button" 
-                  |  Lokasi Wisata Guide #{@guide.nama}
+                  |  Places Travel Guide #{@guide.nama}
             #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel" 
               .panel-body
                 - @guide.wisatas.each do |wisata|
@@ -67,7 +67,7 @@
       br
       .panel-heading
         h3.panel-title
-          | Ulasan mengenai #{@guide.nama}
+          | Reviews Guide #{@guide.nama}
       .panel-body
         #reviews
           = render @reviews
@@ -76,7 +76,7 @@
 a href="#" class="scrollToTop" 
   button.btn.btn-success
     .glyphicon.glyphicon-chevron-up
-    |  Kembali ke Atas
+    |  Back to Top
 
 javascript: 
   $(document).ready(function(){
