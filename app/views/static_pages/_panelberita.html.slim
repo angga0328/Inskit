@@ -1,8 +1,8 @@
 .panel.panel-default.panel-berita
   .panel-heading
     h3.panel-title
-      | Berita
-      = link_to 'Lainnya', beritas_path, class: "pull-right glyphicon glyphicon-chevron-right"
+      | News
+      = link_to 'more', beritas_path, class: "pull-right glyphicon glyphicon-chevron-right"
   .panel-body.panel-home-berita
     -@beritas.order('created_at DESC')[0..2].each do |berita|
       .col-md-12.padding
@@ -10,4 +10,4 @@
           = image_tag(berita.foto, class: "img-responsive center-block ukuran")
           .overlay
             h2 = berita.title
-            =link_to 'Lihat', berita, class: "info"
+            =link_to 'Show', berita, class: "info"

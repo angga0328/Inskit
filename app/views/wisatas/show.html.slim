@@ -7,13 +7,13 @@
         span.icon-map
           |  #{@wisata.nama} 
         = link_to like_wisata_path(@wisata), method: :put do
-          span.icon-heart.icon-hati data-toggle="tooltip" data-placement="bottom" title="Silahkan Login terlebih dahulu"
+          span.icon-heart.icon-hati data-toggle="tooltip" data-placement="bottom" title="Please Login First"
         | #{@wisata.get_upvotes.size} 
         = link_to dislike_wisata_path(@wisata), method: :put do
-          span.icon-heart-broken.icon-broken data-toggle="tooltip" data-placement="bottom" title="Silahkan Login terlebih dahulu"
+          span.icon-heart-broken.icon-broken data-toggle="tooltip" data-placement="bottom" title="Please Login First"
         | #{@wisata.get_downvotes.size}
         button.btn.btn-success.pull-right type="button" data-toggle="modal" data-target=".bs-example-modal-lg" 
-          | Tips dan Info Transportasi
+          | Tips dan Info Transportation
         .modal.fade.bs-example-modal-lg.modal-info tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
           .modal-dialog.modal-lg
             .modal-content.info-tips
@@ -23,7 +23,7 @@
                   li.active role="presentation" 
                     a aria-controls="home" data-toggle="tab" href="#home" role="tab"  Tips & Trick
                   li role="presentation" 
-                    a aria-controls="profile" data-toggle="tab" href="#profile" role="tab"  Info Akses
+                    a aria-controls="profile" data-toggle="tab" href="#profile" role="tab"  Info Access
                 /! Tab panes
                 .tab-content
                   #home.tab-pane.active.text-justify role="tabpanel" style="color: #000000;"
@@ -47,22 +47,22 @@
       p
         .glyphicon.glyphicon-info-sign
         - if @wisata.kategori_id == 6
-          |    Kisaran Harga makanan untuk 1 orang :
+          |    Price range of food for one person:
           |    #{@wisata.harga}
         - else
-          |    Harga Tiket Masuk : 
+          |    Entrance ticket: 
           |    #{@wisata.harga}
       p
         .glyphicon.glyphicon-time
-        |  Jam Buka: #{@wisata.jambuka}
+        |  Opening hours: #{@wisata.jambuka}
       p
         .glyphicon.glyphicon-phone-alt
         | #{@wisata.telp}
-      h4 style="font-weight: 800;" Deskripsi
+      h4 style="font-weight: 800;" Description
       p.text-justify 
         | #{@wisata.deskripsi}
       button.btn.btn-success type="button" data-toggle="modal" data-target="#myModal" style="margin-bottom: 10px;"
-        | Deskripsi Lengkap 
+        | Full Description 
         .glyphicon.glyphicon-book
       #myModal.modal.fade.modal-info tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         .modal-dialog.modal-lg
@@ -70,7 +70,7 @@
             .panel.panel-default
               .panel-heading 
                 h3.panel-title style="font-weight: 800;"
-                  | Deskripsi tentang #{@wisata.nama}
+                  | The Description of #{@wisata.nama}
               .panel-body.text-justify
                 = simple_format(@wisata.fulldeskripsi)
     /! Row bagian Accordion sampai restoran sekitar
@@ -82,7 +82,7 @@
               h4.panel-title.glyphicon.glyphicon-facetime-video
                 a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button"
                   - @wisata.videos.each do |video|
-                    |  Video Wisata oleh #{video.author}
+                    |  Video travel by #{video.author}
             #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel" 
               .panel-body
                 - @wisata.videos.each do |video|
@@ -104,7 +104,7 @@
             #headingThree.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.icon-map 
                 a.collapsed aria-controls="collapseThree" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button" 
-                  |  Tempat Wisata #{@wisata.daerah.nama} Lainnya
+                  |  Other tourist attractions in #{@wisata.daerah.nama} 
             #collapseThree.panel-collapse.collapse aria-labelledby="headingThree" role="tabpanel" 
               .panel-body
                 - @wisata.daerah.wisatas.each do |wisata|
@@ -128,7 +128,7 @@
             #headingFive.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-cutlery
                 a.collapsed aria-controls="collapseFive" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" role="button" 
-                  |  Restaurant Sekitar #{@wisata.nama} 
+                  |  Restaurants around #{@wisata.nama} 
             #collapseFive.panel-collapse.collapse aria-labelledby="headingFive" role="tabpanel" 
               .panel-body
                 - @wisata.restaurants.each do |restaurant|
@@ -140,14 +140,14 @@
   .col-sm-7.panel-review
     - if @wisata.kategori_id == 6 
       .panel.panel-default.panel-album-hotel
-        .panel-heading.album-heading Menu Makanan dan Minuman
+        .panel-heading.album-heading Foods and Drinks Menu
         .panel-body
           - @wisata.menurestorans.each do |menurestoran|
             .col-md-3.kolom-foto-hotel
               a.hovereffect href=menurestoran.foto data-lightbox="image-1"
                 =image_tag (menurestoran.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
                 .overlay
-                  p.info Click me
+                  p.info Click here
                   
     - unless @reviews.where("foto IS NOT NULL").count == 0
       .row style="margin-left: 0px; margin-right: 0px; margin-left: 50px;"
@@ -171,7 +171,7 @@
     .panel.panel-default
       .panel-heading
         h3.panel-title
-          | Ulasan Wisata
+          | Travel Reviews
       .panel-body.panel-home-review
         - if @wisata.reviews.any?
           #reviews
@@ -181,7 +181,7 @@
 a href="#" class="scrollToTop" 
   button.btn.btn-success
     .glyphicon.glyphicon-chevron-up
-    |  Kembali ke Atas
+    |  Back to Top
 
 
 /! Javascript
