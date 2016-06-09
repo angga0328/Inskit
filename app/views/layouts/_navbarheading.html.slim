@@ -21,7 +21,7 @@ nav.navbar.navbar-default
             .row
               .col-sm-12
                 ul.multi-column-dropdown
-                  - Daerah.order('nama ASC').all.each do |daerah|
+                  - Daerah.all.each do |daerah|
                       li.col-sm-4
                         =link_to daerah.nama, daerah
         li.dropdown
