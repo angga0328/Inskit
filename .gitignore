@@ -23,3 +23,10 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# amazoon
+/server.key
+/server.pass.key
+
+#heroku
+/lastest.dump
