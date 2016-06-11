@@ -4,8 +4,14 @@
   .col-md-3.kolom-kiri
     =render 'panelpopular'
   .col-md-6.panel-review
-    =link_to 'feed', root_path
-    =link_to 'explore', explore_path
+    -if user_signed_in?    
+      table
+        tbody
+          tr.button-group
+            td
+              = button_to "Feed", root_path, class: "btn btn-primary btn-follow active", type: "radio", style: "width:327px; margin-top: 0px;", method: :get
+            td   
+              = button_to "Explore", explore_path, class: "btn btn-primary btn-follow", type: "radio", style: "width:328px; margin-top: 0px;", method: :get
     =render 'panelreview'
   .col-md-3.kolom-kanan
     =render 'panelberita'
