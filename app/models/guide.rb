@@ -10,7 +10,10 @@ class Guide < ActiveRecord::Base
   has_many :reviews
 
   acts_as_votable
-  
+
+  extend FriendlyId
+  friendly_id :nama, use: :slugged
+
   def guide(wisata)
     guide_wisatas.create(wisata_id: wisata.id)
   end

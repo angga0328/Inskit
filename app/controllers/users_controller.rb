@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   def index
   end
 
- 
-  
+
+
   def following
     @title = "Following"
     @user  = User.find(params[:id])
@@ -27,6 +27,6 @@ class UsersController < ApplicationController
   private
     def set_user
       @notifications = current_user != nil ? current_user.mailbox.notifications : nil
-      @user = User.find(params[:id])
+      @user = User.friendly.find(params[:id])
     end
 end
