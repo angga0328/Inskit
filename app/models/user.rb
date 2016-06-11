@@ -19,6 +19,14 @@ class User < ActiveRecord::Base
   acts_as_voter
   acts_as_messageable
 
+
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :user_id"
+    Review.where("user_id IN (#{following_ids})
+                    OR user_id = :user_id", user_id: id)
+  end
+
   def mailboxer_email(object)
     if object.class==Mailboxer::Notification
      return nil

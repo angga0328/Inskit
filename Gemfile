@@ -30,6 +30,7 @@ gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'
 gem 'twitter', '~> 5.15'
 
 gem 'acts_as_commentable_with_threading'
+gem 'friendly_id', '~> 5.1.0'
 
 gem 'mailboxer'
 
