@@ -13,7 +13,7 @@
           span.icon-heart-broken.icon-broken data-toggle="tooltip" data-placement="bottom" title="Please Login First"
         | #{@wisata.get_downvotes.size}
         button.btn.btn-success.pull-right type="button" data-toggle="modal" data-target=".bs-example-modal-lg" 
-          | Tips dan Info Transportation
+          | Tips and Transportation Info
         .modal.fade.bs-example-modal-lg.modal-info tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
           .modal-dialog.modal-lg
             .modal-content.info-tips
@@ -23,7 +23,7 @@
                   li.active role="presentation" 
                     a aria-controls="home" data-toggle="tab" href="#home" role="tab"  Tips & Trick
                   li role="presentation" 
-                    a aria-controls="profile" data-toggle="tab" href="#profile" role="tab"  Info Access
+                    a aria-controls="profile" data-toggle="tab" href="#profile" role="tab"  Access Info
                 /! Tab panes
                 .tab-content
                   #home.tab-pane.active.text-justify role="tabpanel" style="color: #000000;"
@@ -116,7 +116,7 @@
             #headingFour.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-home
                 a.collapsed aria-controls="collapseFour" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" role="button" 
-                  |  Penginapan Sekitar #{@wisata.nama} 
+                  |  Loudges near #{@wisata.nama} 
             #collapseFour.panel-collapse.collapse aria-labelledby="headingFour" role="tabpanel" 
               .panel-body
                 - @wisata.hotels.each do |hotel|
@@ -128,7 +128,7 @@
             #headingFive.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-cutlery
                 a.collapsed aria-controls="collapseFive" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" role="button" 
-                  |  Restaurants around #{@wisata.nama} 
+                  |  Restaurants near #{@wisata.nama} 
             #collapseFive.panel-collapse.collapse aria-labelledby="headingFive" role="tabpanel" 
               .panel-body
                 - @wisata.restaurants.each do |restaurant|
@@ -171,7 +171,7 @@
     .panel.panel-default
       .panel-heading
         h3.panel-title
-          | Travel Reviews
+          | Reviews
       .panel-body.panel-home-review
         - if @wisata.reviews.any?
           #reviews
