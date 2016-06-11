@@ -11,9 +11,12 @@ class Wisata < ActiveRecord::Base
   has_many :restaurants
   has_many :videos
   has_many :menurestorans
-  
+
   acts_as_votable
-  
+
+  extend FriendlyId
+  friendly_id :nama, use: :slugged
+
   def name
     nama
   end

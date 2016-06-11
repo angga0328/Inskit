@@ -4,7 +4,10 @@ class Restaurant < ActiveRecord::Base
   has_many :menurestorans
   mount_uploader :foto, FotoUploader
   reverse_geocoded_by :latitude, :longitude
-  
+
+  extend FriendlyId
+  friendly_id :nama, use: :slugged
+
   def name
     nama
   end

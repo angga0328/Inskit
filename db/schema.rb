@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610162247) do
+ActiveRecord::Schema.define(version: 20160611081909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,10 @@ ActiveRecord::Schema.define(version: 20160610162247) do
     t.string   "foto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "daerahs", ["slug"], name: "index_daerahs_on_slug", unique: true, using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -122,10 +125,12 @@ ActiveRecord::Schema.define(version: 20160610162247) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.text     "bio"
+    t.string   "slug"
   end
 
   add_index "guides", ["email"], name: "index_guides_on_email", unique: true, using: :btree
   add_index "guides", ["reset_password_token"], name: "index_guides_on_reset_password_token", unique: true, using: :btree
+  add_index "guides", ["slug"], name: "index_guides_on_slug", unique: true, using: :btree
 
   create_table "hotels", force: :cascade do |t|
     t.integer  "wisata_id"
@@ -145,7 +150,10 @@ ActiveRecord::Schema.define(version: 20160610162247) do
     t.string   "hargakamar"
     t.text     "fulldeskripsi"
     t.text     "transportasi"
+    t.string   "slug"
   end
+
+  add_index "hotels", ["slug"], name: "index_hotels_on_slug", unique: true, using: :btree
 
   create_table "jenishotels", force: :cascade do |t|
     t.integer  "hotel_id"
@@ -160,7 +168,10 @@ ActiveRecord::Schema.define(version: 20160610162247) do
     t.string   "foto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "kategoris", ["slug"], name: "index_kategoris_on_slug", unique: true, using: :btree
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
@@ -251,7 +262,10 @@ ActiveRecord::Schema.define(version: 20160610162247) do
     t.string   "menu"
     t.text     "fulldeskripsi"
     t.text     "transportasi"
+    t.string   "slug"
   end
+
+  add_index "restaurants", ["slug"], name: "index_restaurants_on_slug", unique: true, using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.text     "content"
@@ -298,10 +312,12 @@ ActiveRecord::Schema.define(version: 20160610162247) do
     t.string   "token"
     t.string   "secret"
     t.boolean  "twitterlink"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
   create_table "videos", force: :cascade do |t|
     t.string   "title"
@@ -351,6 +367,7 @@ ActiveRecord::Schema.define(version: 20160610162247) do
     t.text     "fulldeskripsi"
     t.text     "tips"
     t.text     "transportasi"
+    t.string   "slug"
   end
 
   add_index "wisatas", ["cached_votes_down"], name: "index_wisatas_on_cached_votes_down", using: :btree
@@ -362,6 +379,7 @@ ActiveRecord::Schema.define(version: 20160610162247) do
   add_index "wisatas", ["cached_weighted_total"], name: "index_wisatas_on_cached_weighted_total", using: :btree
   add_index "wisatas", ["daerah_id"], name: "index_wisatas_on_daerah_id", using: :btree
   add_index "wisatas", ["kategori_id"], name: "index_wisatas_on_kategori_id", using: :btree
+  add_index "wisatas", ["slug"], name: "index_wisatas_on_slug", unique: true, using: :btree
 
   add_foreign_key "guide_wisatas", "guides"
   add_foreign_key "guide_wisatas", "wisatas"

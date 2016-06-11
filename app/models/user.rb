@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   acts_as_voter
   acts_as_messageable
 
+  extend FriendlyId
+  friendly_id :nama, use: :slugged
 
   def feed
     following_ids = "SELECT followed_id FROM relationships
