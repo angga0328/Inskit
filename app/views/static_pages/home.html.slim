@@ -7,7 +7,7 @@
     -if user_signed_in?    
       table
         tbody
-          tr.button-group
+          tr
             td
               = button_to "Feed", root_path, class: "btn btn-primary btn-follow active", type: "radio", style: "width:327px; margin-top: 0px;", method: :get
             td   
@@ -16,7 +16,7 @@
   .col-md-3.kolom-kanan
     =render 'panelberita'
     =render 'footer'
-
+    
 a href="#" class="scrollToTop" 
   button.btn.btn-success
     .glyphicon.glyphicon-chevron-up
