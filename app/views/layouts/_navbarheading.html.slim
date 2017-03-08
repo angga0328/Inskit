@@ -73,20 +73,6 @@ nav.navbar.navbar-default
               li.divider role="separator"
               li
                 = link_to ' signout', destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-off", style: "font-size: 16px;"
-        -elsif guide_signed_in?
-          li.dropdown
-            a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
-              = current_guide.email
-              span.caret
-            ul.dropdown-menu.dropdown-profile style= "margin-top: 0px;"
-              li
-                = link_to ' @' +current_guide.nama, current_guide, class: "glyphicon glyphicon-user", style: "font-size: 16px;"
-              li.divider role="separator"
-              li
-                = link_to ' settings', edit_guide_registration_path, class: "glyphicon glyphicon-wrench", style: "font-size: 16px;"
-              li.divider role="separator"
-              li
-                = link_to ' signout', destroy_guide_session_path, method: :delete, class: "glyphicon glyphicon-off", style: "font-size: 16px;"
         -elsif admin_signed_in?
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown" role="button" 
@@ -104,9 +90,6 @@ nav.navbar.navbar-default
           li  
             =link_to 'Traveler', new_user_session_path, :style => "text-decoration: underline;"
           li style='padding-top:15px; color: #FFFFFF;'
-            | or
-          li
-            =link_to 'Guide', new_guide_session_path, :style => "text-decoration: underline;"
             
 /.search-form action= ""
 /          .form-group.has-feedback
