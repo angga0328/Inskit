@@ -7,13 +7,13 @@
         span.icon-map
           |  #{@wisata.nama} 
         = link_to like_wisata_path(@wisata), method: :put do
-          span.icon-heart.icon-hati data-toggle="tooltip" data-placement="bottom" title="Please Login First"
+          span.icon-heart.icon-hati data-toggle="tooltip" data-placement="bottom" title="Oops, harus login dahulu"
         | #{@wisata.get_upvotes.size} 
         = link_to dislike_wisata_path(@wisata), method: :put do
-          span.icon-heart-broken.icon-broken data-toggle="tooltip" data-placement="bottom" title="Please Login First"
+          span.icon-heart-broken.icon-broken data-toggle="tooltip" data-placement="bottom" title="Oops, harus login dahulu"
         | #{@wisata.get_downvotes.size}
         button.btn.btn-success.pull-right type="button" data-toggle="modal" data-target=".bs-example-modal-lg" 
-          | Tips and Transportation Info
+          | Tips dan Info Transportasi
         .modal.fade.bs-example-modal-lg.modal-info tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
           .modal-dialog.modal-lg
             .modal-content.info-tips
@@ -21,9 +21,9 @@
                 /! Nav tabs
                 ul.nav.nav-tabs.tab-info role="tablist" 
                   li.active role="presentation" 
-                    a aria-controls="home" data-toggle="tab" href="#home" role="tab"  Tips & Trick
+                    a aria-controls="home" data-toggle="tab" href="#home" role="tab"  Tips dan Trik
                   li role="presentation" 
-                    a aria-controls="profile" data-toggle="tab" href="#profile" role="tab"  Access Info
+                    a aria-controls="profile" data-toggle="tab" href="#profile" role="tab"  Info Akses
                 /! Tab panes
                 .tab-content
                   #home.tab-pane.active.text-justify role="tabpanel" style="color: #000000;"
@@ -47,22 +47,22 @@
       p
         .glyphicon.glyphicon-info-sign
         - if @wisata.kategori_id == 6
-          |    Price range of food for one person:
+          |    Kisaran harga makanan untuk satu orang:
           |    #{@wisata.harga}
         - else
-          |    Entrance ticket: 
+          |    Tiket masuk: 
           |    #{@wisata.harga}
       p
         .glyphicon.glyphicon-time
-        |  Opening hours: #{@wisata.jambuka}
+        |  Jam buka: #{@wisata.jambuka}
       p
         .glyphicon.glyphicon-phone-alt
         | #{@wisata.telp}
-      h4 style="font-weight: 800;" Description
+      h4 style="font-weight: 800;" Deskripsi
       p.text-justify 
         | #{@wisata.deskripsi}
       button.btn.btn-success type="button" data-toggle="modal" data-target="#myModal" style="margin-bottom: 10px;"
-        | Full Description 
+        | Deskripsi Lengkap
         .glyphicon.glyphicon-book
       #myModal.modal.fade.modal-info tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         .modal-dialog.modal-lg
@@ -70,7 +70,7 @@
             .panel.panel-default
               .panel-heading 
                 h3.panel-title style="font-weight: 800;"
-                  | The Description of #{@wisata.nama}
+                  | Deskripsi dari #{@wisata.nama}
               .panel-body.text-justify
                 = simple_format(@wisata.fulldeskripsi)
     /! Row bagian Accordion sampai restoran sekitar
@@ -82,7 +82,7 @@
               h4.panel-title.glyphicon.glyphicon-facetime-video
                 a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button"
                   - @wisata.videos.each do |video|
-                    |  Video travel by #{video.author}
+                    |  Video wisata dari #{video.author}
             #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel" 
               .panel-body
                 - @wisata.videos.each do |video|
@@ -104,7 +104,7 @@
             #headingThree.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.icon-map 
                 a.collapsed aria-controls="collapseThree" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button" 
-                  |  Other tourist attractions in #{@wisata.daerah.nama} 
+                  |  Tempat wisata lain di #{@wisata.daerah.nama} 
             #collapseThree.panel-collapse.collapse aria-labelledby="headingThree" role="tabpanel" 
               .panel-body
                 - @wisata.daerah.wisatas.each do |wisata|
@@ -116,7 +116,7 @@
             #headingFour.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-home
                 a.collapsed aria-controls="collapseFour" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" role="button" 
-                  |  Loudges near #{@wisata.nama} 
+                  |  Penginapan sekitar #{@wisata.nama} 
             #collapseFour.panel-collapse.collapse aria-labelledby="headingFour" role="tabpanel" 
               .panel-body
                 - @wisata.hotels.each do |hotel|
@@ -128,7 +128,7 @@
             #headingFive.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.glyphicon.glyphicon-cutlery
                 a.collapsed aria-controls="collapseFive" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" role="button" 
-                  |  Restaurants near #{@wisata.nama} 
+                  |  Restoran sekitar #{@wisata.nama} 
             #collapseFive.panel-collapse.collapse aria-labelledby="headingFive" role="tabpanel" 
               .panel-body
                 - @wisata.restaurants.each do |restaurant|
@@ -140,7 +140,7 @@
   .col-sm-7.panel-review
     - if @wisata.kategori_id == 6 
       .panel.panel-default.panel-album-hotel
-        .panel-heading.album-heading Foods and Drinks Menu
+        .panel-heading.album-heading Menu makanan dan minuman
         .panel-body
           - @wisata.menurestorans.each do |menurestoran|
             .col-md-3.kolom-foto-hotel
@@ -181,7 +181,7 @@
 a href="#" class="scrollToTop" 
   button.btn.btn-success
     .glyphicon.glyphicon-chevron-up
-    |  Back to Top
+    |  Kembali ke atas
 
 
 /! Javascript

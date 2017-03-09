@@ -1,8 +1,8 @@
 .panel.panel-default.panel-popular
   .panel-heading
     h3.panel-title
-      | Popular Tourism
-      = link_to 'more', 'popular-location', class: "pull-right glyphicon glyphicon-chevron-right"
+      | Wisata Populer
+      = link_to 'selebihnya', 'popular-location', class: "pull-right glyphicon glyphicon-chevron-right"
   .panel-body.panel-home-popular
     -@wisatas[0..2].each do |wisata|
       .col-md-12.padding
@@ -13,6 +13,6 @@
               = wisata.nama
             span.glyphicon.glyphicon-heart style="color:white;"
               | #{wisata.get_upvotes.size}
-            =link_to 'Show', wisata, class: "info"
+            =link_to 'Lihat', wisata, class: "info"
             span.icon-bubble style="color:white;"
               = wisata.reviews.count

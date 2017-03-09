@@ -15,7 +15,7 @@ nav.navbar.navbar-default
       ul.nav.navbar-nav
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#" 
-            | Explore Indonesia
+            | Telusur Indonesia
             b.caret
           ul.dropdown-menu.multi-column.columns-3
             .row
@@ -26,7 +26,7 @@ nav.navbar.navbar-default
                         =link_to daerah.nama, daerah
         li.dropdown
           a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
-            | Category
+            | Kategori
             span.caret
           ul.dropdown-menu.dropdown-kategori
             - Kategori.all.each do |kategori|
@@ -34,7 +34,7 @@ nav.navbar.navbar-default
                   =link_to kategori.nama, kategori
       = form_tag(wisatas_path, :method => "get", class: "navbar-form navbar-left", role: "search") do
         .form-group
-          = search_field_tag :search, params[:search], class: "form-control", placeholder: "name of the tourist attractions"
+          = search_field_tag :search, params[:search], class: "form-control", placeholder: "nama tempat wisata"
           button.btn.btn-default.btn-search type="submit" style="border-radius: 0px;"
             i.glyphicon.glyphicon-search
 
@@ -56,7 +56,7 @@ nav.navbar.navbar-default
                           | #{notif.subject == "ikuti" ? " has followed you." : notif.subject == "notif" ? " has liked your review." : " has commented on your review."}
                       li.divider
                     li.text-center
-                      = link_to "View more", notifications_path, class: "text-center"
+                      = link_to "Lihat lebih lanjut", notifications_path, class: "text-center"
                   
       ul.nav.navbar-nav.navbar-right
         -if user_signed_in?
@@ -86,7 +86,7 @@ nav.navbar.navbar-default
                 = link_to 'sign out', destroy_admin_session_path, method: :delete
         - else
           li style='padding-top:15px; color: #FFFFFF;'
-            | Login as
+            | Masuk sebagai
           li  
             =link_to 'Traveler', new_user_session_path, :style => "text-decoration: underline;"
           li style='padding-top:15px; color: #FFFFFF;'
