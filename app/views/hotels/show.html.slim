@@ -8,16 +8,16 @@
   .col-md-4.bagian-kanan
     .embed-responsive.embed-responsive-4by3
       = render 'hotels/peta', hotel: @hotel
-    = link_to "Find out more", "#{@hotel.website}", class: "btn btn-success pull-right", target: "_blank"
+    = link_to "Ketahui lebih lanjut", "#{@hotel.website}", class: "btn btn-success pull-right", target: "_blank"
 .row.set-row
   .col-md-6.box
     .panel.panel-default.panel-deskripsi
-      .panel-heading.heading-panel Description of the #{@hotel.nama}
+      .panel-heading.heading-panel Deskripsi dari #{@hotel.nama}
       .panel-body.text-justify
         |  #{@hotel.deskripsi}
         br
         button.btn.btn-success type="button" data-toggle="modal" data-target="#myModal" style="margin-bottom: 10px;"
-          | Full Description 
+          | Deskripsi Lengkap
           .glyphicon.glyphicon-book
         #myModal.modal.fade.modal-info tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
           .modal-dialog.modal-lg style="margin-top: 60px;"
@@ -25,7 +25,7 @@
               .panel.panel-default
                 .panel-heading.full-deskripsi 
                   h3.panel-title style="font-weight: 800;"
-                    | Description of the #{@hotel.nama}
+                    | Deskripsi dari #{@hotel.nama}
                 .panel-body.text-justify
                   = simple_format(@hotel.fulldeskripsi)
     .panel.panel-default.detail-info
@@ -34,38 +34,38 @@
         table.table
           tbody
             tr
-              td Address
+              td Alamat
               td = @hotel.alamat
             tr
-              td Price starting from
+              td Harga dari
               td = @hotel.harga
             tr
-              td Number of Rooms
+              td Jumlah kamar
               td = @hotel.jumlahkamar
             tr
-              td Phone
+              td Telepon
               td 
                 = @hotel.telp
                 br    
   .col-md-6
     .panel.panel-default.panel-album-hotel
-      .panel-heading.album-heading Photos of the hotel
+      .panel-heading.album-heading Foto dari hotel
       .panel-body
         - @hotel.albumfotohotels.each do |albumfotohotel|
           .col-md-3.kolom-foto-hotel
             a.hovereffect href=albumfotohotel.foto data-lightbox="image-1"
               =image_tag (albumfotohotel.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
               .overlay
-                p.info Show
+                p.info Lihat
     .panel.panel-default.panel-album-hotel
-      .panel-heading.album-heading Room types and prices
+      .panel-heading.album-heading Tipe kamar dan harga
       .panel-body
         - @hotel.jenishotels.each do |jenishotel|
           .col-md-3.kolom-foto-hotel
             a.hovereffect href=jenishotel.foto data-lightbox="image-1"
               =image_tag (jenishotel.foto), {:class => "img-responsive", style: "width:150px; height:100px;"} 
               .overlay
-                p.info Show
+                p.info Lihat
 
 
 
