@@ -6,7 +6,7 @@
       = link_to wisata.nama, wisata
       span.jarak-tgl
         .glyphicon.glyphicon-calendar
-        |   #{wisata.created_at.to_date} 
+        |   #{wisata.updated_at.to_date} 
       span.jarak-tgl
         span.icon-heart style=""
           | #{wisata.get_upvotes.size}
@@ -20,4 +20,3 @@
       = wisata.telp
     p.col-md-12.deskripsi 
       = wisata.deskripsi
-
