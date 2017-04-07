@@ -4,9 +4,9 @@
   .col-md-8.konten
     h2.title
       = link_to wisata.nama, wisata
-      span.jarak-tgl
-        .glyphicon.glyphicon-calendar
-        |   #{wisata.updated_at.to_date} 
+      / span.jarak-tgl
+      /   .glyphicon.glyphicon-calendar
+      /   |   #{wisata.updated_at.to_date} 
       span.jarak-tgl
         span.icon-heart style=""
           | #{wisata.get_upvotes.size}
