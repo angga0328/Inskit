@@ -88,18 +88,18 @@
                 - @wisata.videos.each do |video|
                   .embed-responsive.embed-responsive-4by3 style="padding-bottom: 50%;"
                     = embed (video.link)
-          / .panel.panel-default
-          /   #headingTwo.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
-          /     h4.panel-title.glyphicon.glyphicon-user
-          /       a.collapsed aria-controls="collapseTwo" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button" 
-          /         |  Guide 
-          /   #collapseTwo.panel-collapse.collapse aria-labelledby="headingTwo" role="tabpanel" 
-          /     .panel-body
-          /       = render 'guide_form' if guide_signed_in?
-          /       -@wisata.guides.each do |guide|
-          /         .col-sm-3.text-center
-          /           =image_tag (guide.foto), {:class => "img-responsive"}
-          /           =link_to guide.nama, guide, :style => "color: #1aa6b7;"
+          .panel.panel-default
+            #headingTwo.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
+              h4.panel-title.glyphicon.glyphicon-user
+                a.collapsed aria-controls="collapseTwo" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button" 
+                  |  Guide 
+            #collapseTwo.panel-collapse.collapse aria-labelledby="headingTwo" role="tabpanel" 
+              .panel-body
+                = render 'guide_form' if guide_signed_in?
+                -@wisata.guides.each do |guide|
+                  .col-sm-3.text-center
+                    =image_tag (guide.foto), {:class => "img-responsive"}
+                    =link_to guide.nama, guide, :style => "color: #1aa6b7;"
           .panel.panel-default
             #headingThree.panel-heading.title-accordion role="tab" style="background-color: #002d40;"
               h4.panel-title.icon-map 
